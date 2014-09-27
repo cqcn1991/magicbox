@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20140927135425) do
     t.string   "title"
     t.string   "img_url"
     t.string   "taobao_id"
+    t.decimal  "price"
     t.integer  "shop_id"
     t.datetime "created_at"
     t.datetime "updated_at"

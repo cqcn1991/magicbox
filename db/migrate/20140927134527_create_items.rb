@@ -5,6 +5,7 @@ class CreateItems < ActiveRecord::Migration
       t.string :title
       t.string :img_url
       t.string :taobao_id
+      t.decimal :price
       t.belongs_to :shop, index: true
 
       t.timestamps
