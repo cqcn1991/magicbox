@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  url: MyString
+  title: MyString
+  img_url: MyString
+  taobao_id: MyString
+  shop_id: 
+
+two:
+  url: MyString
+  title: MyString
+  img_url: MyString
+  taobao_id: MyString
+  shop_id: 
