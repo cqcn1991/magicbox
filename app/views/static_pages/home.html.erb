@@ -40,7 +40,12 @@
     </div>
   </div>
   <div class="notices col-md-3">
-    <h3>Notice</h3>
+    <h4>公告</h4>
+    <% @notices.each do |notice| %>
+      <div class="notice">
+        <%= notice.content %>
+      </div>
+    <% end  %>
   </div>
 
 </div>

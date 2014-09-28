@@ -9,8 +9,6 @@ task :fetch_post => :environment do
     post = Post.new(title: title, url: href, source: source)
     if post.save
       puts title + 'saved'
-    else
-      puts title + 'not saved'
     end
   end
 

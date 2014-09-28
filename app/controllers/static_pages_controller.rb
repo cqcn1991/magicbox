@@ -3,5 +3,7 @@ class StaticPagesController < ApplicationController
     @items = Item.first(4)
     @videos = Video.first(4)
     @posts = Post.first(4)
+
+    @notices = Notice.all
   end
 end

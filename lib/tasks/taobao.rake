@@ -19,8 +19,6 @@ task :fetch_taobao => :environment do
       item = Item.new(title: title, url: href, taobao_id: taobao_id, img_url: img_url, shop: site, price: price)
       if item.save
         puts title + 'saved'
-      else
-        puts title + 'not saved'
       end
     end
   end

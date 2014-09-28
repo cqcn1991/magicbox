@@ -24,8 +24,6 @@ task :fetch_video => :environment do
       video = Video.new(title: title, url: href, source_id: id, img_url: img_url, source: source)
       if video.save
         puts title + 'saved'
-      else
-        puts title + 'not saved'
       end
     end
   end
@@ -42,8 +40,6 @@ task :fetch_video => :environment do
     video = Video.new(title: title, url: href, source_id: id, img_url: img_url, source: source)
     if video.save
       puts title + 'saved'
-    else
-      puts title + 'not saved'
     end
   end
 end
