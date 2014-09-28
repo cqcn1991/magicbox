@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140928061956) do
+ActiveRecord::Schema.define(version: 20140928084837) do
 
   create_table "items", force: true do |t|
     t.string   "url"
@@ -25,6 +25,14 @@ ActiveRecord::Schema.define(version: 20140928061956) do
   end
 
   add_index "items", ["shop_id"], name: "index_items_on_shop_id"
+
+  create_table "posts", force: true do |t|
+    t.string   "url"
+    t.string   "title"
+    t.string   "source"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "shops", force: true do |t|
     t.string   "name"
