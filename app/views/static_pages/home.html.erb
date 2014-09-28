@@ -1,0 +1,25 @@
+<div class="items">
+  <% @items.each do |item| %>
+    <div class="item">
+      <%= link_to item.title, item.url %>
+      <%= image_tag(item.img_url) %>
+    </div>
+  <% end  %>
+</div>
+
+<div class="videos">
+  <% @videos.each do |item| %>
+    <div class="video">
+      <%= link_to item.title, item.url %>
+      <%= image_tag(item.img_url) %>
+    </div>
+  <% end  %>
+</div>
+
+<div class="posts">
+  <% @posts.each do |item| %>
+    <div class="post">
+      <%= link_to item.title, item.url %>
+    </div>
+  <% end  %>
+</div>
