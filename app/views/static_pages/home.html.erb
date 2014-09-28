@@ -1,25 +1,49 @@
-<div class="items">
-  <% @items.each do |item| %>
-    <div class="item">
-      <%= link_to item.title, item.url %>
-      <%= image_tag(item.img_url) %>
+<div class="row">
+  <div class="col-md-9">
+    <div class="items row">
+      <div class="col-md-12">
+        <h3>Items</h3>
+      </div>
+      <div class="col-md-12">
+        <div class="row">
+          <% @items.each do |item| %>
+            <div class="item col-md-3">
+              <%= link_to item.url, class: 'img-container' do %>
+                <%= image_tag(item.img_url, class: 'img-responsive') %>
+              <% end %>
+              <%= link_to item.title, item.url %>
+            </div>
+          <% end  %>
+        </div>
+      </div>
     </div>
-  <% end  %>
+
+    <div class="videos row">
+      <% @videos.each do |item| %>
+        <div class="video col-md-3">
+          <div class="thumbnail">
+            <%= image_tag(item.img_url, class: 'img-responsive') %>
+            <div class="caption">
+              <%= link_to item.title, item.url %>
+            </div>
+          </div>
+        </div>
+      <% end  %>
+    </div>
+
+    <div class="posts row">
+      <% @posts.each do |item| %>
+        <div class="post col-md-12">
+          <%= link_to item.title, item.url %>
+        </div>
+      <% end  %>
+    </div>
+  </div>
+  <div class="notices col-md-3">
+    <h3>Notice</h3>
+  </div>
+
 </div>
 
-<div class="videos">
-  <% @videos.each do |item| %>
-    <div class="video">
-      <%= link_to item.title, item.url %>
-      <%= image_tag(item.img_url) %>
-    </div>
-  <% end  %>
-</div>
 
-<div class="posts">
-  <% @posts.each do |item| %>
-    <div class="post">
-      <%= link_to item.title, item.url %>
-    </div>
-  <% end  %>
-</div>
+
