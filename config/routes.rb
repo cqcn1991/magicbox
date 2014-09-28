@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :videos
+
   resources :shops
 
   resources :items
