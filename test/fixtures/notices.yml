@@ -2,6 +2,8 @@
 
 one:
   content: MyText
+  pinned: false
 
 two:
   content: MyText
+  pinned: false

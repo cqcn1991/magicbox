@@ -33,7 +33,7 @@
 
     <div class="posts row">
       <% @posts.each do |item| %>
-        <div class="post col-md-12">
+        <div class="post">
           <%= link_to item.title, item.url %>
         </div>
       <% end  %>

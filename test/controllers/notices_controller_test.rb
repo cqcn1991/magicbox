@@ -18,7 +18,7 @@ class NoticesControllerTest < ActionController::TestCase
 
   test "should create notice" do
     assert_difference('Notice.count') do
-      post :create, notice: { content: @notice.content }
+      post :create, notice: { content: @notice.content, pinned: @notice.pinned }
     end
 
     assert_redirected_to notice_path(assigns(:notice))
@@ -35,7 +35,7 @@ class NoticesControllerTest < ActionController::TestCase
   end
 
   test "should update notice" do
-    patch :update, id: @notice, notice: { content: @notice.content }
+    patch :update, id: @notice, notice: { content: @notice.content, pinned: @notice.pinned }
     assert_redirected_to notice_path(assigns(:notice))
   end
 

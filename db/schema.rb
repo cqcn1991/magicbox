@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140928145843) do
+ActiveRecord::Schema.define(version: 20140929042055) do
 
   create_table "items", force: true do |t|
     t.string   "url"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20140928145843) do
 
   create_table "notices", force: true do |t|
     t.text     "content"
+    t.boolean  "pinned"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

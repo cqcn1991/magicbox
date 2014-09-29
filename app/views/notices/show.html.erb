@@ -5,5 +5,10 @@
   <%= @notice.content %>
 </p>
 
+<p>
+  <strong>Pinned:</strong>
+  <%= @notice.pinned %>
+</p>
+
 <%= link_to 'Edit', edit_notice_path(@notice) %> |
 <%= link_to 'Back', notices_path %>
