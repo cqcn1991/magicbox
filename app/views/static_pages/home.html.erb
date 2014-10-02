@@ -37,6 +37,7 @@
     <div class="posts row">
       <% @posts.each do |item| %>
         <div class="post">
+          <%= item.source %>
           <%= link_to item.title, item.url %>
           <%= item.created_at.strftime("%m/%d") %>
         </div>
