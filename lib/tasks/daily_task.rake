@@ -1,7 +1,14 @@
 # encoding: utf-8
 desc "Daily Task"
-task :daily_task => :environment do
-  Rake::Task["fetch_taobao"].invoke
-  Rake::Task["fetch_video"].invoke
-  Rake::Task["fetch_post"].invoke
+task :fetch_all,  [:fetch_number] => :environment do |t, args|
+  if args.fetch_number
+    fetch_number = args.fetch_number.to_i
+  else
+    fetch_number = 4
+  end
+
+  Rake::Task["fetch_taobao"].invoke(fetch_number)
+  Rake::Task["fetch_video"].invoke(fetch_number)
+  Rake::Task["fetch_post"].invoke(fetch_number)
 end
+
