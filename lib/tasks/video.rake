@@ -22,7 +22,7 @@ task :fetch_video, [:fetch_number] => :environment do |t, args|
     puts doc.css("title").text
     doc.css(".YK-video .v").first(fetch_number).compact.each do |item|
       #抓取Youku新视频
-      title = item.css(".v-meta-title a")[0]['title'] rescue nil
+      title = item.at(".v-meta-title a")['title'] rescue nil
       href = item.at(".v-link a")['href']
       id = href.split("id_")[1].split(".html")[0]
       img_url = item.at(".v-thumb img")['src']

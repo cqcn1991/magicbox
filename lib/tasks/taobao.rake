@@ -17,9 +17,9 @@ task :fetch_taobao, [:fetch_number] => :environment do |t, args|
     puts doc.css("title").text
     doc.css(".item").first(fetch_number).compact.each do |item_info|
       #抓取淘宝新品
-      title = item_info.css(".detail a").text
-      href = item_info.css(".detail a")[0]['href']
-      price = item_info.css(".detail .c-price").text
+      title = item_info.at(".detail a").text
+      href = item_info.at(".detail a")['href']
+      price = item_info.at(".detail .c-price").text
       taobao_id = href.split("id=")[1]
       img_url = item_info.at(".photo img")['src']
       item = Item.new(title: title, url: href, taobao_id: taobao_id, img_url: img_url, shop: site, price: price)
