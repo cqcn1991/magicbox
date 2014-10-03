@@ -6,14 +6,15 @@
       </div>
       <div class="col-md-12">
         <div class="row">
-          <% @items.each do |item| %>
+          <% @shops.each do |shop| %>
+            <% item = shop.items.first %>
             <div class="item col-md-3">
               <%= link_to item.url, class: 'img-container' do %>
                 <%= image_tag(item.img_url, class: 'img-responsive') %>
               <% end %>
               <%= link_to item.title, item.url %>
               <%= item.created_at.strftime("%m/%d") %>
-
+              <h5><%= shop.name %></h5>
             </div>
           <% end  %>
         </div>
