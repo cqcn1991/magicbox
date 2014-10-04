@@ -3,7 +3,10 @@ class StaticPagesController < ApplicationController
     @shops = Shop.first(4)
     @videos = Video.first(4)
     @posts = Post.first(4)
-
     @notices = Notice.all
+  end
+
+  def discussion
+
   end
 end
