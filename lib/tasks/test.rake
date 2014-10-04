@@ -1,8 +1,14 @@
 # encoding: utf-8
 desc "Fetch Sites"
-task :test_fetch => :environment do
+task :test_hits => :environment do
   require 'nokogiri'
   require 'open-uri'
+  Video.all.each do |video|
+    video.get_hits
+    puts video.title, video.hits
+  end
+
+=begin
   url = 'http://themagicway.taobao.com/search.htm?&search=y&orderType=newOn_desc'
   doc = Nokogiri::HTML(open(url) )
   puts doc.css(".main-wrap .item").count
@@ -14,5 +20,6 @@ task :test_fetch => :environment do
       puts 'this is empty'
     end
   end
+=end
 end
 

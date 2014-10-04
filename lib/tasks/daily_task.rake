@@ -12,3 +12,12 @@ task :fetch_all,  [:fetch_number] => :environment do |t, args|
   Rake::Task["fetch_post"].invoke(fetch_number)
 end
 
+desc "Weekly Task"
+task :fetch_hits => :environment do
+  require 'nokogiri'
+  require 'open-uri'
+  Video.all.each do |video|
+    video.get_hits
+    puts video.title, video.hits
+  end
+end

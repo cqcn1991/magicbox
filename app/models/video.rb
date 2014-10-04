@@ -4,8 +4,8 @@ class Video < ActiveRecord::Base
   validates :source_id, uniqueness: true
   before_validation :get_info, on: :create
 
-  default_scope{order('created_at DESC, source_id ASC')}
-
+  scope :order_by_time, -> {order('created_at DESC, source_id ASC')}
+  scope :order_by_hits, -> { order('hits DESC') }
   require 'open-uri'
 
   def get_info
@@ -61,6 +61,28 @@ class Video < ActiveRecord::Base
     self.source_id = video_params.split('icode: ')[1].split("'")[1]
     self.img_url = video_params.split('pic: ')[1].split("'")[1]
     self.source = 'tudou'
+  end
+
+  def get_hits
+    if self.source == 'youku'
+      video_id = self.get_youku_id
+      response = HTTParty.get("http://v.youku.com/QVideo/~ajax/getVideoPlayInfo?&id=#{video_id}&type=vv")
+      decode_response =  ActiveSupport::JSON.decode(response)
+      hits = decode_response['vv'].to_i
+    elsif self.source == 'tudou'
+      response = HTTParty.get("http://index.youku.com/dataapi/getData?jsoncallback=page_play_model_exponentModel__getNum&num=100011&icode=#{self.source_id}")
+      json =  /(\{.*\})/.match(response).to_s
+      decode_response =  ActiveSupport::JSON.decode(json)
+      hits = decode_response['result']['totalVv'].to_i
+    end
+    self.hits = hits
+    self.save
+  end
+
+  def get_youku_id
+    response = HTTParty.get("http://v.youku.com/player/getPlayList/VideoIDS/#{self.source_id}")
+    decode_response =  ActiveSupport::JSON.decode(response)
+    decode_response['data'][0]['videoid']
   end
 end
 
