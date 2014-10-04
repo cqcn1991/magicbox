@@ -8,6 +8,7 @@
       <th>Price</th>
       <th>Taobao</th>
       <th>Shop</th>
+      <th>Sales Number</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,6 +21,7 @@
         <td><%= number_with_precision(item.price, precision: 2)  %></td>
         <td><%= item.taobao_id %></td>
         <td><%= item.shop.name %></td>
+        <td><%= item.sales_number %></td>
         <td><%= link_to 'Show', item %></td>
         <td><%= link_to 'Edit', edit_item_path(item) %></td>
         <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -13,11 +13,16 @@ task :fetch_all,  [:fetch_number] => :environment do |t, args|
 end
 
 desc "Weekly Task"
-task :fetch_hits => :environment do
+task :fetch_popularity => :environment do
   require 'nokogiri'
   require 'open-uri'
   Video.all.each do |video|
     video.get_hits
     puts video.title, video.hits
+  end
+
+  Item.all.each do |item|
+    item.get_sales_number
+    puts item.title, item.sales_number
   end
 end

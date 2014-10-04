@@ -1,11 +1,12 @@
 # encoding: utf-8
 desc "Fetch Sites"
-task :test_hits => :environment do
+task :test_taobao => :environment do
   require 'nokogiri'
   require 'open-uri'
-  Video.all.each do |video|
-    video.get_hits
-    puts video.title, video.hits
+
+  Item.all.each do |item|
+    item.get_sales_number
+    puts item.title, item.sales_number
   end
 
 =begin

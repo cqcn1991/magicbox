@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141004041022) do
+ActiveRecord::Schema.define(version: 20141004133323) do
 
   create_table "items", force: true do |t|
     t.string   "url"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20141004041022) do
     t.integer  "shop_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "sales_number"
   end
 
   add_index "items", ["shop_id"], name: "index_items_on_shop_id"
