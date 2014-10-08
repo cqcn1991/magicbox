@@ -51,7 +51,7 @@
     <h4>公告</h4>
     <% @notices.each do |notice| %>
       <div class="notice">
-        <%= notice.content %>
+        <%= short_auto_link(notice.content) %>
       </div>
     <% end  %>
   </div>
