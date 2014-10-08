@@ -21,7 +21,7 @@ task :fetch_post, [:fetch_number] => :environment do |t, args|
   url = 'http://www.collegemagic.cn/forum.php'
   doc = Nokogiri::HTML(open(url) )
   puts doc.css("title").text
-  doc.css(".bm_c.cl a").first(fetch_number).compact.each do |item_info|
+  doc.css(".bm_c.cl a")[0..fetch_number].each do |item_info|
     title = item_info.text
     href = 'http://www.collegemagic.cn/'+ item_info['href']
     source = '高魔'
@@ -31,7 +31,7 @@ task :fetch_post, [:fetch_number] => :environment do |t, args|
   url = 'http://tieba.baidu.com/f/good?kw=%C4%A7%CA%F5'
   doc = Nokogiri::HTML(open(url) )
   puts doc.css("title").text
-  doc.css("ul#thread_list li.j_thread_list").first(fetch_number).compact.each do |item_info|
+  doc.css("ul#thread_list li.j_thread_list")[0..fetch_number].each do |item_info|
     title = item_info.at('a.j_th_tit')['title']
     href = 'http://tieba.baidu.com' + item_info.at('a.j_th_tit')['href']
     source = '贴吧'
