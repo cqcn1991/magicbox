@@ -1,0 +1,24 @@
+<% unless defined?(show_shop)  %>
+  <% show_shop = true  %>
+<% end  %>
+
+<div class="item col-md-3">
+  <div class="thumbnail">
+    <%= link_to item.url, class: 'img-container' do %>
+      <%= image_tag(item.img_url, class: 'img-responsive') %>
+    <% end %>
+    <div class="caption">
+      <%= link_to item.title, item.url %>
+      <br>
+      <% if show_shop  %>
+        <% shop = item.shop  %>
+        <strong><%= link_to shop.name, shop_path(shop) %></strong>
+      <% else  %>
+        销量<strong><%= item.sales_number %></strong>
+      <% end  %>
+      <span class="pull-right">
+        <%= item.created_at.strftime("%m/%d") %>
+      </span>
+    </div>
+  </div>
+</div>

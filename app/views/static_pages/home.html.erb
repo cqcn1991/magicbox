@@ -1,5 +1,4 @@
-<div class="row">
-  <div class="col-md-9">
+
     <div class="items row">
       <div class="col-md-12">
         <h3>Items</h3>
@@ -8,21 +7,7 @@
         <div class="row">
           <% @shops.each do |shop| %>
             <% item = shop.items.first %>
-            <div class="item col-md-3">
-              <div class="thumbnail">
-                <%= link_to item.url, class: 'img-container' do %>
-                  <%= image_tag(item.img_url, class: 'img-responsive') %>
-                <% end %>
-                <div class="caption">
-                  <%= link_to item.title, item.url %>
-                  <br>
-                  <strong><%= link_to shop.name, shop_path(shop) %></strong>
-                  <span class="pull-right">
-                    <%= item.created_at.strftime("%m/%d") %>
-                  </span>
-                </div>
-              </div>
-            </div>
+            <%= render partial: 'items/item', locals: {item: item} %>
           <% end  %>
         </div>
       </div>
@@ -30,38 +15,21 @@
 
     <div class="videos row">
       <% @videos.each do |item| %>
-        <div class="video col-md-3">
-          <div class="thumbnail">
-            <%= image_tag(item.img_url, class: 'img-responsive') %>
-            <div class="caption">
-              <%= link_to item.title, item.url %>
-              <%= item.created_at.strftime("%m/%d") %>
-            </div>
-          </div>
-        </div>
+        <%= render partial: 'videos/video', locals: {item: item}  %>
       <% end  %>
     </div>
 
     <div class="posts row">
       <% @posts.each do |item| %>
-        <div class="post">
-          <%= item.source %>
+        <div class="post col-md-6">
           <%= link_to item.title, item.url %>
-          <%= item.created_at.strftime("%m/%d") %>
+          <div class="pull-right">
+            <%= item.source %>
+            <%= item.created_at.strftime("%m/%d") %>
+          </div>
         </div>
       <% end  %>
     </div>
-  </div>
-  <div class="notices col-md-3">
-    <h4>公告</h4>
-    <% @notices.each do |notice| %>
-      <div class="notice">
-        <%= short_auto_link(notice.content) %>
-      </div>
-    <% end  %>
-  </div>
-
-</div>
 
 
 

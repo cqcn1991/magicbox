@@ -6,6 +6,7 @@ class Video < ActiveRecord::Base
 
   default_scope {order('created_at DESC, source_id ASC')}
   scope :order_by_hits, -> { reorder('hits DESC') }
+  scope :created_in_days, ->(number)  {where('created_at >= ?', Time.zone.now - number.days)}
   require 'open-uri'
 
   def get_info

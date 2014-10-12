@@ -1,5 +1,10 @@
 <% @shops.each do |shop| %>
-<h3><%= shop.name %></h3>
-
-
+  <div class="row">
+    <h3 class="col-md-12"><%= shop.name %></h3>
+    <div class="items">
+      <% shop.items.first(4).each do |item|  %>
+        <%= render partial: 'items/item', locals: {item: item, show_shop: false} %>
+      <% end  %>
+    </div>
+  </div>
 <% end %>

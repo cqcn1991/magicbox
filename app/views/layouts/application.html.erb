@@ -10,7 +10,12 @@
 <body>
 <%= render 'layouts/header' %>
 <div class="container">
-  <%= yield %>
+  <div class="row">
+    <div class="col-md-9">
+      <%= yield %>
+    </div>
+    <%= render 'notices/notice_board' %>
+  </div>
 </div>
 </body>
 </html>

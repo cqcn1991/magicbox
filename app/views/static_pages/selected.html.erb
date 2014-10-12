@@ -1,0 +1,11 @@
+<h1>Trending in </h1>
+<%= link_to '3 Days', number: '3' %>
+<%= link_to '7 Days', number: '7' %>
+<%= link_to '30 Days', number: '30' %>
+
+<div class="videos row">
+  <h2 class="col-md-12">Videos</h2>
+  <% @videos.each do |item| %>
+    <%= render partial: 'videos/video', locals: {item: item}  %>
+  <% end  %>
+</div>
