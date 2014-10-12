@@ -14,12 +14,14 @@
     </div>
 
     <div class="videos row">
+      <h3 class="col-md-12">Videos</h3>
       <% @videos.each do |item| %>
         <%= render partial: 'videos/video', locals: {item: item}  %>
       <% end  %>
     </div>
 
     <div class="posts row">
+      <h3 class="col-md-12">Posts</h3>
       <% @posts.each do |item| %>
         <div class="post col-md-6">
           <%= link_to item.title, item.url %>

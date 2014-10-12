@@ -11,7 +11,7 @@ task :fetch_post, [:fetch_number] => :environment do |t, args|
   end
 
   #method should be put first in a script
-  def save_post(title, href, source, likes)
+  def save_post(title, href, source, likes = nil)
     post = Post.new(title: title, url: href, source: source, likes: likes)
     if post.save
       puts title + 'saved'
@@ -25,6 +25,7 @@ task :fetch_post, [:fetch_number] => :environment do |t, args|
     title = item_info.text
     href = 'http://www.collegemagic.cn/'+ item_info['href']
     source = '高魔'
+    likes = 0
     save_post(title, href, source)
   end
 
@@ -35,6 +36,7 @@ task :fetch_post, [:fetch_number] => :environment do |t, args|
     title = item_info.at('a.j_th_tit')['title']
     href = 'http://tieba.baidu.com' + item_info.at('a.j_th_tit')['href']
     source = '贴吧'
+    likes = 0
     save_post(title, href, source)
   end
 

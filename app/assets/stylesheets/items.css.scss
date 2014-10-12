@@ -4,14 +4,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-body{
-  padding-bottom: 20px;
-  padding-top: 20px;
-}
-
-.items, .videos{
-  margin-bottom: 20px;
-}
 
 @mixin vertical-align {
   position: relative;

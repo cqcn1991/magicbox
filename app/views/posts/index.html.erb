@@ -3,10 +3,11 @@
 <%= link_to 'Order by Date', sort: 'date' %>
 <%= link_to 'Order by Popularity', sort: 'pop' %>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Title</th>
+      <th>Abstraction</th>
       <th>Source</th>
       <th>Likes</th>
       <th>Time</th>
@@ -18,6 +19,7 @@
     <% @posts.each do |post| %>
       <tr>
         <td><%= link_to post.title, post.url %></td>
+        <td><%= post.abstraction %></td>
         <td><%= post.source %></td>
         <td><%= post.likes %></td>
         <td><%= post.created_at.strftime("%m/%d") %></td>
