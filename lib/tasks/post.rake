@@ -11,8 +11,8 @@ task :fetch_post, [:fetch_number] => :environment do |t, args|
   end
 
   #method should be put first in a script
-  def save_post(title, href, source)
-    post = Post.new(title: title, url: href, source: source)
+  def save_post(title, href, source, likes)
+    post = Post.new(title: title, url: href, source: source, likes: likes)
     if post.save
       puts title + 'saved'
     end
@@ -47,10 +47,10 @@ task :fetch_post, [:fetch_number] => :environment do |t, args|
     doc.css("form table.normal tr")[2..30].each do |item_info|
       title = item_info.at('td.bgc2 a.b').text
       href = 'http://www.themagiccafe.com/forums/'+ item_info.at('td.bgc2 a.b')['href']
-      likes = item_info.css('td.midtext')[2].text.to_f
+      likes = item_info.css('td.midtext')[2].text.to_i
       source = 'cafe'
       if likes >= 15
-        save_post(title, href, source)
+        save_post(title, href, source, likes)
       end
     end
   end

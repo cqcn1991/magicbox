@@ -4,7 +4,6 @@ class Item < ActiveRecord::Base
   validates :taobao_id, uniqueness: true
   after_create :update_shop
 
-  #scope :order_by_time, -> {order('taobao_id DESC')}
   default_scope  {order('taobao_id DESC')}
   scope :order_by_sales, -> {reorder('sales_number DESC') }
 

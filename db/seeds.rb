@@ -23,5 +23,7 @@ taobao_sites.each do |site|
     end
 end
 
+Rake::Task["fetch_all"].invoke(30)
+
 Notice.create(content: '10月11日，Howard Hamburg线上讲座,购票链接http://item.taobao.com/item.htm?spm=a1z10.1.w4004-1583697974.3.mMHGr7&id=41257580973')
 Notice.create(content: '10月11日，Howard Hamburg线上讲座,购票链接http://item.taobao.com/item.htm?spm=a1z10.1.w4004-1583697974.3.mMHGr7&id=41257580973')

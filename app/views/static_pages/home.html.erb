@@ -9,13 +9,19 @@
           <% @shops.each do |shop| %>
             <% item = shop.items.first %>
             <div class="item col-md-3">
-              <%= link_to item.url, class: 'img-container' do %>
-                <%= image_tag(item.img_url, class: 'img-responsive') %>
-              <% end %>
-              <%= link_to item.title, item.url %>
-              <%= item.created_at.strftime("%m/%d") %>
-              <%= item.sales_number %>
-              <h5><%= shop.name %></h5>
+              <div class="thumbnail">
+                <%= link_to item.url, class: 'img-container' do %>
+                  <%= image_tag(item.img_url, class: 'img-responsive') %>
+                <% end %>
+                <div class="caption">
+                  <%= link_to item.title, item.url %>
+                  <br>
+                  <strong><%= link_to shop.name, shop_path(shop) %></strong>
+                  <span class="pull-right">
+                    <%= item.created_at.strftime("%m/%d") %>
+                  </span>
+                </div>
+              </div>
             </div>
           <% end  %>
         </div>
@@ -30,7 +36,6 @@
             <div class="caption">
               <%= link_to item.title, item.url %>
               <%= item.created_at.strftime("%m/%d") %>
-              <%= item.hits %>
             </div>
           </div>
         </div>
