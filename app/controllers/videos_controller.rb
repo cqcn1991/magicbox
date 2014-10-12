@@ -4,7 +4,11 @@ class VideosController < ApplicationController
   # GET /videos
   # GET /videos.json
   def index
-    @videos = Video.order_by_hits
+    if params[:sort] == 'pop'
+      @videos = Video.order_by_hits
+    else
+      @videos = Video.all
+    end
   end
 
   # GET /videos/1

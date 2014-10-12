@@ -1,11 +1,15 @@
 <h1>Listing posts</h1>
 
+<%= link_to 'Order by Date', sort: 'date' %>
+<%= link_to 'Order by Popularity', sort: 'pop' %>
+
 <table>
   <thead>
     <tr>
-      <th>Url</th>
       <th>Title</th>
       <th>Source</th>
+      <th>Likes</th>
+      <th>Time</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -13,9 +17,10 @@
   <tbody>
     <% @posts.each do |post| %>
       <tr>
-        <td><%= post.url %></td>
-        <td><%= post.title %></td>
+        <td><%= link_to post.title, post.url %></td>
         <td><%= post.source %></td>
+        <td><%= post.likes %></td>
+        <td><%= post.created_at.strftime("%m/%d") %></td>
         <td><%= link_to 'Show', post %></td>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
         <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>

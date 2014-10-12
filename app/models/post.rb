@@ -3,8 +3,7 @@ class Post < ActiveRecord::Base
   validates :url, uniqueness: true
   scope :by_forum, ->(forum) { where source: forum }
   default_scope{order('created_at DESC')}
-
-  require 'open-uri'
+  scope :order_by_likes, -> { reorder('likes DESC') }
 
   def get_likes
     if self.source == 'cafe'
