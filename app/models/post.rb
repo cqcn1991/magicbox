@@ -3,9 +3,9 @@ class Post < ActiveRecord::Base
   validates :url, uniqueness: true
 
   scope :by_forum, ->(forum) { where source: forum }
-  default_scope{order('created_at DESC')}
-  scope :order_by_likes, -> { reorder('likes DESC') }
-  scope :order_by_reply_number, -> { reorder('reply_number DESC') }
+  scope :order_by_date, -> {order('created_at DESC')}
+  scope :order_by_likes, -> { order('likes IS NULL, likes DESC') }
+  scope :order_by_reply_number, -> {order('reply_number IS NULL, reply_number DESC') }
   scope :created_in_days, ->(number)  {where('created_at >= ?', Time.zone.now - number.days)}
 
   require 'open-uri'

@@ -4,10 +4,12 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    if params[:sort] == 'pop'
+    if params[:sort] == 'like'
       @posts = Post.order_by_likes
+    elsif params[:sort] == 'reply'
+      @posts = Post.order_by_reply_number
     else
-      @posts = Post.all
+      @posts = Post.order_by_date
     end
   end
 

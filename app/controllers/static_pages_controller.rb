@@ -1,8 +1,8 @@
 class StaticPagesController < ApplicationController
   def home
     @shops = Shop.order_by_update.first(4)
-    @videos = Video.first(4)
-    @posts = Post.first(3)
+    @videos = Video.order_by_date.first(4)
+    @posts = Post.order_by_date.first(3)
   end
 
   def discussion

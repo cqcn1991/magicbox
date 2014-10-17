@@ -7,7 +7,7 @@ class VideosController < ApplicationController
     if params[:sort] == 'pop'
       @videos = Video.order_by_hits
     else
-      @videos = Video.all
+      @videos = Video.order_by_date
     end
   end
 

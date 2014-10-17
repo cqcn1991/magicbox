@@ -4,8 +4,8 @@ class Video < ActiveRecord::Base
   validates :source_id, uniqueness: true
   before_validation :get_info, on: :create
 
-  default_scope {order('created_at DESC, source_id ASC')}
-  scope :order_by_hits, -> { reorder('hits DESC') }
+  scope :order_by_date, -> { order('created_at DESC, source_id ASC')}
+  scope :order_by_hits, -> { order('hits IS NULL, hits DESC') }
   scope :created_in_days, ->(number)  {where('created_at >= ?', Time.zone.now - number.days)}
   require 'open-uri'
 
