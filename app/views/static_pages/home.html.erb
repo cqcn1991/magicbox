@@ -23,11 +23,17 @@
     <div class="posts row">
       <h3 class="col-md-12">Posts</h3>
       <% @posts.each do |item| %>
-        <div class="post col-md-6">
-          <%= link_to item.title, item.url %>
-          <div class="pull-right">
-            <%= item.source %>
-            <%= item.created_at.strftime("%m/%d") %>
+        <div class="col-md-4">
+          <div class="thumbnail">
+            <div class="caption">
+             <h4><%= link_to item.title, item.url %>
+               <small class="pull-right">
+                 <%= show_source_name(item) %>
+                 <%= item.created_at.strftime("%m/%d") %>
+               </small></h4>
+              <%= truncate(item.abstraction, length: 100) %>
+            </div>
+
           </div>
         </div>
       <% end  %>

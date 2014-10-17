@@ -13,7 +13,11 @@
       <h4 class="">
         <%= link_to item.title, item.url %>
         <small class="pull-right">
-          <%= item.likes %>❤
+          <% if item.source == 'cafe' %>
+            <%= item.likes %>❤
+          <% elsif item.source == 'tieba' %>
+            <%= item.reply_number %><span class="glyphicon glyphicon-comment"></span>
+          <% end  %>
         </small>
       </h4>
       <div class="">
@@ -34,6 +38,6 @@
 <div class="items row">
   <!--<h3 class="col-md-12">Products</h3>-->
   <% @items.each do |item| %>
-    <%= render partial: 'items/item', locals: {item: item}  %>
+    <%= render partial: 'items/item', locals: {item: item, show_shop: false}  %>
   <% end  %>
 </div>

@@ -15,7 +15,7 @@ task :fetch_taobao, [:fetch_number] => :environment do |t, args|
     url = 'http://'+ site.url + "/search.htm?&search=y&orderType=newOn_desc"
     doc = Nokogiri::HTML(open(url) )
     puts doc.css("title").text
-    doc.css(".main-wrap .item")[0..fetch_number].each do |item_info|
+    doc.css(".main-wrap .item")[0..fetch_number].reverse_each do |item_info|
       #抓取淘宝新品
       title = item_info.at(".detail a").text
       href = item_info.at(".detail a")['href']

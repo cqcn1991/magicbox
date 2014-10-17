@@ -20,7 +20,7 @@ task :fetch_video, [:fetch_number] => :environment do |t, args|
     url = 'http://i.youku.com/u/' + site
     doc = Nokogiri::HTML(open(url) )
     puts doc.css("title").text
-    doc.css(".YK-video .v")[0..fetch_number].each do |item|
+    doc.css(".YK-video .v")[0..fetch_number].reverse_each do |item|
       #抓取Youku新视频
       title = item.at(".v-meta-title a")['title'] rescue nil
       href = item.at(".v-link a")['href']
@@ -38,7 +38,7 @@ task :fetch_video, [:fetch_number] => :environment do |t, args|
   response = HTTParty.get("http://www.tudou.com/home/item/list.do?uid=110747724&page=1&pageSize=20&sort=1&keyword=")
   puts 'fetch tudou'
   decode_response =  ActiveSupport::JSON.decode(response)
-  decode_response['data']['data'][0..fetch_number].each do  |item|
+  decode_response['data']['data'][0..fetch_number].reverse_each do  |item|
       title = item['title']
       href = 'http://www.tudou.com/programs/view/'+ item['code']
       img_url = item['picurl']

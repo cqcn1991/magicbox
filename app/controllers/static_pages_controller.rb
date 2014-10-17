@@ -16,7 +16,7 @@ class StaticPagesController < ApplicationController
       number = 7
     end
     @videos = Video.created_in_days(number).order_by_hits.first(4)
-    @posts = Post.created_in_days(number).order_by_likes.first(4)
+    @posts = Post.created_in_days(number).order_by_reply_number.first(2) + Post.created_in_days(number).order_by_likes.first(2)
     @items = Item.order_by_sales.first(4)
   end
 end

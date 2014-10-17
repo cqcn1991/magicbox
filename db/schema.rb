@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141012114927) do
+ActiveRecord::Schema.define(version: 20141017114504) do
 
   create_table "items", force: true do |t|
     t.string   "url"
@@ -44,6 +44,8 @@ ActiveRecord::Schema.define(version: 20141012114927) do
     t.string   "avatar"
     t.string   "author_name"
     t.text     "abstraction"
+    t.integer  "reply_number"
+    t.float    "score"
   end
 
   create_table "shops", force: true do |t|
