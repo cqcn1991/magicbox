@@ -6,6 +6,7 @@ class CreateVideos < ActiveRecord::Migration
       t.string :img_url
       t.string :source_id
       t.string :source
+      t.integer :hits
 
       t.timestamps
     end

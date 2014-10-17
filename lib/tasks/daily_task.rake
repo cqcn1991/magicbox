@@ -26,8 +26,7 @@ task :fetch_popularity => :environment do
     puts item.title, item.sales_number
   end
 
-  Post..each do |post|
+  Post.all.each do |post|
     post.get_likes_or_reply_number
   end
-
 end

@@ -7,6 +7,7 @@ class CreateItems < ActiveRecord::Migration
       t.string :taobao_id
       t.decimal :price
       t.belongs_to :shop, index: true
+      t.integer :sales_number
 
       t.timestamps
     end

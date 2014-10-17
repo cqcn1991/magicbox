@@ -5,6 +5,7 @@ class CreateShops < ActiveRecord::Migration
       t.string :avatar_url
       t.string :url
 
+
       t.timestamps
     end
   end

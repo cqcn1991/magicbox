@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141017114504) do
+ActiveRecord::Schema.define(version: 20140929042055) do
 
   create_table "items", force: true do |t|
     t.string   "url"
@@ -20,9 +20,9 @@ ActiveRecord::Schema.define(version: 20141017114504) do
     t.string   "taobao_id"
     t.decimal  "price"
     t.integer  "shop_id"
+    t.integer  "sales_number"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "sales_number"
   end
 
   add_index "items", ["shop_id"], name: "index_items_on_shop_id"
@@ -38,14 +38,14 @@ ActiveRecord::Schema.define(version: 20141017114504) do
     t.string   "url"
     t.string   "title"
     t.string   "source"
-    t.datetime "created_at"
-    t.datetime "updated_at"
     t.integer  "likes"
+    t.integer  "reply_number"
+    t.text     "abstraction"
+    t.float    "score"
     t.string   "avatar"
     t.string   "author_name"
-    t.text     "abstraction"
-    t.integer  "reply_number"
-    t.float    "score"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "shops", force: true do |t|
@@ -62,9 +62,9 @@ ActiveRecord::Schema.define(version: 20141017114504) do
     t.string   "img_url"
     t.string   "source_id"
     t.string   "source"
+    t.integer  "hits"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "hits"
   end
 
 end

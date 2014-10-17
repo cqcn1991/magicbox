@@ -39,7 +39,7 @@ task :fetch_post, [:fetch_number] => :environment do |t, args|
       reply_number = item_info.at('.threadlist_rep_num').text
       href = 'http://tieba.baidu.com' + item_info.at('a.j_th_tit')['href']
       source = 'tieba'
-      save_post(title, href, source, reply_number)
+      save_post(title, href, source, nil, reply_number)
     end
   end
 
