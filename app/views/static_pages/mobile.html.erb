@@ -1,0 +1,20 @@
+<section>
+  <nav>
+    <h5>Videos</h5>
+  </nav>
+  <div class="videos-content">
+    <% @videos.each do |video|  %>
+    <div class="video row">
+      <div class="col-xs-4">
+        <%= link_to video.url do %>
+          <%= image_tag(video.img_url, class: 'img-responsive') %>
+        <% end %>
+      </div>
+      <div class="col-xs-8">
+        <%= link_to video.title, video.url %>
+        <span class="pull-right"><%= video.created_at.strftime("%m/%d") %></span>
+      </div>
+    </div>
+      <% end %>
+  </div>
+</section>

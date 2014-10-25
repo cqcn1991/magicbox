@@ -12,7 +12,8 @@ taobao_sites = [{url:'tccrew.taobao.com', name: 'tcc'},
                 {url:'magicmine.taobao.com', name: 'magicmining'},
                 {url:'themagicway.taobao.com', name: 'themagicway'},
                 {url:'secretfactory.taobao.com', name: '酒精哥'},
-                {url:'collegemagiccollection.taobao.com', name:'高校魔术'} ]
+                {url:'collegemagiccollection.taobao.com', name:'高校魔术'},
+                {url:'zhuoyuemagic2010.taobao.com', name:'EPCS'} ]
 
 taobao_sites.each do |site|
     shop = Shop.new(url: site[:url], name: site[:name])

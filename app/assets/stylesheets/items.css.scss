@@ -5,6 +5,17 @@
 @import "bootstrap";
 
 
+.thumbnail a.title{
+  display: block;
+  overflow: hidden;
+}
+.item a.title{
+  height: 60px;
+}
+.video a.title{
+//  height: 38px;
+}
+
 @mixin vertical-align {
   position: relative;
   top: 50%;

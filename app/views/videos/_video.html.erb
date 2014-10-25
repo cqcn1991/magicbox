@@ -1,11 +1,17 @@
+<% unless defined?(show_views)  %>
+  <% show_views = true  %>
+<% end  %>
+
 <div class="video col-md-3">
   <div class="thumbnail">
     <%= image_tag(item.img_url, class: 'img-responsive') %>
     <div class="caption clearfix">
-      <%= link_to item.title, item.url %>
+      <%= link_to item.title, item.url, class: 'title' %>
 
       <div class="pull-right">
-        <span><%= item.hits %></span>
+        <% if show_views  %>
+          <span><%= item.hits %></span>
+        <% end %>
         <span><%= item.created_at.strftime("%m/%d") %></span>
       </div>
     </div>

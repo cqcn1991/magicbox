@@ -12,8 +12,10 @@ Rails.application.routes.draw do
   root 'static_pages#home'
 
   get 'discussion' => 'static_pages#discussion'
-
   get 'selected' => 'static_pages#selected'
+  get 'pop' => 'static_pages#popular'
+  get 'mobile' => 'static_pages#mobile'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

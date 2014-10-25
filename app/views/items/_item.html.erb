@@ -2,14 +2,13 @@
   <% show_shop = true  %>
 <% end  %>
 
-<div class="item col-md-3">
+<div class="item col-sm-3">
   <div class="thumbnail">
     <%= link_to item.url, class: 'img-container' do %>
       <%= image_tag(item.img_url, class: 'img-responsive') %>
     <% end %>
     <div class="caption">
-      <%= link_to item.title, item.url %>
-      <br>
+      <%= link_to item.title, item.url, class: 'title' %>
       <% if show_shop  %>
         <% shop = item.shop  %>
         <strong><%= link_to shop.name, shop_path(shop) %></strong>
