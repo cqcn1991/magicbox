@@ -7,25 +7,31 @@
 </h4>
 
 <h2>Posts</h2>
-<div class="posts row">
-  <% @posts.each do |item| %>
-    <div class="post col-md-6">
-      <h4 class="">
-        <%= link_to item.title, item.url %>
-        <small class="pull-right">
-          <% if item.source == 'cafe' %>
-            <%= item.likes %>❤
-          <% elsif item.source == 'tieba' %>
-            <%= item.reply_number %><span class="glyphicon glyphicon-comment"></span>
-          <% end  %>
-        </small>
-      </h4>
-      <div class="">
-        <%= truncate(item.abstraction, length: 200) %>
-      </div>
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="posts row">
+      <% @posts.each do |item| %>
+        <div class="post col-md-6">
+          <h4 class="">
+            <%= link_to item.title, item.url %>
+            <small class="pull-right">
+              <% if item.source == 'cafe' %>
+                <%= item.likes %>❤
+              <% elsif item.source == 'tieba' %>
+                <%= item.reply_number %><span class="glyphicon glyphicon-comment"></span>
+              <% end  %>
+            </small>
+          </h4>
+          <div class="">
+            <%= truncate(item.abstraction, length: 200) %>
+          </div>
+        </div>
+      <% end  %>
     </div>
-  <% end  %>
+  </div>
 </div>
+
+
 
 <h2>Videos</h2>
 <div class="videos row">
