@@ -1,0 +1,6 @@
+<h2>Videos</h2>
+<div class="videos row">
+  <% @videos.each do |item| %>
+    <%= render partial: 'videos/video', locals: {item: item}  %>
+  <% end  %>
+</div>

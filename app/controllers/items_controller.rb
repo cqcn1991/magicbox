@@ -5,6 +5,11 @@ class ItemsController < ApplicationController
   # GET /items.json
   def index
     @items = Item.order_by_date
+    if params[:sort] == 'pop'
+      @items = Item.order_by_sales
+    else
+      @items = Item.order_by_date
+    end
   end
 
   # GET /items/1

@@ -1,5 +1,5 @@
 class Shop < ActiveRecord::Base
-  has_many :items
+  has_many :items, dependent: :destroy
   validates :url, uniqueness: true
 
   scope :order_by_update, -> {order('updated_at DESC')}

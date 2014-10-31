@@ -10,7 +10,7 @@ class StaticPagesController < ApplicationController
   end
 
   def selected
-
+    @videos=Video.selected.first(20)
   end
 
   def mobile
@@ -27,6 +27,7 @@ class StaticPagesController < ApplicationController
     end
     @videos = Video.created_in_days(number).order_by_hits.first(4)
     @posts =  Post.created_in_days(number).order_by_likes.first(2) +Post.created_in_days(number).order_by_reply_number.first(2)
-    @items = Item.order_by_sales.first(4)
+    @items = Item.order_by_sales.to_a.uniq {|p| p.shop_id}[0..3]
+
   end
 end

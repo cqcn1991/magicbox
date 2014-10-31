@@ -1,6 +1,11 @@
 <h1>Listing items</h1>
 
-<table>
+<%= link_to 'New Item', new_item_path %>
+
+<%= link_to 'Order by Date', sort: 'date' %>
+<%= link_to 'Order by Popularity', sort: 'pop' %>
+
+<table class="table">
   <thead>
     <tr>
       <th>Title</th>
@@ -20,7 +25,7 @@
         <td><%= image_tag(item.img_url) %></td>
         <td><%= number_with_precision(item.price, precision: 2)  %></td>
         <td><%= item.taobao_id %></td>
-        <td><%= item.shop.name %></td>
+        <td><%= item.shop_id%></td>
         <td><%= item.sales_number %></td>
         <td><%= link_to 'Show', item %></td>
         <td><%= link_to 'Edit', edit_item_path(item) %></td>

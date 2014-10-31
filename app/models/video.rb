@@ -7,16 +7,15 @@ class Video < ActiveRecord::Base
   scope :order_by_date, -> { order('created_at DESC, source_id ASC')}
   scope :order_by_hits, -> { order('hits IS NULL, hits DESC') }
   scope :created_in_days, ->(number)  {where('created_at >= ?', Time.zone.now - number.days)}
+  scope :selected, -> { where(selected: true) }
   require 'open-uri'
 
   def get_info
-    if self.source.empty?
-      smart_add_url_protocol
-      if self.is_youku?
-        get_youku_info
-      elsif self.is_tudou?
-        get_tudou_info
-      end
+    smart_add_url_protocol
+    if self.is_youku?
+      get_youku_info
+    elsif self.is_tudou?
+      get_tudou_info
     end
   end
 
@@ -49,8 +48,10 @@ class Video < ActiveRecord::Base
     self.source_id = video_id[0..ampersand_position-1]
     response = HTTParty.get("http://v.youku.com/player/getPlayList/VideoIDS/#{self.source_id}/timezone/+08/version/5/source/out?password=&ran=2513&n=3")
     decode_response =  ActiveSupport::JSON.decode(response)
-    self.title = decode_response['data'][0]['title']
-    self.img_url = decode_response['data'][0]['logo']
+    if decode_response['data'][0]['title'] && decode_response['data'][0]
+      self.title = decode_response['data'][0]['title']
+      self.img_url = decode_response['data'][0]['logo']
+    end
     self.source = 'youku'
   end
 
