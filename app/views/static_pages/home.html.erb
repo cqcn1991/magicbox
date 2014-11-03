@@ -1,8 +1,7 @@
 <div class="items">
   <h3>Items</h3>
   <div class="row">
-    <% @shops.each do |shop| %>
-      <% item = shop.items.first %>
+    <% @items.each do |item| %>
       <%= render partial: 'items/item', locals: {item: item} %>
     <% end  %>
   </div>

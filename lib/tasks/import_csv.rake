@@ -3,7 +3,6 @@ task :import_csv => :environment do |t, args|
   require 'csv'
   file = File.join(Rails.root, 'lib', 'tasks', 'microposts.csv')
   CSV.foreach(file, headers: true) do |row|
-    next if $. < 120
     url = row['video_url']
     video = Video.new(url: url, selected: true)
     puts url

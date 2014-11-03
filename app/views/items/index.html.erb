@@ -21,7 +21,7 @@
   <tbody>
     <% @items.each do |item| %>
       <tr>
-        <td><%= item.title %></td>
+        <td><%= link_to(item.title, item.url) %></td>
         <td><%= image_tag(item.img_url) %></td>
         <td><%= number_with_precision(item.price, precision: 2)  %></td>
         <td><%= item.taobao_id %></td>
