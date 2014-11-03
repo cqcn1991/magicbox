@@ -1,7 +1,7 @@
 class StaticPagesController < ApplicationController
   def home
     #@shops = Shop.order_by_update.first(4)
-    @items = Item.order_by_date.to_a.uniq {|p| p.shop_id}[0..3]
+    @items = Item.order_by_date.to_a.uniq {|p| p.shop_id}[0..7]
     @videos = Video.order_by_date.first(4)
     @posts = Post.order_by_date.first(3)
   end

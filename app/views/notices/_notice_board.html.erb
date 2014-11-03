@@ -1,11 +1,8 @@
-<div class="notices col-md-3">
+<div class="notices">
   <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">公告</h4>
     </div>
-<!--    <div class="panel-body">
-
-    </div>-->
     <ul class="list-group">
       <% @notices.each do |notice| %>
         <li class="list-group-item notice"><%= short_auto_link(notice.content) %></li>

@@ -9,7 +9,7 @@
     <% end %>
     <div class="caption">
       <%= link_to item.title, item.url, class: 'title' %>
-      <% if show_shop  %>
+      <% if show_shop && item.shop %>
         <% shop = item.shop  %>
         <strong><%= link_to shop.name, shop_path(shop) %></strong>
       <% else  %>

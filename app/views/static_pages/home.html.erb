@@ -1,41 +1,75 @@
-<div class="items">
-  <h3>Items</h3>
-  <div class="row">
-    <% @items.each do |item| %>
-      <%= render partial: 'items/item', locals: {item: item} %>
-    <% end  %>
+<div class="panel panel-default main">
+  <div class="panel-heading clearfix">
+    <div class="pull-right">
+      <a class="more-items-control" data-no-turbolink href="#"><span class="glyphicon glyphicon-chevron-down"></span> 展开</a>
+      <%= link_to('更多', shops_path) %>
+    </div>
+    <h2 class="panel-title"><strong>最新产品</strong></h2>
   </div>
-</div>
-
-<div class="videos">
-  <h3>Videos</h3>
-  <div class="row">
-    <% @videos.each do |item| %>
-      <%= render partial: 'videos/video', locals: {item: item, show_views: false}  %>
-    <% end  %>
-  </div>
-</div>
-
-<div class="posts">
-  <h3>Posts</h3>
-  <div class="row">
-    <% @posts.each do |item| %>
-      <div class="col-md-4">
-        <div class="thumbnail">
-          <div class="caption">
-            <h4><%= link_to item.title, item.url %>
-              <small class="pull-right">
-                <%= show_source_name(item) %>
-                <%= item.created_at.strftime("%m/%d") %>
-              </small></h4>
-            <%= truncate(item.abstraction, length: 100) %>
-          </div>
+  <div class="panel-body">
+    <div class="items">
+      <!--<h3>Items</h3>-->
+      <div class="row">
+        <% @items[0..3].each do |item| %>
+          <%= render partial: 'items/item', locals: {item: item} %>
+        <% end  %>
+        <div id="more-items" style="display: none">
+          <% @items[4..7].each do |item| %>
+            <%= render partial: 'items/item', locals: {item: item} %>
+          <% end  %>
+          <a class="more-items-control toggle-control pull-right" data-no-turbolink href="#"><strong><span class="glyphicon glyphicon-chevron-up"></span>收起</strong></a>
         </div>
       </div>
-    <% end  %>
+    </div>
   </div>
-
 </div>
+
+<div class="panel panel-default main">
+  <div class="panel-heading clearfix">
+    <%= link_to('更多', videos_path, class: 'pull-right') %>
+    <h2 class="panel-title"><strong>视频</strong></h2>
+  </div>
+  <div class="panel-body">
+    <div class="videos">
+      <div class="row">
+        <% @videos.each do |item| %>
+          <%= render partial: 'videos/video', locals: {item: item, show_views: false}  %>
+        <% end  %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-default main">
+  <div class="panel-heading clearfix">
+    <div class="pull-right">
+      <%= link_to('更多', posts_path, class: 'pull-right') %>
+    </div>
+
+    <h2 class="panel-title"><strong>论坛热帖</strong></h2>
+  </div>
+  <div class="panel-body">
+    <div class="posts">
+      <div class="row">
+        <% @posts.each do |item| %>
+          <div class="col-md-4">
+            <div class="thumbnail">
+              <div class="caption">
+                <h4 class="post-title"><%= link_to item.title, item.url %>
+                  <small class="pull-right">
+                    <%= show_source_name(item) %>
+                    <%= item.created_at.strftime("%m/%d") %>
+                  </small></h4>
+                <%= truncate(item.abstraction, length: 100) %>
+              </div>
+            </div>
+          </div>
+        <% end  %>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 
 

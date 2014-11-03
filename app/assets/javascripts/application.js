@@ -15,3 +15,18 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(document).on('page:load', function(){
+  appInit();
+});
+
+$(document).ready(function(){
+  appInit();
+});
+
+function appInit(){
+  $(".more-items-control").click(function(event){
+    event.preventDefault();
+    $("#more-items").toggle();
+  });
+}

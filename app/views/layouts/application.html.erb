@@ -14,7 +14,10 @@
     <div class="col-md-9">
       <%= yield %>
     </div>
-    <%= render 'notices/notice_board' %>
+    <div class="col-md-3">
+      <%= yield :pop_selector %>
+      <%= render 'notices/notice_board' %>
+    </div>
   </div>
 </div>
 </body>

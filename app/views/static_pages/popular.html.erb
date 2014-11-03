@@ -1,15 +1,17 @@
-<h4 class="pull-right">Trending in
-  <small>
-    <%= link_to '3 Days', number: '3' %>
-    <%= link_to '7 Days', number: '7' %>
-    <%= link_to '30 Days', number: '30' %>
-  </small>
-</h4>
+<% content_for :pop_selector do %>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <h4 class="no-margin">Trending in</h4>
+      <%= link_to '3 Days', number: '3' %>
+      <%= link_to '7 Days', number: '7' %>
+      <%= link_to '30 Days', number: '30' %>
+    </div>
+  </div>
+<% end %>
 
-<h2>Posts</h2>
 <div class="panel panel-default">
-
   <div class="panel-body">
+    <h3 class="no-margin"><strong>热帖</strong></h3>
     <div class="posts row">
       <% @posts.each do |item| %>
         <div class="post col-md-6">
@@ -32,19 +34,24 @@
   </div>
 </div>
 
-
-
-<h2>Videos</h2>
-<div class="videos row">
-  <% @videos.each do |item| %>
-    <%= render partial: 'videos/video', locals: {item: item}  %>
-  <% end  %>
+<div class="panel panel-default">
+  <div class="panel-body">
+    <h3 class="no-margin"><strong>视频</strong></h3>
+    <div class="videos row">
+      <% @videos.each do |item| %>
+        <%= render partial: 'videos/video', locals: {item: item}  %>
+      <% end  %>
+    </div>
+  </div>
 </div>
 
-<h2>Items</h2>
-<div class="items row">
-  <!--<h3 class="col-md-12">Products</h3>-->
-  <% @items.each do |item| %>
-    <%= render partial: 'items/item', locals: {item: item, show_shop: false}  %>
-  <% end  %>
+<div class="panel panel-default">
+  <div class="panel-body">
+    <h3 class="no-margin"><strong>商品</strong></h3>
+    <div class="items row">
+      <% @items.each do |item| %>
+        <%= render partial: 'items/item', locals: {item: item, show_shop: false}  %>
+      <% end  %>
+    </div>
+  </div>
 </div>
