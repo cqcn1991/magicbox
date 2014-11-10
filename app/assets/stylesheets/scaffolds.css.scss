@@ -1,3 +1,6 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
 .navbar-default .navbar-brand {
   color: #333333;
   &:hover{
@@ -16,16 +19,55 @@ body {
 //  margin-bottom: 0;
 }
 
+.thumbnail a.title{
+  display: block;
+  overflow: hidden;
+}
+.item a.title{
+  height: 60px;
+}
+.video a.title{
+  height: 40px;
+}
+
+.notices{
+  p{
+    margin-bottom: 0;
+  }
+}
+
+@mixin vertical-align {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.img-container{
+  height: 180px;
+  display: block;
+  overflow: hidden;
+  img {
+    @include vertical-align;
+  }
+}
+
 .page-header{
   margin-top: 15px;
 }
 
 .thumbnail{
-  border: none;
+  img.un-responsive{
+    height: 102px;
+  }
 }
+
+
 
 .panel .thumbnail{
   margin-bottom: 0;
+  border: none;
   .post-title{
     margin-top:-10px;
   }
@@ -44,4 +86,8 @@ body {
 
 .no-margin{
   margin: 0;
+}
+
+.no-color{
+  color: black;
 }

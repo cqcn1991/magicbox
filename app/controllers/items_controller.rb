@@ -6,9 +6,9 @@ class ItemsController < ApplicationController
   def index
     @items = Item.order_by_date
     if params[:sort] == 'pop'
-      @items = Item.order_by_sales
+      @items = Item.order_by_sales.paginate(:page => params[:page])
     else
-      @items = Item.order_by_date
+      @items = Item.order_by_date.paginate(:page => params[:page])
     end
   end
 

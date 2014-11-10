@@ -4,9 +4,9 @@
       <h4 class="panel-title">公告</h4>
     </div>
     <ul class="list-group">
-      <% @notices.each do |notice| %>
-        <li class="list-group-item notice"><%= short_auto_link(notice.content) %></li>
-      <% end  %>
+        <% @notices.each do |notice| %>
+          <li class="list-group-item notice"><%= simple_format short_auto_link(notice.content) %></li>
+        <% end %>
     </ul>
   </div>
 </div>

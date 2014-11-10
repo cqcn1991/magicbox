@@ -4,3 +4,5 @@
     <%= render partial: 'videos/video', locals: {item: item}  %>
   <% end  %>
 </div>
+
+<%= will_paginate @videos, renderer: BootstrapPagination::Rails %>

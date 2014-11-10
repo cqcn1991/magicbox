@@ -7,6 +7,10 @@ class NoticesController < ApplicationController
     @notices = Notice.all
   end
 
+  def admin
+    @notices = Notice.all
+  end
+
   # GET /notices/1
   # GET /notices/1.json
   def show

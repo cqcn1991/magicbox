@@ -1,27 +1,28 @@
-<!--<div class="panel panel-default">
-  <div class="panel-heading clearfix">
-    <div class="pull-right">
-      <ul class="nav nav-pills" role="tablist">
-        <li role="presentation" class="active"><a href="#">Home</a></li>
-        <li role="presentation"><a href="#">Profile</a></li>
-      </ul>
+<% content_for :sidebar_selector do %>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <%= link_to 'Shops', shops_path %>
+      <%= link_to 'Items', items_path %>
     </div>
-    <h2 class="panel-title">Panel title</h2>
   </div>
-  <div class="panel-body">
-
-  </div>
-  <div class="panel-footer">Panel footer</div>
-</div>-->
-<h2 class="page-header">Shops</h2>
+<% end %>
 
 <% @shops.each do |shop| %>
-  <h3><%= link_to shop.name, shop %> <small><%= shop.url %></small></h3>
-  <div class="items">
-    <div class="row">
-      <% shop.items.order_by_date.first(4).each do |item|  %>
-        <%= render partial: 'items/item', locals: {item: item, show_shop: false} %>
-      <% end  %>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <%= link_to 'http://' + shop.url do %>
+      <h2 class="no-margin">
+        <%= shop.name %>
+        <small> <%= shop.url%></small>
+      </h2>
+      <% end %>
+    <div class="items">
+      <div class="row">
+        <% shop.items.order_by_date.first(4).each do |item|  %>
+          <%= render partial: 'items/item', locals: {item: item, show_shop: false} %>
+        <% end  %>
+      </div>
+    </div>
     </div>
   </div>
 <% end %>

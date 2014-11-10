@@ -1,13 +1,18 @@
 Rails.application.routes.draw do
   resources :notices
-
   resources :posts
 
   resources :videos
-
   resources :shops
-
   resources :items
+
+  scope '/admin' do
+    get 'videos' => 'videos#admin', as: :admin_videos
+    get 'posts' => 'posts#admin', as: :admin_posts
+    get 'items' => 'items#admin', as: :admin_items
+    get 'shops' => 'shops#admin', as: :admin_shops
+    get 'notices' => 'notices#admin', as: :admin_notices
+  end
 
   root 'static_pages#home'
 
@@ -15,6 +20,9 @@ Rails.application.routes.draw do
   get 'selected' => 'static_pages#selected'
   get 'pop' => 'static_pages#popular'
   get 'mobile' => 'static_pages#mobile'
+
+  get 'admin' => 'static_pages#admin'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

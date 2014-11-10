@@ -11,6 +11,17 @@ class PostsController < ApplicationController
     else
       @posts = Post.order_by_date
     end
+    @posts = @posts.paginate(:page => params[:page])
+  end
+
+  def admin
+    if params[:sort] == 'like'
+      @posts = Post.order_by_likes
+    elsif params[:sort] == 'reply'
+      @posts = Post.order_by_reply_number
+    else
+      @posts = Post.order_by_date
+    end
   end
 
   # GET /posts/1

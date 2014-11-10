@@ -1,39 +1,43 @@
-<h1>Listing posts</h1>
-Order by
-<%= link_to 'Date', sort: 'date' %>
-<%= link_to 'Reply Number', sort: 'reply' %>
-<%= link_to 'Likes', sort: 'like' %>
+<% content_for :sidebar_selector do %>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <h4>Order by</h4>
+      <%= link_to 'Date', sort: 'date' %>
+      <%= link_to 'Reply Number', sort: 'reply' %>
+      <%= link_to 'Likes', sort: 'like' %>
+    </div>
+  </div>
+<% end %>
 
-<table class="table">
+<div class="panel panel-default">
+  <div class="panel-body">
+<table class="table table-striped">
   <thead>
-    <tr>
-      <th>Title</th>
-      <th>Abstraction</th>
-      <th>Source</th>
-      <th>Likes</th>
-      <th>Replies</th>
-      <th>Time</th>
-      <th colspan="3"></th>
-    </tr>
+  <tr>
+    <th><h2 class="no-margin"><strong>论坛热帖</strong></h2></th>
+    <th>Likes</th>
+    <th>Replies</th>
+    <th>Time</th>
+    <th>Source</th>
+  </tr>
   </thead>
 
   <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= link_to post.title, post.url %></td>
-        <td><%= post.abstraction %></td>
-        <td><%= post.source %></td>
-        <td><%= post.likes %></td>
-        <td><%= post.reply_number %></td>
-        <td><%= post.created_at.strftime("%m/%d") %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+  <% @posts.each do |post| %>
+    <tr>
+      <td>
+        <%= link_to post.title, post.url %><br>
+        <%= truncate(post.abstraction, length: 250)%>
+      </td>
+      <td><%= post.likes %></td>
+      <td><%= post.reply_number %></td>
+      <td><%= post.created_at.strftime("%m/%d") %></td>
+      <td><%= post.source %></td>
+    </tr>
+  <% end %>
   </tbody>
 </table>
+</div>
+</div>
 
-<br>
-
-<%= link_to 'New Post', new_post_path %>
+<%= will_paginate @videos, renderer: BootstrapPagination::Rails %>

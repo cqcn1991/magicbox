@@ -9,6 +9,15 @@ class VideosController < ApplicationController
     else
       @videos = Video.order_by_date
     end
+      @videos = @videos.paginate(:page => params[:page])
+  end
+
+  def admin
+    if params[:sort] == 'pop'
+      @videos = Video.order_by_hits.paginate(:page => params[:page])
+    else
+      @videos = Video.order_by_date.paginate(:page => params[:page])
+    end
   end
 
   # GET /videos/1
