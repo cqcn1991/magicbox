@@ -1,33 +1,21 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-.navbar-default .navbar-brand {
-  color: #333333;
-  &:hover{
+//Layout
+.navbar-default  {
+  background: none repeat scroll 0 0 white;
+  border-bottom: medium none;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  .navbar-brand {
     color: #333333;
+    &:hover{
+      color: #333333;
+    }
   }
 }
 
 body {
   background: none repeat scroll 0 0 #eee;
-}
-
-.navbar {
-  background: none repeat scroll 0 0 white;
-  border-bottom: medium none;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
-//  margin-bottom: 0;
-}
-
-.thumbnail a.title{
-  display: block;
-  overflow: hidden;
-}
-.item a.title{
-  height: 60px;
-}
-.video a.title{
-  height: 40px;
 }
 
 .notices{
@@ -36,6 +24,7 @@ body {
   }
 }
 
+//Helper
 @mixin vertical-align {
   position: relative;
   top: 50%;
@@ -50,37 +39,6 @@ body {
   overflow: hidden;
   img {
     @include vertical-align;
-  }
-}
-
-.page-header{
-  margin-top: 15px;
-}
-
-.thumbnail{
-  img.un-responsive{
-    height: 102px;
-  }
-}
-
-
-
-.panel .thumbnail{
-  margin-bottom: 0;
-  border: none;
-  .post-title{
-    margin-top:-10px;
-  }
-}
-
-.panel{
-  &.main .panel-heading{
-    background-color: white;
-  }
-
-  .toggle-control{
-    margin-right: 20px;
-    margin-left: 20px;
   }
 }
 
