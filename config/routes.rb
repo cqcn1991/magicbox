@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   get 'discussion' => 'static_pages#discussion'
   get 'selected' => 'static_pages#selected'
   get 'pop' => 'static_pages#popular'
+  get 'resources' => 'static_pages#resources'
   get 'mobile' => 'static_pages#mobile'
 
   get 'admin' => 'static_pages#admin'

@@ -17,16 +17,16 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><%= link_to '最新', root_path %></li>
-        <li><%= link_to '热门', pop_path %></li>
-        <li><%= link_to '精选', selected_path %></li>
-        <li class="active"><%= link_to 'Taobao', shops_path %></li>
-        <li><%= link_to 'Video', videos_path %></li>
-        <li><%= link_to 'Post', posts_path %></li>
+        <%= nav_link '最新', root_path %>
+        <%= nav_link  '热门', pop_path %>
+        <%= nav_link  '精选', selected_path %>
+        <%= nav_link  '淘宝', shops_path %>
+        <%= nav_link  '视频', videos_path %>
+        <%= nav_link  '热帖', posts_path %>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Leave a Message</a></li>
+        <%= nav_link  '信息来源', resources_path %>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">

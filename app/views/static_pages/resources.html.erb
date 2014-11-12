@@ -1,0 +1,63 @@
+<div class="panel panel-default main">
+  <div class="panel-heading clearfix">
+    <h2 class="panel-title">淘宝</h2>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <% @shops.each do |shop|  %>
+        <div class="col-md-3">
+          <%#= image_tag(shop.avatar_url, class: 'img-responsive') %>
+          <%= link_to shop.name, external_url(shop.url) %>
+        </div>
+      <% end  %>
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-default main">
+  <div class="panel-heading clearfix">
+    <h2 class="panel-title">视频</h2>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <% @youku_sites.each do |site|  %>
+        <div class="col-md-3">
+          <%= link_to(site[:name], 'http://i.youku.com/u/'+site[:url]) %>
+        </div>
+      <% end  %>
+      <div class="col-md-3">
+        <%= link_to('Lssence', 'http://www.tudou.com/home/lssence/') %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-default main">
+  <div class="panel-heading clearfix">
+    <h2 class="panel-title">论坛</h2>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <% @forums.each do |forum|  %>
+        <div class="col-md-3">
+          <%= link_to(forum[:name], forum[:url]) %>
+        </div>
+      <% end  %>
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-default main">
+  <div class="panel-heading clearfix">
+    <h2 class="panel-title">国外网站</h2>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <% @overseas.each do |site|  %>
+        <div class="col-md-3">
+          <%= link_to(site[:name], site[:url]) %>
+        </div>
+      <% end  %>
+    </div>
+  </div>
+</div>

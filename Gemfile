@@ -32,8 +32,7 @@ gem 'nokogiri'
 gem 'httparty'
 
 gem 'rails_autolink'
-
-
+gem 'active_link_to'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

@@ -4,7 +4,9 @@
 
 <div class="col-md-3">
   <div class="video thumbnail">
-    <%= image_tag(item.img_url, class: 'un-responsive') %>
+    <%= link_to item.url do %>
+      <%= image_tag(item.img_url, class: 'un-responsive') %>
+    <% end %>
     <div class="caption clearfix">
       <%= link_to item.title, item.url, class: 'title' %>
       <% if show_views  %>
