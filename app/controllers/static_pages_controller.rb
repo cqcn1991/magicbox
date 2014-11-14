@@ -39,48 +39,37 @@ class StaticPagesController < ApplicationController
 
   def resources
     @shops = Shop.all
-    @youku_sites = [{url: 'UMTAyMDY5MTE2', name: 'derren brown'},
-                   {url: 'UMzU5NjcwNzk2',name: 'themagicway'},
-                   {url: 'UMTQ0ODgzOTQ0',name: '张笑我'},
-                   {url:'UMTg1MzM3MzMy',name: 'E-Chong'},
-                   {url:'UNTc0MDYxNjcy',name: 'SomethingMagic'},
-                   {url: 'UMTQzNDg2NzU2', name: '现实一种'},
-                   {url: 'UMjUyNDczNTA4', name: '竹音牵梦'},
-                   {url:'UNDI2NjE2MzI=', name: 'cheunglei'},
-                   {url:'UMTU1Nzg4MzA0', name: '兰色死鱼'},
-                   {url:'UMjQ4MjgyMjEy', name: '禾小口'},
-                   {url:'UMTg1NTc5ODgw', name: '酒精一百二十度'},
-                   {url:'UMzY0OTU2ODgw', name: '酒精百分一百二'},
-                   {url:'UMTI5MzQyMTQw', name: '哈利波特魔术'},
-                   {url:'UNTAwMjg4Njg=', name: 'ArtherChan'}]
-    @forums = [
-              {url:'http://www.superx.org/bbs/forum.php', name: '魔术吧 超人联盟'},
-              {url:'http://www.collegemagic.cn/forum.php', name: '高校魔术'},
-              {url:'http://tieba.baidu.com/f?kw=%C4%A7%CA%F5', name: '百度魔术吧'},
-              {url:'http://tieba.baidu.com/f?kw=%D0%C4%C1%E9%C4%A7%CA%F5', name: '百度心灵魔术吧'},
-              {url:'http://tieba.baidu.com/f?kw=%BB%A8%C7%D0', name: '百度花式吧'},]
-    @china_website = []
-    @overseas = [
+    @youku_sites = RESOURCES_CONSTANT::YOUKU
+    @forums = RESOURCES_CONSTANT::FORUMS
+    @china_websites = RESOURCES_CONSTANT::CHINA
+    @weibos = [
+        {url:'http://weibo.com/luchenmagic', name: "刘谦", avatar_url: 'http://tp4.sinaimg.cn/1271542887/180/5682525508/1'},
+        {url:'http://weibo.com/yifmagic', name: 'Yif',  avatar_url: 'http://tp1.sinaimg.cn/2480681624/180/5707479662/1'},
+        {url:'http://weibo.com/dengnanzi', name: '邓男子',  avatar_url: 'http://tp3.sinaimg.cn/1614012094/180/5683480371/1'},
+        {url:'http://weibo.com/SomethingMagic', name: 'SomethingMagic',  avatar_url: 'http://tp1.sinaimg.cn/3189082924/180/5674373734/1'},
+        {url:'http://weibo.com/tmw9', name: 'TheMagicWay',  avatar_url: 'http://tp1.sinaimg.cn/2232187404/180/40000949813/1'},
+    ]
+    @oversea_shops = [#魔术厂商类
+        {url:'http://murphysmagic.com/', name: "Murphy's Magic", favicon: 'http://www.murphysmagic.com/favicon1.ico'},
+        {url:'http://www.penguin.com/', name: 'Penguin Magic',  favicon: 'http://www.penguinmagic.com/favicon.ico'},
+        {url:'http://www.dananddave.com/', name: 'Dan and Dave',favicon: 'http://dananddave.com/wp-content/themes/dananddave/img/favicon.ico' },
+        {url:'http://www.ellusionist.com/', name: 'Ellusionist', favicon: 'http://www.ellusionist.com/favicon.ico'},
+        {url:'http://www.theory11.com/', name: 'Theory11', favicon: 'http://www.theory11.com/favicon.ico'},
+        {url:'http://www.vanishingincmagic.com/', name: 'Vanishing Inc.', favicon: 'http://www.vanishingincmagic.com/favicon.ico'},
+        {url:'http://www.ementalism.com/', name: 'Ementalism', favicon: ''},
+        {url:'http://www.lybrary.com/', name: 'lybrary', favicon: 'http://www.lybrary.com/favicon.ico'},
+        {url:'http://www.alakazam.co.uk/', name: 'Alakazam Magic', favicon: 'http://www.alakazam.co.uk/favicon.ico'},
+        {url:'http://thebluecrown.com/', name: 'The Blue Crown', favicon: 'http://thebluecrown.com/favicon.ico'}]
+    @oversea_sites = [
 #社区类
 {url:'http://www.themagiccafe.com/forums/index.php', name: 'themagiccafe'},
-#魔术厂商类
-{url:'http://murphysmagic.com', name: "Murphy's Magic"},
-{url:'http://www.penguin.com', name: 'Penguin Magic'},
-{url:'http://www.dananddave.com', name: 'Dan and Dave'},
-{url:'http://www.ellusionist.com', name: 'Ellusionist'},
-{url:'http://www.theory11.com', name: 'Theory11'},
-{url:'http://www.vanishingincmagic.com', name: 'Vanishing Inc.'},
-{url:'http://www.ementalism.com', name: 'Ementalism'},
-{url:'http://www.lybrary.com/', name: 'lybrary'},
-{url:'http://www.alakazam.co.uk/', name: 'Alakazam Magic'},
-{url:'http://www.bigblindmedia.com/', name: 'Big Blind Media'},
 #内容类
 {url:'http://secretartjournal.com/', name: 'Secret Journal'},
-{url:'http://www.conjuringarchive.com/', name: 'The Conjuring Archive'},
-{url:'http://conjuringarts.org/', name: 'Conjuring Arts Research Center'},
+{url:'http://www.conjuringarchive.com/', name: "Denis Behr's Conjuring Archive", favicon: 'http://www.conjuringarchive.com/images/favicon.ico'},
+{url:'http://conjuringarts.org/', name: 'Conjuring Arts Research Center',favicon: 'http://conjuringarts.org/wp-content/themes/lifestyle_40/images/favicon.ico'},
 {url:'http://geniimagazine.com/', name: 'Genii Magazine'},
-{url:'http://www.magicmagazine.com/', name: 'Magic Magazine'},
-{url:'http://www.reelmagicmagazine.com/', name: 'Reel Magic Magazine'},
+{url:'http://www.magicmagazine.com/', name: 'Magic Magazine',favicon:'http://www.magicmagazine.com/favicon.ico'},
+{url:'http://www.reelmagicmagazine.com/', name: 'Reel Magic Magazine',favicon: 'http://www.reelmagicmagazine.com/templates/reelmagicjoom25a/favicon.ico'},
     ]
   end
 end

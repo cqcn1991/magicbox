@@ -1,63 +1,101 @@
-<div class="panel panel-default main">
-  <div class="panel-heading clearfix">
-    <h2 class="panel-title">淘宝</h2>
-  </div>
-  <div class="panel-body">
-    <div class="row">
-      <% @shops.each do |shop|  %>
-        <div class="col-md-3">
-          <%#= image_tag(shop.avatar_url, class: 'img-responsive') %>
-          <%= link_to shop.name, external_url(shop.url) %>
-        </div>
-      <% end  %>
-    </div>
-  </div>
-</div>
+<div class="resources">
 
-<div class="panel panel-default main">
-  <div class="panel-heading clearfix">
-    <h2 class="panel-title">视频</h2>
-  </div>
-  <div class="panel-body">
-    <div class="row">
-      <% @youku_sites.each do |site|  %>
-        <div class="col-md-3">
-          <%= link_to(site[:name], 'http://i.youku.com/u/'+site[:url]) %>
-        </div>
-      <% end  %>
-      <div class="col-md-3">
-        <%= link_to('Lssence', 'http://www.tudou.com/home/lssence/') %>
+  <div class="panel panel-default main">
+    <div class="panel-heading clearfix">
+      <h2 class="panel-title">淘宝</h2>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <% @shops.each do |shop|  %>
+          <div class="col-md-3 site">
+            <%= image_tag(shop.avatar_url, class: 'favicon') %>
+            <%= link_to shop.name, external_url(shop.url) %>
+          </div>
+        <% end  %>
       </div>
     </div>
   </div>
-</div>
 
-<div class="panel panel-default main">
-  <div class="panel-heading clearfix">
-    <h2 class="panel-title">论坛</h2>
-  </div>
-  <div class="panel-body">
-    <div class="row">
-      <% @forums.each do |forum|  %>
-        <div class="col-md-3">
-          <%= link_to(forum[:name], forum[:url]) %>
+  <div class="panel panel-default main">
+    <div class="panel-heading clearfix">
+      <h2 class="panel-title">视频</h2>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <% @youku_sites.each do |site|  %>
+          <div class="col-md-3 site">
+            <%= image_tag(site[:avatar_url], class: 'favicon') %>
+            <%= link_to(site[:name], 'http://i.youku.com/u/'+site[:url]) %>
+          </div>
+        <% end  %>
+        <div class="col-md-3 site">
+          <%= image_tag('http://u1.tdimg.com/2/197/105/94019298550986930102955861862027823632.jpg', class: 'favicon') %>
+          <%= link_to('Lssence', 'http://www.tudou.com/home/lssence/') %>
         </div>
-      <% end  %>
+      </div>
     </div>
   </div>
-</div>
 
-<div class="panel panel-default main">
-  <div class="panel-heading clearfix">
-    <h2 class="panel-title">国外网站</h2>
-  </div>
-  <div class="panel-body">
-    <div class="row">
-      <% @overseas.each do |site|  %>
-        <div class="col-md-3">
-          <%= link_to(site[:name], site[:url]) %>
-        </div>
-      <% end  %>
+  <div class="panel panel-default main">
+    <div class="panel-heading clearfix">
+      <h2 class="panel-title">国内</h2>
     </div>
+    <ul class="list-group">
+      <li class="list-group-item">
+        <div class="row">
+          <% @forums.each do |site|  %>
+            <div class="col-md-3 site">
+              <% if !site[:favicon].blank?  %>
+                <%= image_tag(site[:favicon], class: 'favicon') %>
+              <% end  %>
+              <%= link_to(site[:name], site[:url]) %>
+            </div>
+          <% end  %>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div class="row">
+          <% @weibos.each do |site|  %>
+            <div class="col-md-3 site">
+              <%= image_tag(site[:avatar_url], class: 'favicon') %>
+              <%= link_to(site[:name], site[:url]) %>
+            </div>
+          <% end  %>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+
+  <div class="panel panel-default main">
+    <div class="panel-heading clearfix">
+      <h2 class="panel-title">国外网站</h2>
+    </div>
+    <ul class="list-group">
+      <li class="list-group-item">
+        <div class="row">
+          <% @oversea_shops.each do |site|  %>
+            <div class="col-md-3 site">
+              <% if !site[:favicon].blank?  %>
+                <%= image_tag(site[:favicon], class: 'favicon') %>
+              <% end  %>
+              <%= link_to(site[:name], site[:url]) %>
+            </div>
+          <% end  %>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div class="row">
+          <% @oversea_sites.each do |site|  %>
+            <div class="col-md-3 site">
+              <% if !site[:favicon].blank?  %>
+                <%= image_tag(site[:favicon], class: 'favicon') %>
+              <% end  %>
+              <%= link_to(site[:name], site[:url]) %>
+            </div>
+          <% end  %>
+        </div>
+      </li>
+    </ul>
   </div>
 </div>
