@@ -1,6 +1,6 @@
+# encoding: utf-8
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-
   # GET /posts
   # GET /posts.json
   def index
@@ -8,6 +8,12 @@ class PostsController < ApplicationController
       @posts = Post.order_by_likes
     elsif params[:sort] == 'reply'
       @posts = Post.order_by_reply_number
+    elsif params[:category] == 'new'
+      @posts = Post.by_category('新品')
+    elsif params[:category] == 'card'
+      @posts = Post.by_category('纸牌')
+    elsif params[:category] == 'mental'
+      @posts = Post.by_category('心灵')
     else
       @posts = Post.order_by_date
     end

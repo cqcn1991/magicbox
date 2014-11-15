@@ -16,6 +16,8 @@ Rails.application.routes.draw do
 
   root 'static_pages#home'
 
+  get 'category/:category/'  => 'posts#index', as: :category_posts
+
   get 'discussion' => 'static_pages#discussion'
   get 'selected' => 'static_pages#selected'
   get 'pop' => 'static_pages#popular'

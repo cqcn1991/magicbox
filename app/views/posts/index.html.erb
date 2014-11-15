@@ -2,7 +2,7 @@
   <div class="panel panel-default">
     <div class="panel-body">
       <h4>Order by</h4>
-      <%= link_to 'Date', sort: 'date' %>
+      <%= link_to 'Date', posts_path, sort: 'date' %>
       <%= link_to 'Reply Number', sort: 'reply' %>
       <%= link_to 'Likes', sort: 'like' %>
     </div>
@@ -26,7 +26,7 @@
   <% @posts.each do |post| %>
     <tr>
       <td>
-        <%= link_to post.title, post.url %><br>
+        <%= link_to post.title, post.url %> - <%= tag_link post, posts_path %><br>
         <%= truncate(post.abstraction, length: 250)%>
       </td>
       <td><%= post.likes %></td>
