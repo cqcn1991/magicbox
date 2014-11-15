@@ -26,8 +26,10 @@ task :fetch_video, [:fetch_number] => :environment do |t, args|
       href = item.at(".v-link a")['href']
       id = href.split("id_")[1].split(".html")[0]
       img_url = item.at(".v-thumb img")['src']
+      time = item.at(".v-thumb .v-time").text
+      time = time.split(':')[0].to_i*60 + time.split(':')[1].to_i
       source = 'youku'
-      video = Video.new(title: title, url: href, source_id: id, img_url: img_url, source: source)
+      video = Video.new(title: title, url: href, source_id: id, img_url: img_url, source: source, duration: time)
       if video.save
         puts title + 'saved'
       end
@@ -43,8 +45,10 @@ task :fetch_video, [:fetch_number] => :environment do |t, args|
       href = 'http://www.tudou.com/programs/view/'+ item['code']
       img_url = item['picurl']
       id = item['code']
+      time = item['formatTotalTime']
+      time = time.split(':')[0].to_i*60 + time.split(':')[1].to_i
       source = 'tudou'
-      video = Video.new(title: title, url: href, source_id: id, img_url: img_url, source: source)
+      video = Video.new(title: title, url: href, source_id: id, img_url: img_url, source: source,duration: time)
       if video.save
         puts title + 'saved'
       end

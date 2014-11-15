@@ -13,7 +13,6 @@ module ApplicationHelper
     end
 
     def tag_link(post, link_path)
-
       if post.category == '心灵'
         category = 'mental'
         label_class = 'danger'
@@ -36,5 +35,13 @@ module ApplicationHelper
     def external_url(url)
       'http://' + url
     end
+
+  def display_time(duration)
+    if !duration.blank?
+      seconds = duration % 60
+      minutes = (duration / 60) % 60
+      format("%02d:%02d", minutes, seconds)
+    end
+  end
 
 end

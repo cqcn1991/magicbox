@@ -4,11 +4,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    if params[:sort] == 'like'
-      @posts = Post.order_by_likes
-    elsif params[:sort] == 'reply'
-      @posts = Post.order_by_reply_number
-    elsif params[:category] == 'new'
+    if params[:category] == 'new'
       @posts = Post.by_category('新品')
     elsif params[:category] == 'card'
       @posts = Post.by_category('纸牌')
@@ -16,6 +12,14 @@ class PostsController < ApplicationController
       @posts = Post.by_category('心灵')
     else
       @posts = Post.order_by_date
+    end
+
+    if params[:sort] == 'like'
+      @posts = @posts.order_by_likes
+    elsif params[:sort] == 'reply'
+      @posts = @posts.order_by_reply_number
+    elsif params[:sort] == 'date'
+      @posts = @posts.order_by_date
     end
     @posts = @posts.paginate(:page => params[:page])
   end

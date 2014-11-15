@@ -51,6 +51,7 @@ class Video < ActiveRecord::Base
     if decode_response['data'][0]['title'] && decode_response['data'][0]
       self.title = decode_response['data'][0]['title']
       self.img_url = decode_response['data'][0]['logo']
+      self.duration = decode_response['data'][0]['seconds'].to_i
     end
     self.source = 'youku'
   end
@@ -62,6 +63,8 @@ class Video < ActiveRecord::Base
     self.title = video_params.split('kw: ')[1].split("'")[1]
     self.source_id = video_params.split('icode: ')[1].split("'")[1]
     self.img_url = video_params.split('pic: ')[1].split("'")[1]
+    time = video_params.split('time: ')[1].split("'")[1]
+    self.duration = time.split(':')[0].to_i*60 + time.split(':')[1].to_i
     self.source = 'tudou'
   end
 
