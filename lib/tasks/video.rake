@@ -24,12 +24,12 @@ task :fetch_video, [:fetch_number] => :environment do |t, args|
       #抓取Youku新视频
       title = item.at(".v-meta-title a")['title'] rescue nil
       href = item.at(".v-link a")['href']
-      id = href.split("id_")[1].split(".html")[0]
-      img_url = item.at(".v-thumb img")['src']
-      time = item.at(".v-thumb .v-time").text
-      time = time.split(':')[0].to_i*60 + time.split(':')[1].to_i
-      source = 'youku'
-      video = Video.new(title: title, url: href, source_id: id, img_url: img_url, source: source, duration: time)
+      #id = href.split("id_")[1].split(".html")[0]
+      #img_url = item.at(".v-thumb img")['src']
+      #time = item.at(".v-thumb .v-time").text
+      #time = time.split(':')[0].to_i*60 + time.split(':')[1].to_i
+      #source = 'youku'
+      video = Video.new(url: href)
       if video.save
         puts title + 'saved'
       end
@@ -43,12 +43,12 @@ task :fetch_video, [:fetch_number] => :environment do |t, args|
   decode_response['data']['data'][0..fetch_number].reverse_each do  |item|
       title = item['title']
       href = 'http://www.tudou.com/programs/view/'+ item['code']
-      img_url = item['picurl']
-      id = item['code']
-      time = item['formatTotalTime']
-      time = time.split(':')[0].to_i*60 + time.split(':')[1].to_i
-      source = 'tudou'
-      video = Video.new(title: title, url: href, source_id: id, img_url: img_url, source: source,duration: time)
+      #img_url = item['picurl']
+      #id = item['code']
+      #time = item['formatTotalTime']
+      #time = time.split(':')[0].to_i*60 + time.split(':')[1].to_i
+      #source = 'tudou'
+      video = Video.new(url: href)
       if video.save
         puts title + 'saved'
       end
