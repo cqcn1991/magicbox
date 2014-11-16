@@ -11,7 +11,7 @@
       <%= link_to item.title, item.url, class: 'title' %>
       <% if show_shop && item.shop %>
         <% shop = item.shop  %>
-        <strong><%= link_to shop.name, shop_path(shop) %></strong>
+        <strong><%= link_to shop.name, external_url(shop.url) %></strong>
       <% else  %>
         销量<strong><%= item.sales_number %></strong>
       <% end  %>

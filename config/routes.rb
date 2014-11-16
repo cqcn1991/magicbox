@@ -16,7 +16,8 @@ Rails.application.routes.draw do
 
   root 'static_pages#home'
 
-  get 'category/:category/'  => 'posts#index', as: :category_posts
+  get 'posts/category/:category/'  => 'posts#index', as: :category_posts
+  get 'video/category/:category/'  => 'videos#index', as: :category_videos
 
   get 'discussion' => 'static_pages#discussion'
   get 'selected' => 'static_pages#selected'

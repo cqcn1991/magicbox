@@ -12,8 +12,9 @@
     <div class="panel-body">
       <%= link_to 'http://' + shop.url do %>
       <h2 class="no-margin">
+        <%= image_tag(shop.avatar_url, class: 'shop-avatar') %>
         <%= shop.name %>
-        <small> <%= shop.url%></small>
+        <small> - - - <%= shop.url%></small>
       </h2>
       <% end %>
     <div class="items">

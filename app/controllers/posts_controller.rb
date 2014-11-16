@@ -4,12 +4,12 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    if params[:category] == 'new'
-      @posts = Post.by_category('新品')
-    elsif params[:category] == 'card'
-      @posts = Post.by_category('纸牌')
-    elsif params[:category] == 'mental'
-      @posts = Post.by_category('心灵')
+    if !params[:category].blank?
+      @posts = Post.by_category(params[:category])
+    #elsif params[:category] == 'card'
+    #  @posts = Post.by_category('纸牌')
+    #elsif params[:category] == 'mental'
+    #  @posts = Post.by_category('心灵')
     else
       @posts = Post.order_by_date
     end
@@ -96,6 +96,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:url, :title, :source)
+      params.require(:post).permit(:url, :title, :source, :category, :abstraction)
     end
 end

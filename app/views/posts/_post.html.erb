@@ -3,7 +3,7 @@
     <div class="caption">
       <h4 class="post-title"><%= link_to item.title, item.url %>
         <small class="pull-right">
-          <%= tag_link item, posts_path %>
+          <%= tag_link item %>
           <%= show_source_name(item) %>
 
           <%= item.created_at.strftime("%m/%d") %>

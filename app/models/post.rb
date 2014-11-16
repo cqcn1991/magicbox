@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class Post < ActiveRecord::Base
   validates :title, presence: true
   validates :url, uniqueness: true
@@ -20,6 +21,7 @@ class Post < ActiveRecord::Base
     if self.source == 'cafe'
       #get_cafe_author_info(doc)
       get_cafe_abstraction(doc)
+      categorize_post
     elsif self.source == 'tieba'
       get_tieba_abstraction(doc)
     end
@@ -33,6 +35,18 @@ class Post < ActiveRecord::Base
     self.author_name = author_name
     self.save
     puts url, author_name
+  end
+
+  def categorize_post
+    forum_id =  self.url.split('&forum=')[1]
+    if forum_id ==  '15'
+      self.category = '心灵'
+    elsif forum_id ==  '2'
+      self.category = '纸牌'
+    elsif forum_id ==  '218'
+      self.category = '新品'
+    end
+    self.save
   end
 
   def get_cafe_abstraction(doc)

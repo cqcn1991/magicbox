@@ -12,22 +12,52 @@ module ApplicationHelper
       end
     end
 
-    def tag_link(post, link_path)
-      if post.category == '心灵'
+    def tag_link(item)
+      if item.category == '心灵'
         category = 'mental'
         label_class = 'danger'
-      elsif post.category == '新品'
+      elsif item.category == '新品'
         category = 'new'
         label_class = 'primary'
-      elsif post.category == '纸牌'
+      elsif item.category == '纸牌'
         category = 'card'
         label_class = 'info'
+      elsif item.category == '表演'
+        category = 'selected'
+        label_class = 'success'
       end
       if category
-        link_to(category_posts_path(category), class: 'no-underline') do
+        if item.class == Post
+          path = category_posts_path(item.category)
+        elsif  item.class == Video
+          path = category_videos_path(item.category)
+        end
+        link_to(path, class: 'no-underline') do
           content_tag(:span, :class => "label label-#{label_class}") do
-            post.category
+            item.category
           end
+        end
+      end
+    end
+
+    def tag_nav_link(class_name, category)
+      if category == '心灵'
+        label_class = 'danger'
+      elsif category == '新品'
+        label_class = 'primary'
+      elsif category == '纸牌'
+        label_class = 'info'
+      elsif category == '表演'
+        label_class = 'success'
+      end
+      if class_name == 'post'
+        path = category_posts_path(category)
+      elsif class_name == 'video'
+        path = category_videos_path(category)
+      end
+      link_to(path, class: 'no-underline') do
+        content_tag(:span, :class => "label label-#{label_class}") do
+          category
         end
       end
     end
@@ -39,7 +69,7 @@ module ApplicationHelper
   def display_time(duration)
     if !duration.blank?
       seconds = duration % 60
-      minutes = (duration / 60) % 60
+      minutes = (duration / 60)
       format("%02d:%02d", minutes, seconds)
     end
   end

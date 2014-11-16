@@ -1,9 +1,12 @@
 <% content_for :sidebar_selector do %>
   <div class="panel panel-default">
     <div class="panel-body">
-      <h4>Order by</h4>
-      <%= link_to 'Date', sort: 'date' %>
-      <%= link_to 'Popularity', sort: 'pop' %>
+      <span>Order by</span>
+      <%= link_to '日期', sort: 'date' %>
+      <%= link_to '浏览量', sort: 'pop' %>
+      <br>
+      <%= tag_nav_link('video', '新品') %>
+      <%= tag_nav_link('video', '表演') %>
     </div>
   </div>
 <% end %>

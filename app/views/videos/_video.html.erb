@@ -4,15 +4,23 @@
 
 <div class="col-md-3">
   <div class="video thumbnail">
-    <%= link_to item.url do %>
-      <%= image_tag(item.img_url, class: 'un-responsive') %>
-    <% end %>
+    <div class="video-img">
+      <%= link_to item.url do %>
+        <%= image_tag(item.img_url, class: 'un-responsive') %>
+        <span class="vtime">
+          <span class="bg"></span>
+          <span class="di"><%= display_time(item.duration) %></span>
+        </span>
+      <% end %>
+    </div>
+
     <div class="caption clearfix">
       <%= link_to item.title, item.url, class: 'title' %>
       <% if show_views  %>
         观看<strong><%= item.hits %></strong>
       <% end %>
       <div class="pull-right">
+        <%= tag_link item %>
         <span><%= item.created_at.strftime("%m/%d") %></span>
       </div>
     </div>

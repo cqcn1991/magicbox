@@ -20,10 +20,12 @@
   }
 }
 
+
 .panel{
   &.main .panel-heading{
     background-color: white;
   }
+
   .toggle-control{
     margin-right: 20px;
     margin-left: 20px;
@@ -36,7 +38,38 @@
     }
 }
 }
+.video-img{
+  position: relative;
+}
+.vtime{
+  bottom: 4px;
+  color: #fff;
+  height: 19px;
+  line-height: 19px;
+  overflow: hidden;
+  position: absolute;
+  right: 4px;
+  .bg{
+    border-radius: 3px;
+    display: block;
+    opacity: 0.55;
+    background: none repeat scroll 0 0 #000;
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    width: 100%;
+  }
+  .di{
+    padding: 0 5px;
+    position: relative;
+  }
+}
 
-
+.shop-avatar{
+  border-radius: 5px;
+  height: 48px;
+  width: 48px;
+}
 
 

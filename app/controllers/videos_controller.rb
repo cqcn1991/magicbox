@@ -4,20 +4,28 @@ class VideosController < ApplicationController
   # GET /videos
   # GET /videos.json
   def index
-    if params[:sort] == 'pop'
-      @videos = Video.order_by_hits
+    if !params[:category].blank?
+      @videos = Video.by_category(params[:category])
     else
-      @videos = Video.order_by_date
+      @videos = Video.all
+    end
+    if params[:sort] == 'pop'
+      @videos = @videos.order_by_hits
+    else
+      @videos = @videos.order_by_date
     end
       @videos = @videos.paginate(:page => params[:page])
   end
 
   def admin
     if params[:sort] == 'pop'
-      @videos = Video.order_by_hits.paginate(:page => params[:page])
+      @videos = Video.order_by_hits
+    elsif params[:sort] == 'duration'
+      @videos = Video.order_by_duration
     else
-      @videos = Video.order_by_date.paginate(:page => params[:page])
+      @videos = Video.order_by_date
     end
+    @videos = @videos.paginate(:page => params[:page])
   end
 
   # GET /videos/1
@@ -82,6 +90,6 @@ class VideosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def video_params
-      params.require(:video).permit(:url, :title, :img_url, :source_id, :source)
+      params.require(:video).permit(:url, :title, :img_url, :source_id, :source, :category)
     end
 end

@@ -20,7 +20,7 @@ Order by
   <tbody>
   <% @posts.each do |post| %>
     <tr>
-      <td><%= link_to post.title, post.url %></td>
+      <td><%= link_to post.title, post.url %> - <%= post.category %></td>
       <td><%= post.abstraction %></td>
       <td><%= post.source %></td>
       <td><%= post.likes %></td>

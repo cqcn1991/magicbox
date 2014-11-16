@@ -4,8 +4,10 @@ class Video < ActiveRecord::Base
   validates :source_id, uniqueness: true
   before_validation :get_info, on: :create
 
+  scope :by_category, ->(category) { where category: category }
   scope :order_by_date, -> { order('created_at DESC, source_id ASC')}
   scope :order_by_hits, -> { order('hits IS NULL, hits DESC') }
+  scope :order_by_duration, -> { order('duration IS NULL, duration DESC') }
   scope :created_in_days, ->(number)  {where('created_at >= ?', Time.zone.now - number.days)}
   scope :selected, -> { where(selected: true) }
   require 'open-uri'
@@ -24,6 +26,7 @@ class Video < ActiveRecord::Base
       self.url = "http://#{self.url}"
     end
   end
+
 
   def is_youku?
     if self.url.include?("youku")  && self.url.include?("id_") && !self.url.include?("playlist")
@@ -52,6 +55,10 @@ class Video < ActiveRecord::Base
       self.title = decode_response['data'][0]['title']
       self.img_url = decode_response['data'][0]['logo']
       self.duration = decode_response['data'][0]['seconds'].to_i
+      username = decode_response['data'][0]['username']
+      if username == 'arthurchan76'
+        self.category = '新品'
+      end
     end
     self.source = 'youku'
   end
