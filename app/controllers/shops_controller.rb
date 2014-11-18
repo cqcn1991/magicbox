@@ -5,6 +5,7 @@ class ShopsController < ApplicationController
   # GET /shops.json
   def index
     @shops = Shop.all
+    @items = Item.order_by_sales.to_a.uniq {|p| p.shop_id}[0..4]
   end
 
   def admin

@@ -30,3 +30,16 @@ task :fetch_popularity => :environment do
     post.get_likes_or_reply_number
   end
 end
+
+task :fetch_recent_popularity => :environment do
+  require 'nokogiri'
+  require 'open-uri'
+  Video.created_in_days(30).each do |video|
+    video.get_hits
+    puts video.title, video.hits
+  end
+
+  Post.created_in_days(30).each do |post|
+    post.get_likes_or_reply_number
+  end
+end

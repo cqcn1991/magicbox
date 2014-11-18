@@ -5,6 +5,29 @@
       <%= link_to 'Items', items_path %>
     </div>
   </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title"><%= link_to '正在热销', items_path, sort: 'pop' %></h4>
+    </div>
+    <table class="table table-condensed">
+    <!--<thead>
+      <tr>
+        <th>#</th>
+        <th colspan="2">正在热销</th>
+      </tr>
+    </thead>-->
+    <tbody>
+    <% @items.each_with_index do |item, index| %>
+      <tr>
+        <td><span class="badge"><%= index+1 %></span></td>
+        <td><%= link_to item.title, item.url %></td>
+        <td><%= item.sales_number %></td>
+      </tr>
+     <% end  %>
+    </tbody>
+    </table>
+  </div>
 <% end %>
 
 <% @shops.each do |shop| %>

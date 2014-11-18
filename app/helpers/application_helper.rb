@@ -4,9 +4,11 @@ module ApplicationHelper
       /^http/i.match(url) ? url : "http://#{url}"
     end
 
-    def nav_link(link_text, link_path)
+    def nav_link(link_text, link_path, additional_class = nil)
       class_name = current_page?(link_path) ? 'active' : nil
-
+      if additional_class
+        class_name = [class_name, additional_class ]
+      end
       content_tag(:li, :class => class_name) do
         link_to link_text, link_path
       end
@@ -25,6 +27,9 @@ module ApplicationHelper
       elsif item.category == '表演'
         category = 'selected'
         label_class = 'success'
+      elsif item.category == '花式'
+        category = 'flourish'
+        label_class = 'warning'
       end
       if category
         if item.class == Post
@@ -49,6 +54,8 @@ module ApplicationHelper
         label_class = 'info'
       elsif category == '表演'
         label_class = 'success'
+      elsif category == '花式'
+        label_class = 'warning'
       end
       if class_name == 'post'
         path = category_posts_path(category)

@@ -14,15 +14,18 @@
     <h3 class="no-margin"><strong>热帖</strong></h3>
     <div class="posts row">
       <% @posts.each do |item| %>
-        <div class="post col-md-6">
+        <div class="post col-md-12">
           <h4>
             <%= link_to item.title, item.url %>
+            <%= tag_link(item) %>
             <small class="pull-right">
               <% if item.source == 'cafe' %>
                 <%= item.likes %>❤
               <% elsif item.source == 'tieba' %>
                 <%= item.reply_number %><span class="glyphicon glyphicon-comment"></span>
               <% end  %>
+              <%= item.created_at.strftime("%m/%d") %>
+              <%#= item.source %>
             </small>
           </h4>
           <div class="">

@@ -64,7 +64,9 @@ class StaticPagesController < ApplicationController
 #社区类
 {url:'http://www.themagiccafe.com/forums/index.php', name: 'themagiccafe'},
 #内容类
+{url:'http://itricks.com/news/', name: 'iTricks'},
 {url:'http://secretartjournal.com/', name: 'Secret Journal'},
+{url:'http://www.michaelvincentmagic.com/news', name: 'Elegant Deceptions', favicon:'http://www.michaelvincentmagic.com/favicon.ico'},
 {url:'http://www.conjuringarchive.com/', name: "Denis Behr's Conjuring Archive", favicon: 'http://www.conjuringarchive.com/images/favicon.ico'},
 {url:'http://conjuringarts.org/', name: 'Conjuring Arts Research Center',favicon: 'http://conjuringarts.org/wp-content/themes/lifestyle_40/images/favicon.ico'},
 {url:'http://geniimagazine.com/', name: 'Genii Magazine'},
