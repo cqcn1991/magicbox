@@ -39,7 +39,20 @@ task :fetch_recent_popularity => :environment do
     puts video.title, video.hits
   end
 
-  Post.created_in_days(30).each do |post|
+  Rake::Task["fetch_post_popularity"].invoke(fetch_number)
+end
+
+task :fetch_post_popularity, [:fetch_number] => :environment do |t, args|
+  require 'nokogiri'
+  require 'open-uri'
+
+  if args.fetch_number.to_i > 0
+    fetch_number = args.fetch_number.to_i
+  else
+    fetch_number = 30
+  end
+
+  Post.created_in_days(fetch_number).each do |post|
     post.get_likes_or_reply_number
   end
 end

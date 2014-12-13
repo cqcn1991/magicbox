@@ -6,19 +6,15 @@ class PostsController < ApplicationController
   def index
     if !params[:category].blank?
       @posts = Post.by_category(params[:category])
-    #elsif params[:category] == 'card'
-    #  @posts = Post.by_category('纸牌')
-    #elsif params[:category] == 'mental'
-    #  @posts = Post.by_category('心灵')
     else
-      @posts = Post.order_by_date
+      @posts = Post.all
     end
 
     if params[:sort] == 'like'
       @posts = @posts.order_by_likes
     elsif params[:sort] == 'reply'
       @posts = @posts.order_by_reply_number
-    elsif params[:sort] == 'date'
+    else
       @posts = @posts.order_by_date
     end
     @posts = @posts.paginate(:page => params[:page])
