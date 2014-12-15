@@ -13,6 +13,7 @@ task :fetch_taobao, [:fetch_number] => :environment do |t, args|
   taobao_sites = Shop.all
   taobao_sites.each do |site|
     url = 'http://'+ site.url + "/search.htm?&search=y&orderType=newOn_desc"
+
     doc = Nokogiri::HTML(open(url) )
     puts doc.css("title").text
     doc.css(".main-wrap .item")[0..fetch_number].reverse_each do |item_info|

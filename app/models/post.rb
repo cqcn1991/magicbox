@@ -40,11 +40,11 @@ class Post < ActiveRecord::Base
   def categorize_post
     forum_id =  self.url.split('&forum=')[1]
     if forum_id ==  '15'
-      self.category = '心灵'
+      self.category = 'mental'
     elsif forum_id ==  '2'
-      self.category = '纸牌'
+      self.category = 'card'
     elsif forum_id ==  '218'
-      self.category = '新品'
+      self.category = 'new'
     end
     self.save
   end

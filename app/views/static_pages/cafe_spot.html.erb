@@ -1,0 +1,47 @@
+<% content_for :sidebar_selector do %>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <h4 class="no-margin">Order by</h4>
+      <%= link_to 'Time', sort: 'date' %>
+      <%= link_to 'Likes', sort: 'like' %>
+      <br>
+      <%= cafe_tag_nav_link('post', 'new') %>
+      <%= cafe_tag_nav_link('post', 'card') %>
+      <%= cafe_tag_nav_link('post', 'mental') %>
+    </div>
+  </div>
+<% end %>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+      <tr class="no-style-link">
+        <th ><h2 class="no-margin">
+              <%= link_to cafe_spot_path do %><strong>Cafe Digest</strong>
+              <% end  %>
+        </h2></th>
+        <th><%= link_to '❤', sort: 'like' %></th>
+        <th><%= link_to 'Time', sort: 'date' %></th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <% @posts.each do |post| %>
+        <tr>
+          <td>
+              <%= link_to post.title, post.url %> - <%= cafe_tag_link post %><br>
+            <%= link_to post.url, class:'no-style-link' do %>
+              <%= truncate(post.abstraction, length: 250)%>
+            <% end %>
+          </td>
+          <td><%= post.likes %></td>
+          <td><%= post.created_at.strftime("%m/%d") %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
