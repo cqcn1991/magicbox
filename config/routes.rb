@@ -14,19 +14,20 @@ Rails.application.routes.draw do
     get 'notices' => 'notices#admin', as: :admin_notices
   end
 
-  root 'static_pages#cafe_spot'
+  root 'static_pages#cafe_digest'
 
   get 'discussion' => 'static_pages#discussion'
   get 'selected' => 'static_pages#selected'
   get 'pop' => 'static_pages#popular'
   get 'resources' => 'static_pages#resources'
-  get 'cafe_spot' => 'static_pages#cafe_spot'
+  get 'cafe_digest' => 'static_pages#cafe_digest'
+  get 'home' => 'static_pages#home'
 
   get 'admin' => 'static_pages#admin'
 
   get 'posts/category/:category/'  => 'posts#index', as: :category_posts
   get 'video/category/:category/'  => 'videos#index', as: :category_videos
-  get 'cafe_spot/category/:category/'  => 'static_pages#cafe_spot', as: :cafe_category_posts
+  get 'cafe_digest/category/:category/'  => 'static_pages#cafe_digest', as: :cafe_category_posts
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

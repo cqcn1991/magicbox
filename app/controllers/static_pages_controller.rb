@@ -11,7 +11,7 @@ class StaticPagesController < ApplicationController
 
   end
 
-  def cafe_spot
+  def cafe_digest
     if !params[:category].blank?
       @posts = Post.by_category(params[:category])
     else
@@ -26,7 +26,7 @@ class StaticPagesController < ApplicationController
       @posts = @posts.order_by_date
     end
     @posts = @posts.paginate(:page => params[:page], :per_page => 10)
-    render :layout => 'cafe_spot_layout'
+    render :layout => 'cafe_digest_layout'
   end
 
   def selected

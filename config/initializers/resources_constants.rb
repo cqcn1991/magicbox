@@ -27,4 +27,18 @@ module RESOURCES_CONSTANT
       {url:'http://www.magic8.cn/', name: '魔术吧', favicon: 'http://www.magic8.cn/favicon.ico'},
       {url:'http://www.themagicway.net/', name: 'themagicway',favicon: 'http://www.themagicway.net/wp-content/themes/tmw/img/favicon.ico'},
       {url:'http://www.hatupsidedown.com/', name: '倒放的帽子'},]
+
+  OVERSEA_WEBSITES = [
+      {url:'http://www.themagiccafe.com/forums/index.php', name: 'themagiccafe'},
+      {url:'http://murphysmagic.com/', name: "Murphy's Magic", favicon: 'http://www.murphysmagic.com/favicon1.ico'},
+      {url:'http://www.penguin.com/', name: 'Penguin Magic',  favicon: 'http://www.penguinmagic.com/favicon.ico'},
+      {url:'http://www.dananddave.com/', name: 'Dan and Dave',favicon: 'http://dananddave.com/wp-content/themes/dananddave/img/favicon.ico' },
+      {url:'http://www.ellusionist.com/', name: 'Ellusionist', favicon: 'http://www.ellusionist.com/favicon.ico'},
+      {url:'http://www.theory11.com/', name: 'Theory11', favicon: 'http://www.theory11.com/favicon.ico'},
+      {url:'http://www.vanishingincmagic.com/', name: 'Vanishing Inc.', favicon: 'http://www.vanishingincmagic.com/favicon.ico'},
+      {url:'http://www.ementalism.com/', name: 'Ementalism', favicon: ''},
+      {url:'http://www.lybrary.com/', name: 'lybrary', favicon: 'http://www.lybrary.com/favicon.ico'},
+      {url:'http://www.alakazam.co.uk/', name: 'Alakazam Magic', favicon: 'http://www.alakazam.co.uk/favicon.ico'},
+      {url:'http://thebluecrown.com/', name: 'The Blue Crown', favicon: 'http://thebluecrown.com/favicon.ico'}
+  ]
 end

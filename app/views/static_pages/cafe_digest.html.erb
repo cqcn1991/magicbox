@@ -18,7 +18,9 @@
       <thead>
       <tr class="no-style-link">
         <th ><h2 class="no-margin">
-              <%= link_to cafe_spot_path do %><strong>Cafe Digest</strong>
+          <%= link_to cafe_digest_path do %>
+            <span class="glyphicon glyphicon-cutlery" aria-hidden="true"></span>
+            <strong>Cafe Digest</strong>
               <% end  %>
         </h2></th>
         <th><%= link_to '❤', sort: 'like' %></th>

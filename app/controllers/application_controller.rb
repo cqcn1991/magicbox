@@ -6,5 +6,6 @@ class ApplicationController < ActionController::Base
 
   def set_notices
     @notices = Notice.all
+    @oversea_websites = RESOURCES_CONSTANT::OVERSEA_WEBSITES
   end
 end

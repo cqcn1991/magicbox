@@ -1,5 +1,5 @@
 # encoding: utf-8
-module CafeSpotHelper
+module CafeDigestHelper
   def cafe_tag_nav_link(class_name, category)
     if category == 'mental'
       label_class = 'danger'
