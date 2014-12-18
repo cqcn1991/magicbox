@@ -49,7 +49,7 @@ task :fetch_post, [:fetch_number] => :environment do |t, args|
   end
 
 
-  magic_cafe = ['15', '2', '218']
+  magic_cafe = ['15', '2', '218', '110', '303']
   #Penny, Workers, Latest and Greatest?
   magic_cafe.each do |forum|
     url = 'http://www.themagiccafe.com/forums/viewforum.php?forum=' + forum

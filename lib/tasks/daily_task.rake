@@ -53,6 +53,7 @@ task :fetch_post_popularity, [:fetch_number] => :environment do |t, args|
   end
 
   Post.created_in_days(fetch_number).each do |post|
+    puts post.title
     post.get_likes_or_reply_number
   end
 end

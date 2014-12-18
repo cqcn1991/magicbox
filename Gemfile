@@ -30,6 +30,7 @@ gem 'will_paginate-bootstrap', '~> 1.0'
 
 gem 'nokogiri'
 gem 'httparty'
+#gem 'video_info'
 
 gem 'rails_autolink'
 gem 'active_link_to'
