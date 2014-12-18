@@ -8,6 +8,8 @@ module CafeDigestHelper
       label_class = 'primary'
     elsif category == 'card'
       label_class = 'info'
+    elsif category == 'review'
+      label_class = 'success'
     end
     if class_name == 'post'
       path = cafe_category_posts_path(category)
@@ -27,6 +29,8 @@ module CafeDigestHelper
       label_class = 'primary'
     elsif item.category == 'card'
       label_class = 'info'
+    elsif item.category == 'review'
+      label_class = 'success'
     end
     if !item.category.blank?
       if item.class == Post
