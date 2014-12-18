@@ -13,3 +13,15 @@
     }
   }
 }
+
+.visible-xxs{
+  display: none;
+}
+@media (max-width: 400px) {
+  .visible-xxs {
+    display: block !important;
+  }
+  .hidden-xxs {
+    display: none !important;
+  }
+}
