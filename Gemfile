@@ -28,6 +28,9 @@ gem 'bootstrap-sass', '~> 3.2.0'
 gem 'will_paginate', '~> 3.0'
 gem 'will_paginate-bootstrap', '~> 1.0'
 
+gem 'yt', '~> 0.13.4'
+gem 'youtube_it'
+
 gem 'nokogiri'
 gem 'httparty'
 #gem 'video_info'

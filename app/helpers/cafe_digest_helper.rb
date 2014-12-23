@@ -21,6 +21,17 @@ module CafeDigestHelper
     end
   end
 
+  def selected_tag_link
+    label_class = 'warning'
+    path = selected_videos_path
+    link_to(path, class: 'no-underline') do
+      content_tag(:span, :class => "label label-#{label_class}") do
+        'selected'
+      end
+    end
+  end
+
+
   def cafe_tag_link(item)
     if item.category == 'mental'
       label_class = 'danger'

@@ -1,0 +1,18 @@
+<div class="post col-md-12">
+  <h4>
+    <%= link_to item.title, item.url %>
+    <%= tag_link(item) %>
+    <small class="pull-right">
+      <% if item.source == 'cafe' %>
+        <%= item.likes %>❤
+      <% elsif item.source == 'tieba' %>
+        <%= item.reply_number %><span class="glyphicon glyphicon-comment"></span>
+      <% end  %>
+      <%= item.created_at.strftime("%m/%d") %>
+      <%#= item.source %>
+    </small>
+  </h4>
+  <div class="">
+    <%= truncate(item.abstraction, length: 200) %>
+  </div>
+</div>

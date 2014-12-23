@@ -3,7 +3,7 @@
 <% end  %>
 
 <div class="col-md-3 col-sm-4 col-xs-6">
-  <div class="video thumbnail">
+  <div class="video thumbnail <%= item.id %>">
     <div class="video-img">
       <%= link_to item.url do %>
         <%= image_tag(item.img_url, class: 'un-responsive') %>
@@ -17,11 +17,14 @@
     <div class="caption clearfix">
       <%= link_to item.title, item.url, class: 'title' %>
       <% if show_views  %>
-        观看<strong><%= item.hits %></strong>
+        Views<strong><%= " #{number_to_human(item.hits, precision: 2)}" %></strong>
       <% end %>
       <div class="pull-right">
-        <%= tag_link item %>
-        <span><%= item.created_at.strftime("%m/%d") %></span>
+        <% if item.selected?  %>
+          <%= selected_tag_link %>
+        <% else %>
+          <span><%= item.created_at.strftime("%m/%d") %></span>
+        <% end %>
       </div>
     </div>
   </div>

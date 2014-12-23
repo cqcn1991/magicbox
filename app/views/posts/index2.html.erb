@@ -1,0 +1,47 @@
+<% content_for :sidebar_selector do %>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <h4>Order by</h4>
+      <%= link_to 'Date', sort: 'date' %>
+      <%= link_to 'Reply Number', sort: 'reply' %>
+      <%= link_to 'Likes', sort: 'like' %>
+      <br>
+      <%= tag_nav_link('post', '新品') %>
+      <%= tag_nav_link('post', '花式') %>
+      <%= tag_nav_link('post', '心灵') %>
+    </div>
+  </div>
+<% end %>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th><h2 class="no-margin"><strong>论坛热帖</strong></h2></th>
+    <th>❤</th>
+    <th><span class="glyphicon glyphicon-comment"></span></th>
+    <th>Time</th>
+    <th>Source</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @posts.each do |post| %>
+    <tr>
+      <td>
+        <%= link_to post.title, post.url %> - <%= tag_link post %><br>
+        <%= truncate(post.abstraction, length: 250)%>
+      </td>
+      <td><%= post.likes %></td>
+      <td><%= post.reply_number %></td>
+      <td><%= post.created_at.strftime("%m/%d") %></td>
+      <td><%= post.source %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+</div>
+</div>
+
+<%= will_paginate @posts, renderer: BootstrapPagination::Rails %>

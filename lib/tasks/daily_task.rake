@@ -7,9 +7,8 @@ task :fetch_all,  [:fetch_number] => :environment do |t, args|
     fetch_number = 4
   end
 
-  Rake::Task["fetch_taobao"].invoke(fetch_number)
-  Rake::Task["fetch_video"].invoke(fetch_number)
-  Rake::Task["fetch_post"].invoke(fetch_number)
+  Rake::Task["fetch_youtube_videos"].invoke(fetch_number)
+  Rake::Task["fetch_cafe_post"].invoke(fetch_number)
 end
 
 desc "Weekly Task"
@@ -31,10 +30,15 @@ task :fetch_popularity => :environment do
   end
 end
 
-task :fetch_recent_popularity => :environment do
+task :fetch_recent_popularity, [:fetch_number] => :environment do |t, args|
   require 'nokogiri'
   require 'open-uri'
-  Video.created_in_days(30).each do |video|
+  if args.fetch_number.to_i > 0
+    fetch_number = args.fetch_number.to_i
+  else
+    fetch_number = 14
+  end
+  Video.by_source('youtube').created_in_days(fetch_number).each do |video|
     video.get_hits
     puts video.title, video.hits
   end
@@ -52,7 +56,7 @@ task :fetch_post_popularity, [:fetch_number] => :environment do |t, args|
     fetch_number = 30
   end
 
-  Post.created_in_days(fetch_number).each do |post|
+  Post.by_forum('cafe').created_in_days(fetch_number).each do |post|
     puts post.title
     post.get_likes_or_reply_number
   end

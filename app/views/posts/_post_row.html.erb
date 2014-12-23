@@ -1,0 +1,17 @@
+<tr>
+  <td>
+    <%= link_to post.title, post.url %><span class="hidden-xxs"> - <%= cafe_tag_link post %></span><br>
+    <%= link_to post.url, class:'no-style-link hidden-xxs' do %>
+      <%= truncate(post.abstraction, length: 250)%>
+    <% end %>
+    <div class="visible-xxs">
+      <%= cafe_tag_link post %>
+      <div class="pull-right">
+        ❤<%= post.likes %>
+        <%= post.created_at.strftime("%m/%d") %>
+      </div>
+    </div>
+  </td>
+  <td class="hidden-xxs"><%= post.likes %></td>
+  <td class="hidden-xxs"><%= post.created_at.strftime("%m/%d") %></td>
+</tr>

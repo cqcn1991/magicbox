@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     get 'notices' => 'notices#admin', as: :admin_notices
   end
 
-  root 'static_pages#cafe_digest'
+  root 'static_pages#popular'
 
   get 'discussion' => 'static_pages#discussion'
   get 'selected' => 'static_pages#selected'
@@ -27,6 +27,7 @@ Rails.application.routes.draw do
 
   get 'posts/category/:category/'  => 'posts#index', as: :category_posts
   get 'video/category/:category/'  => 'videos#index', as: :category_videos
+  get 'video/selected/'  => 'videos#index', as: :selected_videos
   get 'cafe_digest/category/:category/'  => 'static_pages#cafe_digest', as: :cafe_category_posts
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -4,28 +4,36 @@ class VideosController < ApplicationController
   # GET /videos
   # GET /videos.json
   def index
+    video_base = Video.by_source('youtube')
     if !params[:category].blank?
-      @videos = Video.by_category(params[:category])
+      videos = video_base.by_category(params[:category])
+    elsif request.env['PATH_INFO'].include?('selected')
+      videos = video_base.selected
     else
-      @videos = Video.all
+      videos = video_base.all
     end
     if params[:sort] == 'pop'
-      @videos = @videos.order_by_hits
+      videos = videos.order_by_hits
     else
-      @videos = @videos.order_by_date
+      videos = videos.order_by_date
     end
-      @videos = @videos.paginate(:page => params[:page])
+    @videos = videos.paginate(:page => params[:page], :per_page => 20)
   end
 
   def admin
+    base_videos = Video.by_source('youtube')
     if params[:sort] == 'pop'
-      @videos = Video.order_by_hits
+      videos = base_videos.order_by_hits
     elsif params[:sort] == 'duration'
-      @videos = Video.order_by_duration
+      videos = base_videos.order_by_duration
+    elsif params[:sort] == 'date'
+      videos = base_videos.order_by_date
+    elsif params[:sort] == 'selected'
+      videos = base_videos.selected.order_by_date
     else
-      @videos = Video.order_by_date
+      videos = base_videos.order_by_id
     end
-    @videos = @videos.paginate(:page => params[:page])
+    @videos = videos.paginate(:page => params[:page])
   end
 
   # GET /videos/1
@@ -63,7 +71,7 @@ class VideosController < ApplicationController
   def update
     respond_to do |format|
       if @video.update(video_params)
-        format.html { redirect_to @video, notice: 'Video was successfully updated.' }
+        format.html { redirect_to admin_videos_path, notice: 'Video was successfully updated.' }
         format.json { render :show, status: :ok, location: @video }
       else
         format.html { render :edit }
@@ -90,6 +98,6 @@ class VideosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def video_params
-      params.require(:video).permit(:url, :title, :img_url, :source_id, :source, :category)
+      params.require(:video).permit(:url, :title, :img_url, :source_id, :source, :category, :selected)
     end
 end

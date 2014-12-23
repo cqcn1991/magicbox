@@ -1,0 +1,13 @@
+common: &common
+  dev_key: 'AIzaSyBktwEa5lFm87ENBHmAGWJMCTChS282Whk'
+  username: 'your username'
+  password: 'your passwd'
+
+test:
+  <<: *common
+
+development:
+  <<: *common
+
+production:
+  <<: *common

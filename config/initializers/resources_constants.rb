@@ -41,4 +41,42 @@ module RESOURCES_CONSTANT
       {url:'http://www.alakazam.co.uk/', name: 'Alakazam Magic', favicon: 'http://www.alakazam.co.uk/favicon.ico'},
       {url:'http://thebluecrown.com/', name: 'The Blue Crown', favicon: 'http://thebluecrown.com/favicon.ico'}
   ]
+  YOUTUBE_MAGIC_SHOP_CHANNELS = [
+    {url: 'https://www.youtube.com/channel/UCFR8mp0gz-h93DGGhsdLmrg',   name: 'MAGIC SHOP FRENCH DROP'},
+    {url:  'https://www.youtube.com/channel/UChKgsPL1MX5z_M33fYtOPKg',   name: ' Ellusionist'},
+    {url: 'https://www.youtube.com/channel/UCfrhuhTDSpVhK7omh_ZIKaw',   name: "Murphy's Magic"},
+    {url:  'https://www.youtube.com/channel/UCEybzfsG2WI4Hnx5hpd2uRA',   name: ' TheBlueCrownMagic'},
+    {url: 'https://www.youtube.com/channel/UCwlXbq5KtkdGC87oABDsfTQ', name: 'Dan & Dave'},
+    {url:  'https://www.youtube.com/channel/UCl1WwbVpKUdQerivZpUxZLA',   name: 'Theory 11'},
+  ]
+
+  YOUTUBE_MAGICIAN_CHANNELS = [
+    {url: 'https://www.youtube.com/channel/UCFR8mp0gz-h93DGGhsdLmrg',   name: 'Soma'},
+    {url:'https://www.youtube.com/channel/UCb9A6uotqUiuVCvVp4GMqOg', name: 'Justin Flom'},
+    {url: 'https://www.youtube.com/channel/UCZFjYOyCdMxbt59vZNuqBpw', name: 'derren brown'},
+    {url: 'https://www.youtube.com/channel/UC-lBIg7PlpYK0D34T6DVgsA', name: 'Mathieu Bich'},
+    {url: 'https://www.youtube.com/channel/UCpEI3TJUtvcsn8AMU74c-JQ', name: 'kiko Pastur'},
+    {url:  'https://www.youtube.com/channel/UCBNkiIDZMlB72a_N0BUHCwQ', name: 'ollie mealing'},
+    {url: 'https://www.youtube.com/channel/UCsUO2qpMrNeoro48taaEj0w', name: 'Paco Rodas Ratazzi'},
+    {url: 'https://www.youtube.com/channel/UCmNEfaZp9QXEvVIiqQMITYw', name: 'russq stevens'},
+    {url: 'https://www.youtube.com/channel/UCta63z9AIbZY1ZqnxeUuj7A', name: 'shawn Farquhar'},
+    {url:  'https://www.youtube.com/channel/UCIE5yGe5n0JOvufxEiv08Gg', name: 'Shin Lim'},
+    {url: 'https://www.youtube.com/channel/UCSqZOoDM735N0KTGVQ_Ytng', name: 'atlas brookings'},
+    {url: 'https://www.youtube.com/channel/UC-beEh5L8QETtO1r32eXxqA', name: 'jack carpenter'},
+    {url: 'https://www.youtube.com/channel/UC1IUltgiD5sMpAVbOe6BNNg', name: 'james brown'},
+    {url: 'https://www.youtube.com/channel/UCewE7G8ZQOA-9zfK2OQmM5g', name: 'Patrick Kun'},
+    {url:  'https://www.youtube.com/channel/UCQqQpVg1QrC6MvBa932jwaA', name: 'Jean Pierr Vallarino'},
+
+    {url: 'https://www.youtube.com/channel/UC0lGvHjyA4ol65sPwrWa9xg', name: ' waynehouchin'} ,
+    {url: 'https://www.youtube.com/channel/UCRRTORo_cwbC9xP0DuTJtDQ', name: 'Andrew Gerard'} ,
+    {url: 'https://www.youtube.com/channel/UCtJkiissi90Z8MBlMnrvXfQ', name: 'dani daortiz'} ,
+    {url: 'https://www.youtube.com/channel/UCB99aK4f2WaH96joccxLvSQ', name: 'Daniel Madiosn'} ,
+    {url: 'https://www.youtube.com/channel/UCRRTORo_cwbC9xP0DuTJtDQ', name: 'Andrew Gerard'} ,
+    {url: 'https://www.youtube.com/channel/UCqr6tYc9Bollsoi2qRXsj7w', name: 'Mike Dynamo'} ,
+    {url: 'https://www.youtube.com/channel/UCqJoecUmp0s6xncf9OXH3cQ', name: 'Mike Vincent'} ,
+    {url: 'https://www.youtube.com/channel/UCU-LcQ4lsQ8bD_v0H3QawPw', name: 'peter turner'} ,
+    {url: 'https://www.youtube.com/channel/UCZIhf2Jf4AirRLNLOWQqjdQ', name: 'luke jermay'} ,
+
+  {url: ' https://www.youtube.com/channel/UCXiK0ySADAUhtx8YJkSN8Jw', name: ' Vintage Magic Archives'} ,
+  ]
 end

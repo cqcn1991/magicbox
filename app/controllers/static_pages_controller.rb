@@ -1,5 +1,6 @@
 # encoding: utf-8
 class StaticPagesController < ApplicationController
+
   def home
     #@shops = Shop.order_by_update.first(4)
     @items = Item.order_by_date.to_a.uniq {|p| p.shop_id}[0..7]
@@ -8,25 +9,23 @@ class StaticPagesController < ApplicationController
   end
 
   def discussion
-
   end
 
   def cafe_digest
     if !params[:category].blank?
-      @posts = Post.by_category(params[:category])
+      posts = Post.by_category(params[:category])
     else
-      @posts = Post.by_forum('cafe')
+      posts = Post.by_forum('cafe')
     end
 
     if params[:sort] == 'like'
-      @posts = @posts.order_by_likes
+      posts = posts.order_by_likes
     elsif params[:sort] == 'reply'
-      @posts = @posts.order_by_reply_number
+      posts = posts.order_by_reply_number
     else
-      @posts = @posts.order_by_date
+      posts = posts.order_by_date
     end
-    @posts = @posts.paginate(:page => params[:page], :per_page => 10)
-    render :layout => 'cafe_digest_layout'
+    @posts = posts.paginate(:page => params[:page], :per_page => 10)
   end
 
   def selected
@@ -40,15 +39,18 @@ class StaticPagesController < ApplicationController
   end
 
   def popular
+    base_videos = Video.by_source('youtube')
+    base_posts = Post.by_forum('cafe')
     if params[:number]
       number = params[:number].to_i
+      selected_video = base_videos.selected.updated_in_days(number).order_by_hits.first
+      trending_videos = base_videos.where(selected: false).created_in_days(number).order_by_hits.first(3)
+      @videos =  trending_videos.unshift(selected_video)
+      @posts =  base_posts.created_in_days(number).order_by_likes.first(5)
     else
-      number = 7
+      @videos = base_videos.order_by_date.first(4)
+      @posts = base_posts.order_by_date.first(5)
     end
-    @videos = Video.created_in_days(number).order_by_hits.first(4)
-    @posts =  Post.created_in_days(number).order_by_likes.first(2) +Post.created_in_days(number).order_by_reply_number.first(2)
-    @posts = @posts.uniq
-    @items = Item.order_by_sales.to_a.uniq {|p| p.shop_id}[0..3]
   end
 
   def admin
@@ -92,4 +94,7 @@ class StaticPagesController < ApplicationController
 {url:'http://www.reelmagicmagazine.com/', name: 'Reel Magic Magazine',favicon: 'http://www.reelmagicmagazine.com/templates/reelmagicjoom25a/favicon.ico'},
     ]
   end
+
+
+
 end

@@ -2,6 +2,7 @@
   <div class="panel panel-default">
     <div class="panel-body">
       <h4 class="no-margin">Trending in</h4>
+      <%= link_to 'Now', sort: 'new' %>
       <%= link_to '3 Days', number: '3' %>
       <%= link_to '7 Days', number: '7' %>
       <%= link_to '30 Days', number: '30' %>
@@ -9,37 +10,14 @@
   </div>
 <% end %>
 
-<div class="panel panel-default">
-  <div class="panel-body">
-    <h3 class="no-margin"><strong>热帖</strong></h3>
-    <div class="posts row">
-      <% @posts.each do |item| %>
-        <div class="post col-md-12">
-          <h4>
-            <%= link_to item.title, item.url %>
-            <%= tag_link(item) %>
-            <small class="pull-right">
-              <% if item.source == 'cafe' %>
-                <%= item.likes %>❤
-              <% elsif item.source == 'tieba' %>
-                <%= item.reply_number %><span class="glyphicon glyphicon-comment"></span>
-              <% end  %>
-              <%= item.created_at.strftime("%m/%d") %>
-              <%#= item.source %>
-            </small>
-          </h4>
-          <div class="">
-            <%= truncate(item.abstraction, length: 200) %>
-          </div>
-        </div>
-      <% end  %>
-    </div>
-  </div>
-</div>
-
 <div class="main panel panel-default">
   <div class="panel-body no-bottom-space">
-    <h3 class="no-margin"><strong>视频</strong></h3>
+    <h3 class="no-margin no-style-link">
+      <%= link_to videos_path do %>
+      <span class="glyphicon glyphicon-facetime-video"></span>
+      <strong>Videos</strong>
+      <% end %>
+    </h3>
     <div class="videos row">
       <% @videos.each do |item| %>
         <%= render partial: 'videos/video', locals: {item: item}  %>
@@ -49,12 +27,28 @@
 </div>
 
 <div class="panel panel-default">
-  <div class="panel-body no-bottom-space">
-    <h3 class="no-margin"><strong>商品</strong></h3>
-    <div class="items row">
-      <% @items.each do |item| %>
-        <%= render partial: 'items/item', locals: {item: item, show_shop: false}  %>
-      <% end  %>
-    </div>
+  <div class="panel-body">
+    <table class="table table-striped table-condensed">
+      <thead>
+      <tr class="no-style-link">
+        <th ><h3 class="no-margin">
+          <%= link_to cafe_digest_path do %>
+            <span class="glyphicon glyphicon-cutlery" aria-hidden="true"></span>
+            <strong>Cafe Posts</strong>
+          <% end  %>
+        </h3></th>
+        <th class="hidden-xxs">❤</th>
+        <th class="hidden-xxs">Time</th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <% @posts.each do |post| %>
+        <%= render partial: 'posts/post_row', locals: {post: post}  %>
+      <% end %>
+      </tbody>
+    </table>
   </div>
 </div>
+
+

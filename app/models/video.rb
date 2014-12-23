@@ -5,12 +5,21 @@ class Video < ActiveRecord::Base
   before_validation :get_info, on: :create
 
   scope :by_category, ->(category) { where category: category }
+  scope :by_source, ->(source) { where source: source }
   scope :order_by_date, -> { order('created_at DESC, source_id ASC')}
+  scope :order_by_update, -> { order('updated_at DESC, source_id ASC')}
   scope :order_by_hits, -> { order('hits IS NULL, hits DESC') }
   scope :order_by_duration, -> { order('duration IS NULL, duration DESC') }
+  scope :order_by_id, -> {order('id DESC')}
+
+  scope :updated_in_days, ->(number)  {where('updated_at >= ?', Time.zone.now - number.days)}
   scope :created_in_days, ->(number)  {where('created_at >= ?', Time.zone.now - number.days)}
   scope :selected, -> { where(selected: true) }
   require 'open-uri'
+
+  def self.yt_session
+    @yt_session ||= YouTubeIt::Client.new(:dev_key => YouTubeITConfig.dev_key)
+  end
 
   def get_info
     smart_add_url_protocol
@@ -18,6 +27,8 @@ class Video < ActiveRecord::Base
       get_youku_info
     elsif self.is_tudou?
       get_tudou_info
+    elsif self.is_youtube?
+      get_youtube_info
     end
   end
 
@@ -39,6 +50,14 @@ class Video < ActiveRecord::Base
   def is_tudou?
     #http://www.tudou.com/programs/view/KedeEo3TLdI
     if self.url.include?("tudou")  && self.url.include?("view/")
+      true
+    else
+      false
+    end
+  end
+
+  def is_youtube?
+    if self.url.include?("youtube")  && self.url.include?("watch?v=")
       true
     else
       false
@@ -75,6 +94,24 @@ class Video < ActiveRecord::Base
     self.source = 'tudou'
   end
 
+  def get_youtube_info
+    youtube_id = parse_youtube(self.url)
+    video = Video.yt_session.video_by(youtube_id)
+    self.title = video.title
+    self.duration = video.duration
+    self.hits = video.view_count
+    self.selected = false
+    self.img_url = "http://img.youtube.com/vi/#{youtube_id}/mqdefault.jpg"
+    self.created_at = video.published_at.to_s
+    self.source = 'youtube'
+    self.source_id = youtube_id
+  end
+
+  def parse_youtube url
+    regex = /(?:.be\/|\/watch\?v=|\/(?=p\/))([\w\/\-]+)/
+    url.match(regex)[1]
+  end
+
   def get_hits
     if self.source == 'youku'
       video_id = self.get_youku_id
@@ -86,6 +123,8 @@ class Video < ActiveRecord::Base
       json =  /(\{.*\})/.match(response).to_s
       decode_response =  ActiveSupport::JSON.decode(json)
       hits = decode_response['result']['totalVv'].to_i
+    elsif self.source == 'youtube'
+      hits = Video.yt_session.video_by(self.source_id).view_count
     end
     self.hits = hits
     self.save
@@ -96,6 +135,7 @@ class Video < ActiveRecord::Base
     decode_response =  ActiveSupport::JSON.decode(response)
     decode_response['data'][0]['videoid']
   end
+
 end
 
 

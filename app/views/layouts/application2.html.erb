@@ -1,0 +1,30 @@
+<!--
+<!DOCTYPE html>
+<html>
+<head>
+  <title>魔法盒子 —— 魔术，正在发生</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="text/javascript">
+    var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F5f94c3a160e0e65368c50729114616e3' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+</head>
+<body>
+<%= render 'layouts/magic_digest_header' %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-9">
+      <%= yield %>
+    </div>
+    <div class="col-md-3">
+      <%= yield :sidebar_selector %>
+      <%= render 'notices/notice_board' %>
+    </div>
+  </div>
+</div>
+</body>
+</html>
+-->
