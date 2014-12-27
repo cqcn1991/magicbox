@@ -41,15 +41,19 @@ class StaticPagesController < ApplicationController
   def popular
     base_videos = Video.by_source('youtube')
     base_posts = Post.by_forum('cafe')
-    if params[:number]
-      number = params[:number].to_i
-      selected_video = base_videos.selected.updated_in_days(number).order_by_hits.first
-      trending_videos = base_videos.where(selected: false).created_in_days(number).order_by_hits.first(3)
-      @videos =  trending_videos.unshift(selected_video)
-      @posts =  base_posts.created_in_days(number).order_by_likes.first(5)
-    else
+    if params[:sort]
       @videos = base_videos.order_by_date.first(4)
       @posts = base_posts.order_by_date.first(5)
+    else
+      if params[:number]
+        number = params[:number].to_i
+      else
+        number= 7
+      end
+      selected_video = base_videos.selected.updated_in_days(number).first
+      trending_videos = base_videos.where(selected: false).created_in_days(number).order_by_rating.first(3)
+      @videos =  trending_videos.unshift(selected_video)
+      @posts =  base_posts.created_in_days(number).order_by_likes.first(5)
     end
   end
 

@@ -7,6 +7,21 @@
 <%= link_to 'Popularity', sort: 'pop' %>
 <%= link_to 'Duration', sort: 'duration' %>
 <%= link_to 'Selected', sort: 'selected' %>
+<%= link_to 'Rating', sort: 'rating' %>
+<br/>
+<%= form_tag(admin_videos_path, :method => "get", id: "search-form") do %>
+  <div class="row">
+    <div class="col-sm-4">
+      <%= text_field_tag :year, params[:year], placeholder: "Year", class: 'form-control', value: '2014' %>
+    </div>
+    <div class="col-sm-4">
+      <%= text_field_tag :month, params[:month], placeholder: "Month", class: 'form-control' %>
+    </div>
+    <div class="col-sm-2">
+      <%= button_tag "Search", class: 'btn btn-success btn-block btn-search'%>
+    </div>
+  </div>
+<% end %>
 
 <table>
   <thead>
@@ -16,7 +31,7 @@
     <th>Selected</th>
     <th>Duration</th>
     <th>Category</th>
-
+    <th>Rating</th>
     <th colspan="3"></th>
   </tr>
   </thead>
@@ -35,6 +50,7 @@
       <td><%= video.selected if video.selected %></td>
       <td><%= display_time(video.duration) %></td>
       <td><%= video.category %></td>
+      <td><%= video.rating %></td>
       <td><%= link_to 'Show', video %></td>
       <td><%= link_to 'Edit', edit_video_path(video) %></td>
       <td><%= link_to 'Destroy', video, method: :delete, data: { confirm: 'Are you sure?' } %></td>

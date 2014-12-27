@@ -61,3 +61,16 @@ task :fetch_post_popularity, [:fetch_number] => :environment do |t, args|
     post.get_likes_or_reply_number
   end
 end
+
+task :delete_junk_video => :environment do
+  require 'nokogiri'
+  require 'open-uri'
+
+  keywords = ['Coffee with Dan & Dave', 'Exposé', 'THE SHIFT', 'Free Tick Friday']
+  keywords.each do |keyword|
+    videos = Video.search(keyword)
+    videos.each do |video|
+      video.destroy
+    end
+  end
+end

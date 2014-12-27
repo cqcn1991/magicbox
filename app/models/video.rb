@@ -9,12 +9,20 @@ class Video < ActiveRecord::Base
   scope :order_by_date, -> { order('created_at DESC, source_id ASC')}
   scope :order_by_update, -> { order('updated_at DESC, source_id ASC')}
   scope :order_by_hits, -> { order('hits IS NULL, hits DESC') }
+  scope :order_by_rating, -> { order('rating IS NULL, rating DESC, hits DESC') }
   scope :order_by_duration, -> { order('duration IS NULL, duration DESC') }
   scope :order_by_id, -> {order('id DESC')}
 
+  scope :best_of_the_month, ->(year, month) do
+    time = Time.new(year, month)
+    start_time = time.beginning_of_month
+    end_time = time.end_of_month
+    where("created_at > ? AND created_at < ?", start_time, end_time).order_by_rating
+    end
+
   scope :updated_in_days, ->(number)  {where('updated_at >= ?', Time.zone.now - number.days)}
   scope :created_in_days, ->(number)  {where('created_at >= ?', Time.zone.now - number.days)}
-  scope :selected, -> { where(selected: true) }
+  scope :selected, -> { where(selected: true)}
   require 'open-uri'
 
   def self.yt_session
@@ -103,6 +111,9 @@ class Video < ActiveRecord::Base
     self.selected = false
     self.img_url = "http://img.youtube.com/vi/#{youtube_id}/mqdefault.jpg"
     self.created_at = video.published_at.to_s
+    if video.rating
+      self.rating = video.rating.average
+    end
     self.source = 'youtube'
     self.source_id = youtube_id
   end
@@ -128,6 +139,12 @@ class Video < ActiveRecord::Base
     end
     self.hits = hits
     self.save
+  end
+
+  def self.search(query)
+    # where(:title, query) -> This would return an exact match of the query
+    #find(:all, :conditions => ["title like ? ", "%#{query}%"])
+    where("title like ?", "%#{query}%")
   end
 
   def get_youku_id

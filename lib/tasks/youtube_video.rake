@@ -5,7 +5,7 @@ task :fetch_youtube_videos, [:fetch_number] => :environment do|t, args|
   if args.fetch_number
     fetch_number = args.fetch_number.to_i
   else
-    fetch_number = 4
+    fetch_number = 3
   end
 
   client = YouTubeIt::Client.new(:dev_key => "AIzaSyBktwEa5lFm87ENBHmAGWJMCTChS282Whk")
@@ -29,6 +29,9 @@ task :fetch_youtube_videos, [:fetch_number] => :environment do|t, args|
       end
     end
   end
+
+
+
 end
 
 

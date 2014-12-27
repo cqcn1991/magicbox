@@ -14,6 +14,8 @@ class VideosController < ApplicationController
     end
     if params[:sort] == 'pop'
       videos = videos.order_by_hits
+    elsif params[:sort] == 'rating'
+      videos = videos.order_by_rating
     else
       videos = videos.order_by_date
     end
@@ -30,8 +32,12 @@ class VideosController < ApplicationController
       videos = base_videos.order_by_date
     elsif params[:sort] == 'selected'
       videos = base_videos.selected.order_by_date
+    elsif params[:sort] == 'rating'
+      videos = base_videos.order_by_rating
+    elsif params[:month] && params[:year]
+      videos = base_videos.best_of_the_month(params[:year].to_i, params[:month].to_i)
     else
-      videos = base_videos.order_by_id
+      videos = base_videos.order_by_date
     end
     @videos = videos.paginate(:page => params[:page])
   end
@@ -85,7 +91,7 @@ class VideosController < ApplicationController
   def destroy
     @video.destroy
     respond_to do |format|
-      format.html { redirect_to videos_url, notice: 'Video was successfully destroyed.' }
+      format.html { redirect_to admin_videos_path, notice: 'Video was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

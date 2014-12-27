@@ -6,6 +6,7 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <% if Rails.env.production? %>
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -14,8 +15,8 @@
 
     ga('create', 'UA-48003175-3', 'auto');
     ga('send', 'pageview');
-
   </script>
+  <% end %>
 </head>
 <body>
 <%= render 'layouts/magic_digest_header' %>
