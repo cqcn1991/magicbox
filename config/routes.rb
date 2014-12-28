@@ -28,7 +28,7 @@ Rails.application.routes.draw do
   get 'posts/category/:category/'  => 'posts#index', as: :category_posts
   get 'video/category/:category/'  => 'videos#index', as: :category_videos
   get 'video/selected/'  => 'videos#index', as: :selected_videos
-  get 'cafe_digest/category/:category/'  => 'static_pages#cafe_digest', as: :cafe_category_posts
+  get 'posts/category/:category/'  => 'posts#index', as: :cafe_category_posts
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -25,6 +25,8 @@ class PostsController < ApplicationController
       @posts = Post.order_by_likes
     elsif params[:sort] == 'reply'
       @posts = Post.order_by_reply_number
+    elsif params[:sort] == 'id'
+      @posts = Post.order('id DESC')
     else
       @posts = Post.order_by_date
     end

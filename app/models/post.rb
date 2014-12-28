@@ -19,7 +19,7 @@ class Post < ActiveRecord::Base
 
   require 'open-uri'
 
-  before_validation :get_info
+  before_validation :get_info, on: :create
 
   def get_info
     url = self.url
@@ -30,7 +30,7 @@ class Post < ActiveRecord::Base
     end
     if self.source == 'cafe'
       #get_cafe_author_info(doc)
-      get_cafe_abstraction(doc)
+      get_cafe_abstraction_and_time(doc)
       categorize_post
     elsif self.source == 'tieba'
       get_tieba_abstraction(doc)
@@ -66,9 +66,11 @@ class Post < ActiveRecord::Base
     end
   end
 
-  def get_cafe_abstraction(doc)
+  def get_cafe_abstraction_and_time(doc)
     text = doc.at("table.normal .vat.w90 .w100").text
+    time = doc.at("table.normal .vat.w90 span.b").text.split('Posted: ')[1]
     text = text.split(" ").first(100).join(" ")
+    self.created_at = time.to_time(:utc)
     self.abstraction = text
   end
 

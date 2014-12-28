@@ -1,12 +1,63 @@
 # encoding: utf-8
 desc "Get youtube video information"
-task :test_youtube => :environment do
+task :test_post => :environment do
   require 'youtube_it'
 
-  client = YouTubeIt::Client.new(:dev_key => "AIzaSyBktwEa5lFm87ENBHmAGWJMCTChS282Whk")
+    client = YouTubeIt::Client.new(:dev_key => "AIzaSyBktwEa5lFm87ENBHmAGWJMCTChS282Whk")
+    channels = [{url: 'https://www.youtube.com/channel/UCfrhuhTDSpVhK7omh_ZIKaw', name: "Murphy's Magic"},
+                   {url: 'https://www.youtube.com/channel/UCEybzfsG2WI4Hnx5hpd2uRA', name: 'TheBlueCrownMagic'},
+                   {url: 'https://www.youtube.com/channel/UCwlXbq5KtkdGC87oABDsfTQ', name: 'Dan & Dave'},
+                   {url: 'https://www.youtube.com/channel/UCl1WwbVpKUdQerivZpUxZLA', name: 'Theory 11'},]
 
-  time = Time.new(2014, 11)
-  puts time.beginning_of_month, time.end_of_month
+    channels.each do |channel|
+      channel_id = channel[:url].split('channel/')[1]
+      query = {
+          author: channel_id,
+          order_by: 'published',
+      }
+      videos = client.videos_by(query).videos
+      videos.each do |video_info|
+        url = video_info.player_url.gsub(/[?&]feature=youtube_gdata_player/, '')
+        keywords = ['Coffee with Dan', 'Exposé', 'THE SHIFT', 'Free Tick Friday']
+        if !keywords.any? {|str| video_info.title.include? str}
+          puts "#{url} #{video_info.title}"
+        end
+        #video = Video.new(url: url)
+      end
+    end
+
+    ##method should be put first in a script
+    #def save_post(title, href, source, likes = nil, reply_number = nil, category = nil)
+    #  post = Post.new(title: title, url: href, source: source, likes: likes, reply_number: reply_number, category: category)
+    #  if post.save
+    #    puts title + 'saved'
+    #  end
+    #end
+    #
+    #magic_cafe = ['15', '2','218', '110', '303']
+    #magic_cafe.each do |forum|
+    #  url = 'http://www.themagiccafe.com/forums/viewforum.php?forum=' + forum
+    #  (30..2070).step(30) do |n|
+    #    url = url + "&start=#{n}"
+    #    doc = Nokogiri::HTML(open(url) )
+    #    doc.css("form table.normal tr")[2..30].reverse_each do |item_info|
+    #      title = item_info.at('td.bgc2 a.b').text
+    #      href = 'http://www.themagiccafe.com/forums/'+ item_info.at('td.bgc2 a.b')['href']
+    #      likes = item_info.css('td.midtext')[2].text.to_i
+    #      source = 'cafe'
+    #      if likes >= 15
+    #        save_post(title, href, source, likes)
+    #      end
+    #    end
+    #  end
+    #end
+    #
+
+
+
+  #require 'youtube_it'
+  #
+  #client = YouTubeIt::Client.new(:dev_key => "AIzaSyBktwEa5lFm87ENBHmAGWJMCTChS282Whk")
 
   #channels =  [
   #{url: 'https://www.youtube.com/channel/UCrPUg54jUy1T_wII9jgdRbg', name: 'Chris Ramsay'},
