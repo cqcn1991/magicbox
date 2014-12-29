@@ -135,7 +135,11 @@ class Video < ActiveRecord::Base
       decode_response =  ActiveSupport::JSON.decode(json)
       hits = decode_response['result']['totalVv'].to_i
     elsif self.source == 'youtube'
-      hits = Video.yt_session.video_by(self.source_id).view_count
+      video_info = Video.yt_session.video_by(self.source_id)
+      hits = video_info.view_count
+      if video_info.rating
+        self.rating = video_info.rating.average
+      end
     end
     self.hits = hits
     self.save

@@ -4,7 +4,7 @@ task :fetch_all,  [:fetch_number] => :environment do |t, args|
   if args.fetch_number
     fetch_number = args.fetch_number.to_i
   else
-    fetch_number = 4
+    fetch_number = 60
   end
 
   Rake::Task["fetch_youtube_videos"].invoke(fetch_number)
@@ -36,11 +36,11 @@ task :fetch_recent_popularity, [:fetch_number] => :environment do |t, args|
   if args.fetch_number.to_i > 0
     fetch_number = args.fetch_number.to_i
   else
-    fetch_number = 14
+    fetch_number = 60
   end
   Video.by_source('youtube').created_in_days(fetch_number).each do |video|
     video.get_hits
-    puts video.title, video.hits
+    puts "#{video.title} #{video.hits}"
   end
 
   Rake::Task["fetch_post_popularity"].invoke(fetch_number)
@@ -59,6 +59,7 @@ task :fetch_post_popularity, [:fetch_number] => :environment do |t, args|
   Post.by_forum('cafe').created_in_days(fetch_number).each do |post|
     puts post.title
     post.get_likes_or_reply_number
+    post.save
   end
 end
 
