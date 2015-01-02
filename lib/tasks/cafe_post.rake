@@ -14,24 +14,31 @@ task :fetch_cafe_post, [:fetch_number] => :environment do |t, args|
   def save_post(title, href, source, likes = nil, reply_number = nil, category = nil)
     post = Post.new(title: title, url: href, source: source, likes: likes, reply_number: reply_number, category: category)
     if post.save
-      puts title + 'saved'
+      puts "#{title} saved"
     end
   end
 
-  magic_cafe = ['15', '2', '218', '110', '303']
+  magic_cafe = [{forum_id:  '15', forum_name: 'Penny for your thoughts'},
+                {forum_id:  '2', forum_name: 'The workers'},
+                {forum_id:  '218', forum_name: 'Latest and Greatest?'},
+                {forum_id:  '110', forum_name: 'Books, Pamphlets & Lecture Notes'},
+                {forum_id:  '303', forum_name: 'Mentally Speaking'},]
   #Penny, Workers, Latest and Greatest?
   magic_cafe.each do |forum|
-    url = 'http://www.themagiccafe.com/forums/viewforum.php?forum=' + forum
-    doc = Nokogiri::HTML(open(url) )
-    puts doc.css("title").text
-    # 分类已经系在Post方法中
-    doc.css("form table.normal tr")[2..30].reverse_each do |item_info|
-      title = item_info.at('td.bgc2 a.b').text
-      href = 'http://www.themagiccafe.com/forums/'+ item_info.at('td.bgc2 a.b')['href']
-      likes = item_info.css('td.midtext')[2].text.to_i
-      source = 'cafe'
-      if likes >= 15
-        save_post(title, href, source, likes)
+    url_base = 'http://www.themagiccafe.com/forums/viewforum.php?forum=' + forum[:forum_id]
+    puts "... #{forum[:forum_id]} #{forum[:forum_name]} starts"
+    (0..60).step(30) do |n|
+      url = url_base + "&start=#{n}"
+      doc = Nokogiri::HTML(open(url) )
+      # 分类已经系在Post方法中
+      doc.css("form table.normal tr")[2..30].reverse_each do |item_info|
+        title = item_info.at('td.bgc2 a.b').text
+        href = 'http://www.themagiccafe.com/forums/'+ item_info.at('td.bgc2 a.b')['href']
+        likes = item_info.css('td.midtext')[2].text.to_i
+        source = 'cafe'
+        if likes >= 15
+          save_post(title, href, source, likes)
+        end
       end
     end
   end

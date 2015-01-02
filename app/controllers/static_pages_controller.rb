@@ -50,9 +50,9 @@ class StaticPagesController < ApplicationController
       else
         number= 7
       end
-      selected_video = base_videos.selected.updated_in_days(number).first
-      trending_videos = base_videos.where(selected: false).created_in_days(number).order_by_rating.first(3)
-      @videos =  trending_videos.unshift(selected_video)
+      #selected_video = base_videos.selected.updated_in_days(number).first
+      trending_videos = base_videos.created_in_days(number).order_by_rating.first(4)
+      @videos =  trending_videos
       @posts =  base_posts.created_in_days(number).order_by_likes.first(5)
     end
   end

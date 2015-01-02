@@ -4,7 +4,7 @@ task :fetch_all,  [:fetch_number] => :environment do |t, args|
   if args.fetch_number
     fetch_number = args.fetch_number.to_i
   else
-    fetch_number = 60
+    fetch_number = 7
   end
 
   Rake::Task["fetch_youtube_videos"].invoke(fetch_number)

@@ -2,11 +2,13 @@
   <div class="panel panel-default">
     <div class="panel-body">
       <h4 class="no-margin">Trending in</h4>
-      <%= link_to 'Now', sort: 'new' %>
-      <br/>
-      <%= link_to '7 Days', number: '7' %>
-      <%= link_to '30 Days', number: '30' %>
-      <%= link_to '90 Days', number: '90' %>
+      <div class="selectors">
+        <%= selector_link('Now', sort: 'new') %>
+        <br/>
+        <%= selector_link('7 Days', number: '7') %>
+        <%= selector_link('30 Days', number: '30' ) %>
+        <%= selector_link('90 Days', number: '90' ) %>
+      </div>
     </div>
   </div>
 <% end %>
@@ -33,7 +35,7 @@
       <thead>
       <tr class="no-style-link">
         <th ><h3 class="no-margin">
-          <%= link_to cafe_digest_path do %>
+          <%= link_to posts_path do %>
             <span class="glyphicon glyphicon-cutlery" aria-hidden="true"></span>
             <strong>Cafe Posts</strong>
           <% end  %>

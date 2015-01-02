@@ -5,7 +5,7 @@ task :fetch_youtube_videos, [:fetch_number] => :environment do|t, args|
   if args.fetch_number
     fetch_number = args.fetch_number.to_i
   else
-    fetch_number = 3
+    fetch_number = 7
   end
 
   client = YouTubeIt::Client.new(:dev_key => "AIzaSyBktwEa5lFm87ENBHmAGWJMCTChS282Whk")
@@ -17,7 +17,7 @@ task :fetch_youtube_videos, [:fetch_number] => :environment do|t, args|
         author: channel_id,
         order_by: 'published',
         fields: {:published  => ((Date.today - fetch_number)..(Date.today))},
-        page: 1,
+        #max_results: 50   ### used when getting initial videos
     }
     videos = client.videos_by(query).videos
     videos.each do |video_info|

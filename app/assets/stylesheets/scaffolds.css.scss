@@ -1,6 +1,13 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.selectors{
+  .active{
+    font-weight: bold;
+    color: black;
+  }
+}
+
 //Layout
 .navbar-default  {
   background: none repeat scroll 0 0 white;

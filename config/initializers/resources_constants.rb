@@ -85,6 +85,8 @@ module RESOURCES_CONSTANT
     {url: 'https://www.youtube.com/channel/UCXiK0ySADAUhtx8YJkSN8Jw', name: 'Vintage Magic Archives'} ,
     {url: 'https://www.youtube.com/channel/UCbQWelTfa0xTCCJcb0sgcUQ', name: 'Steve Pellegrino'} ,
     {url: 'https://www.youtube.com/channel/UCDaDCy1NNbhnZJ5Tokn4Bxg', name: 'Miracles of Magic'},
+    {url: 'https://www.youtube.com/channel/UCOn_hpazVfS7ZSX00eLZKdA', name: '770pratik'},
+    {url: 'https://www.youtube.com/channel/UC4F9G58rQlCaJqGX6oeZhHg', name: ' cardinimagican'},
     # Masters
     {url: 'https://www.youtube.com/channel/UCtJkiissi90Z8MBlMnrvXfQ', name: 'Dani Daortiz'} ,
     {url: 'https://www.youtube.com/channel/UC8wSDyGlNCQWbpTj9uXjHdA', name: 'Michael Ammar'},
