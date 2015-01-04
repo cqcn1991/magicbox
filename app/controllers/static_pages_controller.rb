@@ -29,7 +29,14 @@ class StaticPagesController < ApplicationController
   end
 
   def selected
-    @videos=Video.selected.paginate(:page => params[:page])
+    @monthly_videos = []
+    (2012..2014).step(1) do |year|
+      (1..12).step(1) do |month|
+        videos = Video.best_of_the_month(year, month).first(7)
+        @monthly_videos << videos
+      end
+    end
+    #@videos=Video.selected.paginate(:page => params[:page])
   end
 
   def mobile

@@ -12,26 +12,22 @@ task :test_post => :environment do
       like_number = video_info.rating.likes
       video.likes = like_number.to_i
       puts "#{video.id} #{video.url}"
-      if video.save
+      if video.saveat
         puts "#{video.title} likes: #{video.likes}"
       end
     end
   end
 
-  #puts video_info.rating.num_likes
-  #if video_info.rating
-  #  self.rating = video_info.rating.average
-  #end
   #monthly_videos = []
   #(1..2).step(1) do |month|
   #  videos = Video.best_of_the_month(2014, month).first(4)
   #  monthly_videos << videos
   #end
-  # monthly_videos.each do |month|
+  #monthly_videos.each do |month|
   #   month.each do |video|
   #     puts video.title
   #   end
-  # end
+  #end
 
   #client = YouTubeIt::Client.new(:dev_key => "AIzaSyBktwEa5lFm87ENBHmAGWJMCTChS282Whk")
 #

@@ -1,8 +1,12 @@
-<h2>Videos</h2>
-<div class="videos row">
-  <% @videos.each do |item| %>
-    <%= render partial: 'videos/video', locals: {item: item}  %>
-  <% end  %>
-</div>
 
-<%= will_paginate @videos, renderer: BootstrapPagination::Rails %>
+  <% @monthly_videos.reverse.each_with_index do |video_group, index| %>
+    <h2>Best in <%= "#{(12-index)%12}" %> </h2>
+    <div class="videos row">
+    <% video_group.each do |item| %>
+      <%= render partial: 'videos/video', locals: {item: item}  %>
+    <% end  %>
+    </div>
+  <% end  %>
+
+
+<%#= will_paginate @videos, renderer: BootstrapPagination::Rails %>
