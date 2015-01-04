@@ -34,6 +34,8 @@ class VideosController < ApplicationController
       videos = base_videos.selected.order_by_date
     elsif params[:sort] == 'rating'
       videos = base_videos.order_by_rating
+    elsif params[:sort] == 'id'
+      videos = base_videos.order_by_id
     elsif params[:month] && params[:year]
       videos = base_videos.best_of_the_month(params[:year].to_i, params[:month].to_i)
     else

@@ -8,6 +8,8 @@
 <%= link_to 'Duration', sort: 'duration' %>
 <%= link_to 'Selected', sort: 'selected' %>
 <%= link_to 'Rating', sort: 'rating' %>
+<%= link_to 'ID', sort: 'id' %>
+
 <br/>
 <%= form_tag(admin_videos_path, :method => "get", id: "search-form") do %>
   <div class="row">
@@ -30,8 +32,9 @@
     <th>Hits</th>
     <th>Selected</th>
     <th>Duration</th>
-    <th>Category</th>
+    <!--<th>Category</th>-->
     <th>Rating</th>
+    <th>Likes</th>
     <th colspan="3"></th>
   </tr>
   </thead>
@@ -49,8 +52,9 @@
       <td><%= video.hits %></td>
       <td><%= video.selected if video.selected %></td>
       <td><%= display_time(video.duration) %></td>
-      <td><%= video.category %></td>
+      <!--<td><%#= video.category %></td>-->
       <td><%= video.rating %></td>
+      <td><%= video.likes %></td>
       <td><%= link_to 'Show', video %></td>
       <td><%= link_to 'Edit', edit_video_path(video) %></td>
       <td><%= link_to 'Destroy', video, method: :delete, data: { confirm: 'Are you sure?' } %></td>

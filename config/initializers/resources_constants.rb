@@ -86,7 +86,7 @@ module RESOURCES_CONSTANT
     {url: 'https://www.youtube.com/channel/UCbQWelTfa0xTCCJcb0sgcUQ', name: 'Steve Pellegrino'} ,
     {url: 'https://www.youtube.com/channel/UCDaDCy1NNbhnZJ5Tokn4Bxg', name: 'Miracles of Magic'},
     {url: 'https://www.youtube.com/channel/UCOn_hpazVfS7ZSX00eLZKdA', name: '770pratik'},
-    {url: 'https://www.youtube.com/channel/UC4F9G58rQlCaJqGX6oeZhHg', name: ' cardinimagican'},
+    {url: 'https://www.youtube.com/channel/UC4F9G58rQlCaJqGX6oeZhHg', name: 'cardinimagican'},
     # Masters
     {url: 'https://www.youtube.com/channel/UCtJkiissi90Z8MBlMnrvXfQ', name: 'Dani Daortiz'} ,
     {url: 'https://www.youtube.com/channel/UC8wSDyGlNCQWbpTj9uXjHdA', name: 'Michael Ammar'},
@@ -106,7 +106,7 @@ module RESOURCES_CONSTANT
     {url: 'https://www.youtube.com/channel/UCB99aK4f2WaH96joccxLvSQ', name: 'Daniel Madiosn'} ,
     {url: 'https://www.youtube.com/channel/UCqr6tYc9Bollsoi2qRXsj7w', name: 'Mike Dynamo'} ,
     {url: 'https://www.youtube.com/channel/UC1IUltgiD5sMpAVbOe6BNNg', name: 'james brown'},
-    {url: 'https://www.youtube.com/channel/UCmNEfaZp9QXEvVIiqQMITYw', name: 'russq stevens'},
+    #{url: 'https://www.youtube.com/channel/UCmNEfaZp9QXEvVIiqQMITYw', name: 'russq stevens'},
 
 
   {url: 'https://www.youtube.com/channel/UCvGMGQC8gNkd4gwxSbABIlw', name: 'quirkology'},

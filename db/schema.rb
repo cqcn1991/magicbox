@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141227022813) do
+ActiveRecord::Schema.define(version: 20150104083052) do
 
   create_table "items", force: true do |t|
     t.string   "url"
@@ -71,6 +71,7 @@ ActiveRecord::Schema.define(version: 20141227022813) do
     t.integer  "duration"
     t.string   "category"
     t.decimal  "rating"
+    t.integer  "likes"
   end
 
 end

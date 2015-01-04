@@ -17,8 +17,8 @@ class Video < ActiveRecord::Base
     time = Time.new(year, month)
     start_time = time.beginning_of_month
     end_time = time.end_of_month
-    where("created_at > ? AND created_at < ?", start_time, end_time).order_by_rating
-    end
+    where("created_at > ? AND created_at < ?", start_time, end_time).where("likes > ?", 15).order_by_rating
+  end
 
   scope :updated_in_days, ->(number)  {where('updated_at >= ?', Time.zone.now - number.days)}
   scope :created_in_days, ->(number)  {where('created_at >= ?', Time.zone.now - number.days)}
@@ -113,6 +113,7 @@ class Video < ActiveRecord::Base
     self.created_at = video.published_at.to_s
     if video.rating
       self.rating = video.rating.average
+      self.likes = video.rating.likes.to_i
     end
     self.source = 'youtube'
     self.source_id = youtube_id
@@ -139,6 +140,7 @@ class Video < ActiveRecord::Base
       hits = video_info.view_count
       if video_info.rating
         self.rating = video_info.rating.average
+        self.likes = video_info.rating.likes.to_i
       end
     end
     self.hits = hits
