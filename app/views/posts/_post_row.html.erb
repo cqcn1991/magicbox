@@ -8,10 +8,10 @@
       <%= cafe_tag_link post %>
       <div class="pull-right">
         ❤<%= post.likes %>
-        <%= post.created_at.strftime("%m/%d") %>
+        <%= post.updated_at.strftime("%m/%d") %>
       </div>
     </div>
   </td>
   <td class="hidden-xxs"><%= post.likes %></td>
-  <td class="hidden-xxs"><%= post.created_at.strftime("%m/%d") %></td>
+  <td class="hidden-xxs"><%= post.updated_at.strftime("%m/%d") %></td>
 </tr>

@@ -17,7 +17,7 @@ class Video < ActiveRecord::Base
     time = Time.new(year, month)
     start_time = time.beginning_of_month
     end_time = time.end_of_month
-    where("created_at > ? AND created_at < ?", start_time, end_time).where("likes > ?", 15).order_by_rating
+    where("created_at > ? AND created_at < ?", start_time, end_time).where("likes > ?", 15).uniq(&:author).order_by_rating
   end
 
   scope :updated_in_days, ->(number)  {where('updated_at >= ?', Time.zone.now - number.days)}
@@ -111,6 +111,7 @@ class Video < ActiveRecord::Base
     self.selected = false
     self.img_url = "http://img.youtube.com/vi/#{youtube_id}/mqdefault.jpg"
     self.created_at = video.published_at.to_s
+    self.author = video.author.name
     if video.rating
       self.rating = video.rating.average
       self.likes = video.rating.likes.to_i

@@ -35,9 +35,17 @@ task :fetch_cafe_post, [:fetch_number] => :environment do |t, args|
         title = item_info.at('td.bgc2 a.b').text
         href = 'http://www.themagiccafe.com/forums/'+ item_info.at('td.bgc2 a.b')['href']
         likes = item_info.css('td.midtext')[2].text.to_i
+        updated_time = item_info.at('td.bgc2.w17 span.midtext').text.to_time(:utc)
         source = 'cafe'
         if likes >= 15
-          save_post(title, href, source, likes)
+          post = Post.find_by(url: href)
+          if post
+            post.updated_at = updated_time
+            post.save
+            puts "#{post.title} updated #{updated_time.strftime("%m/%d")}"
+          else
+            save_post(title, href, source, likes)
+          end
         end
       end
     end

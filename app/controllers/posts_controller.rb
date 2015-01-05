@@ -27,6 +27,8 @@ class PostsController < ApplicationController
       @posts = Post.order_by_reply_number
     elsif params[:sort] == 'id'
       @posts = Post.order('id DESC')
+    elsif params[:sort] == 'update'
+      @posts = Post.order('updated_at DESC')
     else
       @posts = Post.order_by_date
     end

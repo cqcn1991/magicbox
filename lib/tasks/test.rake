@@ -2,32 +2,23 @@
 desc "Get youtube video information"
 task :test_post => :environment do
   require 'youtube_it'
+  require 'nokogiri'
+  require 'open-uri'
 
   client = YouTubeIt::Client.new(:dev_key => "AIzaSyBktwEa5lFm87ENBHmAGWJMCTChS282Whk")
 
-  #Video.by_source('youtube').where('id >= ?', 884).each do |video|
-  Video.by_source('youtube').each do |video|
-    video_info = client.video_by(video.url)
-    if video_info.rating
-      like_number = video_info.rating.likes
-      video.likes = like_number.to_i
-      puts "#{video.id} #{video.url}"
-      if video.saveat
-        puts "#{video.title} likes: #{video.likes}"
-      end
-    end
+
+  #time = Time.new(2014, 12)
+  #start_time = time.beginning_of_month
+  #end_time = time.end_of_month
+  ##query = where("created_at > ? AND created_at < ?", start_time, end_time).where("likes > ?", 15)
+  #
+  videos = Video.by_source('youtube')
+  videos.each do |video|
+    video.get_info
+    video.save
   end
 
-  #monthly_videos = []
-  #(1..2).step(1) do |month|
-  #  videos = Video.best_of_the_month(2014, month).first(4)
-  #  monthly_videos << videos
-  #end
-  #monthly_videos.each do |month|
-  #   month.each do |video|
-  #     puts video.title
-  #   end
-  #end
 
   #client = YouTubeIt::Client.new(:dev_key => "AIzaSyBktwEa5lFm87ENBHmAGWJMCTChS282Whk")
 #

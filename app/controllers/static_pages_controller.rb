@@ -30,12 +30,10 @@ class StaticPagesController < ApplicationController
 
   def selected
     @monthly_videos = []
-    (2012..2014).step(1) do |year|
       (1..12).step(1) do |month|
-        videos = Video.best_of_the_month(year, month).first(7)
+        videos = Video.best_of_the_month(2014, month).select(:author).distinct.first(7)
         @monthly_videos << videos
       end
-    end
     #@videos=Video.selected.paginate(:page => params[:page])
   end
 
@@ -50,7 +48,7 @@ class StaticPagesController < ApplicationController
     base_posts = Post.by_forum('cafe')
     if params[:sort]
       @videos = base_videos.order_by_date.first(4)
-      @posts = base_posts.order_by_date.first(5)
+      @posts = base_posts.order_by_update.first(5)
     else
       if params[:number]
         number = params[:number].to_i
