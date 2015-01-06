@@ -11,27 +11,12 @@ class StaticPagesController < ApplicationController
   def discussion
   end
 
-  def cafe_digest
-    if !params[:category].blank?
-      posts = Post.by_category(params[:category])
-    else
-      posts = Post.by_forum('cafe')
-    end
-
-    if params[:sort] == 'like'
-      posts = posts.order_by_likes
-    elsif params[:sort] == 'reply'
-      posts = posts.order_by_reply_number
-    else
-      posts = posts.order_by_date
-    end
-    @posts = posts.paginate(:page => params[:page], :per_page => 10)
-  end
-
   def selected
+    @random_videos = Video.random_best_before(2013,1).first(8)
+
     @monthly_videos = []
       (1..12).step(1) do |month|
-        videos = Video.best_of_the_month(2014, month).select(:author).distinct.first(7)
+        videos = Video.best_of_the_month(2014, month)
         @monthly_videos << videos
       end
     #@videos=Video.selected.paginate(:page => params[:page])
@@ -46,19 +31,14 @@ class StaticPagesController < ApplicationController
   def popular
     base_videos = Video.by_source('youtube')
     base_posts = Post.by_forum('cafe')
-    if params[:sort]
-      @videos = base_videos.order_by_date.first(4)
-      @posts = base_posts.order_by_update.first(5)
-    else
-      if params[:number]
-        number = params[:number].to_i
-      else
-        number= 7
-      end
-      #selected_video = base_videos.selected.updated_in_days(number).first
+    if  params[:number]
+      number = params[:number].to_i
       trending_videos = base_videos.created_in_days(number).order_by_rating.first(4)
       @videos =  trending_videos
       @posts =  base_posts.created_in_days(number).order_by_likes.first(5)
+    else
+      @videos = base_videos.order_by_date.first(4)
+      @posts = base_posts.order_by_update.first(5)
     end
   end
 

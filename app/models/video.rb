@@ -17,7 +17,13 @@ class Video < ActiveRecord::Base
     time = Time.new(year, month)
     start_time = time.beginning_of_month
     end_time = time.end_of_month
-    where("created_at > ? AND created_at < ?", start_time, end_time).where("likes > ?", 15).uniq(&:author).order_by_rating
+    where("created_at > ? AND created_at < ?", start_time, end_time).where("likes > ?", 15).where("rating > ?", 4.85).order_by_rating.to_a.uniq(&:author)
+  end
+
+  scope :random_best_before,->(year, month) do
+    time = Time.new(year, month)
+    before_time = time.beginning_of_month
+    where("created_at < ?", before_time).where("likes > ?", 15).where("rating > ?", 4.85).order_by_rating.to_a.uniq(&:author).shuffle
   end
 
   scope :updated_in_days, ->(number)  {where('updated_at >= ?', Time.zone.now - number.days)}

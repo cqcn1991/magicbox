@@ -12,10 +12,8 @@ class PostsController < ApplicationController
 
     if params[:sort] == 'like'
       posts = posts.order_by_likes
-    elsif params[:sort] == 'reply'
-      posts = posts.order_by_reply_number
     else
-      posts = posts.order_by_date
+      posts = posts.order_by_update
     end
     @posts = posts.paginate(:page => params[:page], :per_page => 10)\
   end

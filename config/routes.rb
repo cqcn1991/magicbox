@@ -20,7 +20,6 @@ Rails.application.routes.draw do
   get 'selected' => 'static_pages#selected'
   get 'pop' => 'static_pages#popular'
   get 'resources' => 'static_pages#resources'
-  get 'cafe_digest' => 'static_pages#cafe_digest'
   get 'home' => 'static_pages#home'
 
   get 'admin' => 'static_pages#admin'

@@ -6,21 +6,33 @@ task :test_post => :environment do
   require 'open-uri'
 
   client = YouTubeIt::Client.new(:dev_key => "AIzaSyBktwEa5lFm87ENBHmAGWJMCTChS282Whk")
+  keywords =['Le grand Cabaret magic', 'penn teller fool us',
+             'Cyril Takayama',
+             'criss angel', 'penn teller', 'david blain',
+             'magic circle magician', 'dynamo magician', 'derren brown', 'david berglas',
+             'Mat Franco',
+            'Magic Castle magician', 'ellen show magician']
 
-
-  #time = Time.new(2014, 12)
-  #start_time = time.beginning_of_month
-  #end_time = time.end_of_month
-  ##query = where("created_at > ? AND created_at < ?", start_time, end_time).where("likes > ?", 15)
-  #
-  videos = Video.by_source('youtube')
-  videos.each do |video|
-    video.get_info
-    video.save
+  keywords.each do |keyword|
+    query = {
+        query: keyword,
+        order_by: 'viewCount',
+        #author: channel_id,
+        #order_by: 'published', #viewCount, #rating
+        ##fields: {:published  => ((Date.today - fetch_number)..(Date.today))},,
+        max_results: 50
+    }
+    videos = client.videos_by(query).videos
+    videos.each do |video_info|
+      url = video_info.player_url.gsub(/[?&]feature=youtube_gdata_player/, '')
+      puts url
+      video = Video.new(url: url)
+      if video.save
+        puts video.title + 'saved'
+      end
+    end
   end
 
-
-  #client = YouTubeIt::Client.new(:dev_key => "AIzaSyBktwEa5lFm87ENBHmAGWJMCTChS282Whk")
 #
 #  channels =  [
 #  #{url: 'https://www.youtube.com/channel/UCrPUg54jUy1T_wII9jgdRbg', name: 'Chris Ramsay'},
