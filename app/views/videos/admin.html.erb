@@ -48,7 +48,7 @@
         <%= link_to video.title, video.url %>
         <%= video.id %>
         <%= video.created_at.strftime("%Y-%m-%d") %>
-        <%= video.updated_at.strftime("%m-%d %H:%M") %>
+        <%= video.updated_at.strftime("%m-%d") %>
       </td>
       <td><%= video.hits %></td>
       <td><%= video.selected if video.selected %></td>

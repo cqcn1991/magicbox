@@ -12,6 +12,8 @@ class PostsController < ApplicationController
 
     if params[:sort] == 'like'
       posts = posts.order_by_likes
+    elsif params[:sort] == 'create'
+        posts = posts.order_by_date
     else
       posts = posts.order_by_update
     end

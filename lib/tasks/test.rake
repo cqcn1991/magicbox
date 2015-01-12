@@ -5,33 +5,42 @@ task :test_post => :environment do
   require 'nokogiri'
   require 'open-uri'
 
-  client = YouTubeIt::Client.new(:dev_key => "AIzaSyBktwEa5lFm87ENBHmAGWJMCTChS282Whk")
-  keywords =['Le grand Cabaret magic', 'penn teller fool us',
-             'Cyril Takayama',
-             'criss angel', 'penn teller', 'david blain',
-             'magic circle magician', 'dynamo magician', 'derren brown', 'david berglas',
-             'Mat Franco',
-            'Magic Castle magician', 'ellen show magician']
-
-  keywords.each do |keyword|
-    query = {
-        query: keyword,
-        order_by: 'viewCount',
-        #author: channel_id,
-        #order_by: 'published', #viewCount, #rating
-        ##fields: {:published  => ((Date.today - fetch_number)..(Date.today))},,
-        max_results: 50
-    }
-    videos = client.videos_by(query).videos
-    videos.each do |video_info|
-      url = video_info.player_url.gsub(/[?&]feature=youtube_gdata_player/, '')
-      puts url
-      video = Video.new(url: url)
-      if video.save
-        puts video.title + 'saved'
-      end
-    end
+  date = Date.new(2014,1,1)
+  @monthly_videos = []
+  while true
+    videos = Video.best_of_the_month(date.year, date.month)
+    @monthly_videos << videos
+    date += 1.month
+    break if date == Date.today.beginning_of_month
   end
+
+  client = YouTubeIt::Client.new(:dev_key => "AIzaSyBktwEa5lFm87ENBHmAGWJMCTChS282Whk")
+  #keywords =['Le grand Cabaret magic', 'penn teller fool us',
+  #           'Cyril Takayama',
+  #           'criss angel', 'penn teller', 'david blain',
+  #           'magic circle magician', 'dynamo magician', 'derren brown', 'david berglas',
+  #           'Mat Franco',
+  #          'Magic Castle magician', 'ellen show magician']
+  #
+  #keywords.each do |keyword|
+  #  query = {
+  #      query: keyword,
+  #      order_by: 'viewCount',
+  #      #author: channel_id,
+  #      #order_by: 'published', #viewCount, #rating
+  #      ##fields: {:published  => ((Date.today - fetch_number)..(Date.today))},,
+  #      max_results: 50
+  #  }
+  #  videos = client.videos_by(query).videos
+  #  videos.each do |video_info|
+  #    url = video_info.player_url.gsub(/[?&]feature=youtube_gdata_player/, '')
+  #    puts url
+  #    video = Video.new(url: url)
+  #    if video.save
+  #      puts video.title + 'saved'
+  #    end
+  #  end
+  #end
 
 #
 #  channels =  [

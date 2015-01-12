@@ -2,7 +2,8 @@
   <div class="panel panel-default">
     <div class="panel-body">
       <h4 class="no-margin">Order by</h4>
-      <%= link_to 'Time', sort: 'date' %>
+      <%= link_to 'Create', sort: 'create' %>
+      <%= link_to 'Reply', sort: 'update' %>
       <%= link_to 'Likes', sort: 'like' %>
       <br>
       <%= cafe_tag_nav_link('post', 'new') %>
@@ -25,7 +26,8 @@
               <% end  %>
         </h2></th>
         <th class="hidden-xxs"><%= link_to '❤', sort: 'like' %></th>
-        <th class="hidden-xxs"><%= link_to 'Time', sort: 'date' %></th>
+        <th class="hidden-xxs"><%= link_to 'Create', sort: 'create' %></th>
+        <th class="hidden-xxs"><%= link_to 'Reply', sort: 'update' %></th>
       </tr>
       </thead>
 

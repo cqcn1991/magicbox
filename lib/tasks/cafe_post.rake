@@ -14,7 +14,7 @@ task :fetch_cafe_post, [:fetch_number] => :environment do |t, args|
   def save_post(title, href, source, likes = nil, reply_number = nil, category = nil)
     post = Post.new(title: title, url: href, source: source, likes: likes, reply_number: reply_number, category: category)
     if post.save
-      puts "#{title} saved"
+      puts "NEW: #{title} saved"
     end
   end
 

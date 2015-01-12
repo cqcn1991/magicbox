@@ -12,14 +12,16 @@ class StaticPagesController < ApplicationController
   end
 
   def selected
-    @random_videos = Video.random_best_before(2013,1).first(8)
+    @random_videos = Video.random_best_before(2013,7).first(8)
 
+    date = Date.new(2014,1,1)
     @monthly_videos = []
-      (1..12).step(1) do |month|
-        videos = Video.best_of_the_month(2014, month)
-        @monthly_videos << videos
-      end
-    #@videos=Video.selected.paginate(:page => params[:page])
+    while true
+      videos = Video.best_of_the_month(date.year, date.month)
+      @monthly_videos << videos
+      date += 1.month
+      break if date > Date.today.beginning_of_month
+    end
   end
 
   def mobile
