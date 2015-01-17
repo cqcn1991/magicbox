@@ -1,4 +1,11 @@
+<% unless defined?(show_number)  %>
+  <% show_number = false  %>
+<% end  %>
+
 <tr>
+  <% if show_number %>
+  <td><%= post_number+1 %></td>
+  <% end  %>
   <td>
     <%= link_to post.title, post.url %><span class="hidden-xxs"> - <%= cafe_tag_link post %></span><br>
     <%= link_to post.url, class:'no-style-link hidden-xxs' do %>

@@ -6,14 +6,30 @@ module ApplicationHelper
 
     def nav_link(link_text, link_path, additional_class = nil)
       recognized = Rails.application.routes.recognize_path(link_path)
-      if recognized[:controller] == params[:controller] &&
-          recognized[:action] == params[:action]
-        class_name = 'active'
+      if recognized[:controller] == params[:controller]
+        if recognized[:controller] != 'static_pages'
+          #&& recognized[:action] == params[:action]
+          class_name = 'active'
+        else
+          class_name = 'active' if recognized[:action] == params[:action]
+        end
       else
         class_name = nil
       end
       if additional_class
         class_name = [class_name, additional_class ]
+      end
+      content_tag(:li, :class => class_name) do
+        link_to link_text, link_path
+      end
+    end
+
+    def accurate_nav_link(link_text, link_path)
+      recognized = Rails.application.routes.recognize_path(link_path)
+      if recognized[:controller] == params[:controller] && recognized[:action] == params[:action]
+          class_name = 'active'
+      else
+        class_name = nil
       end
       content_tag(:li, :class => class_name) do
         link_to link_text, link_path

@@ -1,0 +1,32 @@
+<% content_for :sidebar_selector do %>
+<!--  <div class="panel panel-default">
+    <div class="panel-body">
+      Check out the most liked threads in 2014 in themagiccafe.com
+    </div>
+  </div>-->
+<% end %>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <table class="table table-striped table-condensed">
+      <thead>
+      <tr class="no-style-link">
+        <th>#</th>
+        <th ><h2 class="no-margin">
+            <span class="glyphicon glyphicon-cutlery" aria-hidden="true"></span>
+            <strong>Best in Cafe, 2014</strong>
+        </h2></th>
+        <th class="hidden-xxs">❤</th>
+        <th class="hidden-xxs">Create</th>
+        <th class="hidden-xxs">Reply</th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <% @posts.each_with_index do |post, index| %>
+        <%= render partial: 'posts/post_row', locals: {post: post, post_number: index, show_number: true}  %>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

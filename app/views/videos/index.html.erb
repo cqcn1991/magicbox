@@ -1,15 +1,12 @@
-<% content_for :sidebar_selector do %>
-  <div class="panel panel-default">
-    <div class="panel-body">
-      <span>Order by</span>
-      <%= link_to 'Time', sort: 'date' %>
-      <%= link_to 'Views', sort: 'pop' %>
-      <%= link_to 'Rating', sort: 'rating' %>
-      <br>
-      <%= link_to 'Best Videos', selected_path %>
-    </div>
-  </div>
+<% content_for :sidebar_selector_content do %>
+  <br/>
+  <span>Order by</span>
+  <%= link_to 'Time', sort: 'date' %>
+  <%= link_to 'Views', sort: 'pop' %>
+  <%= link_to 'Rating', sort: 'rating' %>
 <% end %>
+
+<%= render 'sidebar_selector' %>
 
 <div class="videos row">
   <% @videos.each do |item| %>

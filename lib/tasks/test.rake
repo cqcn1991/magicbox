@@ -5,13 +5,13 @@ task :test_post => :environment do
   require 'nokogiri'
   require 'open-uri'
 
-  date = Date.new(2014,1,1)
-  @monthly_videos = []
-  while true
-    videos = Video.best_of_the_month(date.year, date.month)
-    @monthly_videos << videos
-    date += 1.month
-    break if date == Date.today.beginning_of_month
+  start_time = Date.new(2014,1,1)
+  end_time = Date.new(2015,1,1)
+  posts = Post.where("created_at >= ? AND created_at < ?", start_time, end_time).order_by_likes.first(10)
+
+  posts.each_with_index do |post,index|
+    puts "#{index}. #{post.title} ❤#{post.likes}"
+    puts "#{post.url}"
   end
 
   client = YouTubeIt::Client.new(:dev_key => "AIzaSyBktwEa5lFm87ENBHmAGWJMCTChS282Whk")

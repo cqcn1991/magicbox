@@ -11,17 +11,15 @@ class StaticPagesController < ApplicationController
   def discussion
   end
 
-  def selected
-    @random_videos = Video.random_best_before(2013,7).first(8)
+  def best_in_cafe_2014
+    start_time = Date.new(2014,1,1)
+    end_time = Date.new(2015,1,1)
+    posts = Post.where("created_at >= ? AND created_at < ?", start_time, end_time).order_by_likes.first(50)
+    @posts = posts
+  end
 
-    date = Date.new(2014,1,1)
-    @monthly_videos = []
-    while true
-      videos = Video.best_of_the_month(date.year, date.month)
-      @monthly_videos << videos
-      date += 1.month
-      break if date > Date.today.beginning_of_month
-    end
+  def selected
+
   end
 
   def mobile

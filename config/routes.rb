@@ -2,7 +2,11 @@ Rails.application.routes.draw do
   resources :notices
   resources :posts
 
-  resources :videos
+  resources :videos do
+  collection do
+    get 'best'
+  end
+end
   resources :shops
   resources :items
 
@@ -17,10 +21,11 @@ Rails.application.routes.draw do
   root 'static_pages#popular'
 
   get 'discussion' => 'static_pages#discussion'
-  get 'selected' => 'static_pages#selected'
   get 'pop' => 'static_pages#popular'
   get 'resources' => 'static_pages#resources'
   get 'home' => 'static_pages#home'
+
+  get 'best_in_cafe_2014' => 'static_pages#best_in_cafe_2014'
 
   get 'admin' => 'static_pages#admin'
 
