@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150104121212) do
+ActiveRecord::Schema.define(version: 20150118041027) do
 
   create_table "items", force: true do |t|
     t.string   "url"
@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 20150104121212) do
     t.datetime "updated_at"
     t.boolean  "selected"
     t.string   "category"
+    t.integer  "views"
   end
 
   create_table "shops", force: true do |t|

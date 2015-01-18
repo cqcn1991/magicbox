@@ -23,6 +23,14 @@ module RESOURCES_CONSTANT
       {url:'http://tieba.baidu.com/f?kw=%BB%A8%C7%D0', name: '百度花式吧'},
   ]
 
+  WEIBOS = [
+      {url:'http://weibo.com/luchenmagic', name: "刘谦", avatar_url: 'http://tp4.sinaimg.cn/1271542887/180/5682525508/1'},
+      {url:'http://weibo.com/yifmagic', name: 'Yif',  avatar_url: 'http://tp1.sinaimg.cn/2480681624/180/5707479662/1'},
+      {url:'http://weibo.com/dengnanzi', name: '邓男子',  avatar_url: 'http://tp3.sinaimg.cn/1614012094/180/5683480371/1'},
+      {url:'http://weibo.com/SomethingMagic', name: 'SomethingMagic',  avatar_url: 'http://tp1.sinaimg.cn/3189082924/180/5674373734/1'},
+      {url:'http://weibo.com/tmw9', name: 'TheMagicWay',  avatar_url: 'http://tp1.sinaimg.cn/2232187404/180/40000949813/1'},
+  ]
+
   CHINA = [
       {url:'http://www.magic8.cn/', name: '魔术吧', favicon: 'http://www.magic8.cn/favicon.ico'},
       {url:'http://www.themagicway.net/', name: 'themagicway',favicon: 'http://www.themagicway.net/wp-content/themes/tmw/img/favicon.ico'},
@@ -50,6 +58,47 @@ module RESOURCES_CONSTANT
     {url: 'https://www.youtube.com/channel/UCl1WwbVpKUdQerivZpUxZLA', name: 'Theory 11'},
   ]
 
+  YOUTUBE_CHANNELS = {
+      tv_famous_magicians: [
+          {url:'https://www.youtube.com/channel/UCb9A6uotqUiuVCvVp4GMqOg', name: 'Justin Flom',
+           favicon:'http://yt3.ggpht.com/-23GcVKQRHYw/AAAAAAAAAAI/AAAAAAAAAAA/N8f9s9vQ5Iw/s88-c-k-no/photo.jpg'},
+          {url:'https://www.youtube.com/channel/UCZFjYOyCdMxbt59vZNuqBpw', name: 'Derren Brown',
+           favicon:'http://yt3.ggpht.com/-EW8FRlISnzc/AAAAAAAAAAI/AAAAAAAAAAA/Y-63BHE22K4/s88-c-k-no/photo.jpg'},
+          {url:'https://www.youtube.com/channel/UCS1lj4kyIrWBqZ5YQHWgT5w', name: 'David Blaine',
+           favicon:'http://yt3.ggpht.com/-_wkrDxyXIms/AAAAAAAAAAI/AAAAAAAAAAA/9cLH3bwOg48/s88-c-k-no/photo.jpg'},
+          {url:'https://www.youtube.com/channel/UCa-iuHGLTxvkOChd4jnybiA', name: 'Yif',
+           favicon:'http://yt3.ggpht.com/-Tv0ywXKcV6M/AAAAAAAAAAI/AAAAAAAAAAA/keqsEvamxBI/s88-c-k-no/photo.jpg'},
+          {url:'https://www.youtube.com/channel/UCNGAGtpeciKLnGgoAM53FvQ', name: 'João Blümel',
+           favicon:'http://yt3.ggpht.com/-C7VyBQZPcRQ/AAAAAAAAAAI/AAAAAAAAAAA/st0SkLVcWgI/s88-c-k-no/photo.jpg'},
+      ],
+      award_winning_magician: [
+          {url:'https://www.youtube.com/channel/UCmkaiZAj_rOjPcpidbbjSOw', name: 'HajnoczySoma',
+           favicon:'http://i.ytimg.com/i/mkaiZAj_rOjPcpidbbjSOw/1.jpg?v=aecd78'},
+          {url:'https://www.youtube.com/channel/UC-lBIg7PlpYK0D34T6DVgsA', name: 'Mathieu Bich',
+           favicon:'http://yt3.ggpht.com/-WAZQSfzviEQ/AAAAAAAAAAI/AAAAAAAAAAA/89TCw4OWH2U/s88-c-k-no/photo.jpg'},
+          {url:'https://www.youtube.com/channel/UCpEI3TJUtvcsn8AMU74c-JQ', name: 'Kiko Pastur',
+           favicon:'http://yt3.ggpht.com/-V3_I5BvFpAQ/AAAAAAAAAAI/AAAAAAAAAAA/QQ6BykS5nPY/s88-c-k-no/photo.jpg'},
+          {url:'https://www.youtube.com/channel/UCta63z9AIbZY1ZqnxeUuj7A', name: 'Shawn Farquhar',
+           favicon:'http://yt3.ggpht.com/-sGFXXv30SCo/AAAAAAAAAAI/AAAAAAAAAAA/3vxf-NN4b8M/s88-c-k-no/photo.jpg'},
+          {url:'https://www.youtube.com/channel/UCIE5yGe5n0JOvufxEiv08Gg', name: 'shin lim',
+           favicon:'http://yt3.ggpht.com/-Jlt7Oj0YmoA/AAAAAAAAAAI/AAAAAAAAAAA/92gcJerWQOg/s88-c-k-no/photo.jpg'},
+          {url:'https://www.youtube.com/channel/UC-pL0CeQdSClY-z4V8iNK-g', name: 'Jason Latimer',
+           favicon:'http://yt3.ggpht.com/-aQo8ChRRzfM/AAAAAAAAAAI/AAAAAAAAAAA/hNqzBaeDNZA/s88-c-k-no/photo.jpg'},
+          {url:'https://www.youtube.com/channel/UCORagyitKZnb-w-NYd2x4LQ', name: 'Marc Oberon',
+           favicon:'http://yt3.ggpht.com/-bojr_diKrh0/AAAAAAAAAAI/AAAAAAAAAAA/KFFG5wCiwVw/s88-c-k-no/photo.jpg'},
+          {url:'https://www.youtube.com/channel/UCA3dnYczrhWm-vZY9TIPNfw', name: 'Marco Tempest',
+           favicon:'http://yt3.ggpht.com/-vZmAzCLOZhk/AAAAAAAAAAI/AAAAAAAAAAA/cUgY8aDzyck/s88-c-k-no/photo.jpg'},
+          {url:'https://www.youtube.com/channel/UCu1fwMSRH383erOhZ1aYZ4g', name: 'Yuhojin77',
+           favicon:'http://yt3.ggpht.com/-Kv43qfaz1LE/AAAAAAAAAAI/AAAAAAAAAAA/bYW6B5Ly5r0/s88-c-k-no/photo.jpg'},
+          {url:'https://www.youtube.com/channel/UCccvbKrrgvcEc2h-hfMLjfQ', name: 'David Stone',
+           favicon:'http://i.ytimg.com/i/ccvbKrrgvcEc2h-hfMLjfQ/1.jpg?v=4fc532bd'},
+      ]
+
+  }
+
+
+
+
   YOUTUBE_MAGICIAN_CHANNELS = [
       # Search Key Words
       # FISM, Ellen Show, Le grand Cabaret, Magic Castle, Magic Circle, American Got Talents
@@ -60,7 +109,7 @@ module RESOURCES_CONSTANT
     {url: 'https://www.youtube.com/channel/UCa-iuHGLTxvkOChd4jnybiA', name: 'Yif'},
     {url: 'https://www.youtube.com/channel/UCNGAGtpeciKLnGgoAM53FvQ', name: 'João Blümel'},
     # Award Winning Magician
-    {url: 'https://www.youtube.com/channel/UCFR8mp0gz-h93DGGhsdLmrg', name: 'Soma'},
+    {url: 'https://www.youtube.com/channel/UCmkaiZAj_rOjPcpidbbjSOw', name: 'Soma'},
     {url: 'https://www.youtube.com/channel/UC-lBIg7PlpYK0D34T6DVgsA', name: 'Mathieu Bich'},
     {url: 'https://www.youtube.com/channel/UCpEI3TJUtvcsn8AMU74c-JQ', name: 'Kiko Pastur'},
     {url: 'https://www.youtube.com/channel/UCta63z9AIbZY1ZqnxeUuj7A', name: 'Shawn Farquhar'},

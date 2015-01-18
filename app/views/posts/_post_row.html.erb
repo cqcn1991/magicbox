@@ -19,6 +19,10 @@
       </div>
     </div>
   </td>
+  <% if show_number %>
+    <td class="hidden-xxs"><%= post.reply_number %></td>
+    <td class="hidden-xxs"><%="#{number_to_human(post.views, precision: 2)}" %></td>
+  <% end  %>
   <td class="hidden-xxs"><%= post.likes %></td>
   <td class="hidden-xxs"><%= post.created_at.strftime("%m/%d") %></td>
   <td class="hidden-xxs"><%= post.updated_at.strftime("%m/%d") %></td>

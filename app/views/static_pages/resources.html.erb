@@ -2,52 +2,33 @@
 
   <div class="panel panel-default main">
     <div class="panel-heading clearfix">
-      <h2 class="panel-title">淘宝</h2>
+      <h2 class="panel-title">Shops</h2>
     </div>
     <div class="panel-body">
       <div class="row">
-        <% @shops.each do |shop|  %>
+        <% @oversea_shops.each do |site|  %>
           <div class="col-md-3 site">
-            <%= image_tag(shop.avatar_url, class: 'favicon') %>
-            <%= link_to shop.name, external_url(shop.url) %>
+            <% if !site[:favicon].blank?  %>
+              <%= image_tag(site[:favicon], class: 'favicon') %>
+            <% end  %>
+            <%= link_to(site[:name], site[:url]) %>
           </div>
         <% end  %>
       </div>
     </div>
   </div>
 
-  <div class="panel panel-default main">
-    <div class="panel-heading clearfix">
-      <h2 class="panel-title">视频</h2>
-    </div>
-    <div class="panel-body">
-      <div class="row">
-        <% @youku_sites.each do |site|  %>
-          <div class="col-md-3 site">
-            <%= image_tag(site[:avatar_url], class: 'favicon') %>
-            <%= link_to(site[:name], 'http://i.youku.com/u/'+site[:url]) %>
-          </div>
-        <% end  %>
-        <div class="col-md-3 site">
-          <%= image_tag('http://u1.tdimg.com/2/197/105/94019298550986930102955861862027823632.jpg', class: 'favicon') %>
-          <%= link_to('Lssence', 'http://www.tudou.com/home/lssence/') %>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <div class="panel panel-default main">
     <div class="panel-heading clearfix">
-      <h2 class="panel-title">国内</h2>
+      <h2 class="panel-title">Youtube Channels</h2>
     </div>
     <ul class="list-group">
       <li class="list-group-item">
         <div class="row">
-          <% @forums.each do |site|  %>
+          <% @tv_famous_magicians.each do |site|  %>
             <div class="col-md-3 site">
-              <% if !site[:favicon].blank?  %>
-                <%= image_tag(site[:favicon], class: 'favicon') %>
-              <% end  %>
+              <%= image_tag(site[:favicon], class: 'favicon') %>
               <%= link_to(site[:name], site[:url]) %>
             </div>
           <% end  %>
@@ -55,12 +36,7 @@
       </li>
       <li class="list-group-item">
         <div class="row">
-          <% @weibos.each do |site|  %>
-            <div class="col-md-3 site">
-              <%= image_tag(site[:avatar_url], class: 'favicon') %>
-              <%= link_to(site[:name], site[:url]) %>
-            </div>
-          <% end  %>
+
         </div>
       </li>
     </ul>

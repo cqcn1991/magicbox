@@ -17,7 +17,7 @@
     <div class="caption clearfix">
       <%= link_to item.title, item.url, class: 'title' %>
       <% if show_views  %>
-        Views<strong><%= " #{number_to_human(item.hits, precision: 2)}" %></strong>
+        <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span><strong><%= " #{number_to_human(item.hits, precision: 2)}" %></strong>
       <% end %>
       <div class="pull-right">
         <% if item.selected?  %>

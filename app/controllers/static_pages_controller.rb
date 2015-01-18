@@ -14,7 +14,7 @@ class StaticPagesController < ApplicationController
   def best_in_cafe_2014
     start_time = Date.new(2014,1,1)
     end_time = Date.new(2015,1,1)
-    posts = Post.where("created_at >= ? AND created_at < ?", start_time, end_time).order_by_likes.first(50)
+    posts = Post.where("created_at >= ? AND created_at < ?", start_time, end_time).order_by_reply_number.first(50)
     @posts = posts
   end
 
@@ -51,13 +51,8 @@ class StaticPagesController < ApplicationController
     @youku_sites = RESOURCES_CONSTANT::YOUKU
     @forums = RESOURCES_CONSTANT::FORUMS
     @china_websites = RESOURCES_CONSTANT::CHINA
-    @weibos = [
-        {url:'http://weibo.com/luchenmagic', name: "刘谦", avatar_url: 'http://tp4.sinaimg.cn/1271542887/180/5682525508/1'},
-        {url:'http://weibo.com/yifmagic', name: 'Yif',  avatar_url: 'http://tp1.sinaimg.cn/2480681624/180/5707479662/1'},
-        {url:'http://weibo.com/dengnanzi', name: '邓男子',  avatar_url: 'http://tp3.sinaimg.cn/1614012094/180/5683480371/1'},
-        {url:'http://weibo.com/SomethingMagic', name: 'SomethingMagic',  avatar_url: 'http://tp1.sinaimg.cn/3189082924/180/5674373734/1'},
-        {url:'http://weibo.com/tmw9', name: 'TheMagicWay',  avatar_url: 'http://tp1.sinaimg.cn/2232187404/180/40000949813/1'},
-    ]
+
+    @tv_famous_magicians = RESOURCES_CONSTANT::YOUTUBE_CHANNELS[:tv_famous_magicians]
     @oversea_shops = [#魔术厂商类
         {url:'http://murphysmagic.com/', name: "Murphy's Magic", favicon: 'http://www.murphysmagic.com/favicon1.ico'},
         {url:'http://www.penguin.com/', name: 'Penguin Magic',  favicon: 'http://www.penguinmagic.com/favicon.ico'},

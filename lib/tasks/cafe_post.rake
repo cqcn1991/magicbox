@@ -11,8 +11,8 @@ task :fetch_cafe_post, [:fetch_number] => :environment do |t, args|
   end
 
   #method should be put first in a script
-  def save_post(title, href, source, likes = nil, reply_number = nil, category = nil)
-    post = Post.new(title: title, url: href, source: source, likes: likes, reply_number: reply_number, category: category)
+  def save_post(title, href, source, likes = nil, views = nil, reply_number = nil, category = nil)
+    post = Post.new(title: title, url: href, source: source, likes: likes, views: views, reply_number: reply_number, category: category)
     if post.save
       puts "NEW: #{title} saved"
     end
@@ -34,6 +34,8 @@ task :fetch_cafe_post, [:fetch_number] => :environment do |t, args|
       doc.css("form table.normal tr")[2..30].reverse_each do |item_info|
         title = item_info.at('td.bgc2 a.b').text
         href = 'http://www.themagiccafe.com/forums/'+ item_info.at('td.bgc2 a.b')['href']
+        views = item_info.css('td.midtext')[0].text.to_i
+        rely_number = item_info.css('td.midtext')[1].text.to_i
         likes = item_info.css('td.midtext')[2].text.to_i
         updated_time = item_info.at('td.bgc2.w17 span.midtext').text.to_time(:utc)
         source = 'cafe'
@@ -44,7 +46,7 @@ task :fetch_cafe_post, [:fetch_number] => :environment do |t, args|
             post.save
             puts "#{post.title} updated #{updated_time.strftime("%m/%d")}"
           else
-            save_post(title, href, source, likes)
+            save_post(title, href, source, likes, views, rely_number)
           end
         end
       end
