@@ -49,16 +49,27 @@ module RESOURCES_CONSTANT
       {url:'http://www.alakazam.co.uk/', name: 'Alakazam Magic', favicon: 'http://www.alakazam.co.uk/favicon.ico'},
       {url:'http://thebluecrown.com/', name: 'The Blue Crown', favicon: 'http://thebluecrown.com/favicon.ico'}
   ]
-  YOUTUBE_MAGIC_SHOP_CHANNELS = [
-    {url: 'https://www.youtube.com/channel/UCFR8mp0gz-h93DGGhsdLmrg', name: 'MAGIC SHOP FRENCH DROP'},
-    {url: 'https://www.youtube.com/channel/UChKgsPL1MX5z_M33fYtOPKg', name: 'Ellusionist'},
-    {url: 'https://www.youtube.com/channel/UCfrhuhTDSpVhK7omh_ZIKaw', name: "Murphy's Magic"},
-    {url: 'https://www.youtube.com/channel/UCEybzfsG2WI4Hnx5hpd2uRA', name: 'TheBlueCrownMagic'},
-    {url: 'https://www.youtube.com/channel/UCwlXbq5KtkdGC87oABDsfTQ', name: 'Dan & Dave'},
-    {url: 'https://www.youtube.com/channel/UCl1WwbVpKUdQerivZpUxZLA', name: 'Theory 11'},
-  ]
+
+  OVERSEA_SHOPS =  [#魔术厂商类
+      {url:'http://murphysmagic.com/', name: "Murphy's Magic", favicon: 'http://www.murphysmagic.com/favicon1.ico'},
+      {url:'http://www.penguin.com/', name: 'Penguin Magic',  favicon: 'http://www.penguinmagic.com/favicon.ico'},
+      {url:'http://www.dananddave.com/', name: 'Dan and Dave',favicon: 'http://dananddave.com/wp-content/themes/dananddave/img/favicon.ico' },
+      {url:'http://www.ellusionist.com/', name: 'Ellusionist', favicon: 'http://www.ellusionist.com/favicon.ico'},
+      {url:'http://www.theory11.com/', name: 'Theory11', favicon: 'http://www.theory11.com/favicon.ico'},
+      {url:'http://www.vanishingincmagic.com/', name: 'Vanishing Inc.', favicon: 'http://www.vanishingincmagic.com/favicon.ico'},
+      {url:'http://www.ementalism.com/', name: 'Ementalism', favicon: ''},
+      {url:'http://www.lybrary.com/', name: 'lybrary', favicon: 'http://www.lybrary.com/favicon.ico'},
+      {url:'http://www.alakazam.co.uk/', name: 'Alakazam Magic', favicon: 'http://www.alakazam.co.uk/favicon.ico'},
+      {url:'http://thebluecrown.com/', name: 'The Blue Crown', favicon: 'http://thebluecrown.com/favicon.ico'}]
 
   YOUTUBE_CHANNELS = {
+      shops: [
+          {url: 'https://www.youtube.com/channel/UCFR8mp0gz-h93DGGhsdLmrg', name: 'MAGIC SHOP FRENCH DROP'},
+          {url: 'https://www.youtube.com/channel/UChKgsPL1MX5z_M33fYtOPKg', name: 'Ellusionist'},
+          {url: 'https://www.youtube.com/channel/UCfrhuhTDSpVhK7omh_ZIKaw', name: "Murphy's Magic"},
+          {url: 'https://www.youtube.com/channel/UCEybzfsG2WI4Hnx5hpd2uRA', name: 'TheBlueCrownMagic'},
+          {url: 'https://www.youtube.com/channel/UCwlXbq5KtkdGC87oABDsfTQ', name: 'Dan & Dave'},
+          {url: 'https://www.youtube.com/channel/UCl1WwbVpKUdQerivZpUxZLA', name: 'Theory 11'},],
       tv_famous_magicians: [
           {url:'https://www.youtube.com/channel/UCb9A6uotqUiuVCvVp4GMqOg', name: 'Justin Flom',
            favicon:'http://yt3.ggpht.com/-23GcVKQRHYw/AAAAAAAAAAI/AAAAAAAAAAA/N8f9s9vQ5Iw/s88-c-k-no/photo.jpg'},
@@ -69,9 +80,20 @@ module RESOURCES_CONSTANT
           {url:'https://www.youtube.com/channel/UCa-iuHGLTxvkOChd4jnybiA', name: 'Yif',
            favicon:'http://yt3.ggpht.com/-Tv0ywXKcV6M/AAAAAAAAAAI/AAAAAAAAAAA/keqsEvamxBI/s88-c-k-no/photo.jpg'},
           {url:'https://www.youtube.com/channel/UCNGAGtpeciKLnGgoAM53FvQ', name: 'João Blümel',
-           favicon:'http://yt3.ggpht.com/-C7VyBQZPcRQ/AAAAAAAAAAI/AAAAAAAAAAA/st0SkLVcWgI/s88-c-k-no/photo.jpg'},
+           favicon:'http://yt3.ggpht.com/-C7VyBQZPcRQ/AAAAAAAAAAI/AAAAAAAAAAA/st0SkLVcWgI/s88-c-k-no/photo.jpg'},],
+      archives: [
+          {url:'https://www.youtube.com/channel/UCnCr4v73iD2prmqDfmGvhpg', name: 'enfilo',
+           favicon:'http://yt3.ggpht.com/-_lqMihs7uNk/AAAAAAAAAAI/AAAAAAAAAAA/D-j0IGnecH4/s88-c-k-no/photo.jpg'},
+          {url:'https://www.youtube.com/channel/UCsUO2qpMrNeoro48taaEj0w', name: 'Paco Rodas Ratazzi',
+           favicon:'http://yt3.ggpht.com/-Y1WQMoUymWE/AAAAAAAAAAI/AAAAAAAAAAA/9c76pq7Xkos/s88-c-k-no/photo.jpg'},
+          {url:'https://www.youtube.com/channel/UCXiK0ySADAUhtx8YJkSN8Jw', name: 'VintageMagic Archives',
+           favicon:'http://yt3.ggpht.com/-gu9tlTJTUTg/AAAAAAAAAAI/AAAAAAAAAAA/jcziGI_xLL8/s88-c-k-no/photo.jpg'},
+          {url:'https://www.youtube.com/channel/UCbQWelTfa0xTCCJcb0sgcUQ', name: 'Steve Pellegrino',
+           favicon:'http://yt3.ggpht.com/-J-7lcB0pTR8/AAAAAAAAAAI/AAAAAAAAAAA/Pc5WuN0izfk/s88-c-k-no/photo.jpg'},
+          {url:'https://www.youtube.com/channel/UCRQA6Y4ofSivJGV2evZgukA', name: 'theheadhacker',
+           favicon:'http://yt3.ggpht.com/-wUj0qoTNUjg/AAAAAAAAAAI/AAAAAAAAAAA/O-A_KHT7Tfc/s88-c-k-no/photo.jpg'},
       ],
-      award_winning_magician: [
+      award_winning_magicians: [
           {url:'https://www.youtube.com/channel/UCmkaiZAj_rOjPcpidbbjSOw', name: 'HajnoczySoma',
            favicon:'http://i.ytimg.com/i/mkaiZAj_rOjPcpidbbjSOw/1.jpg?v=aecd78'},
           {url:'https://www.youtube.com/channel/UC-lBIg7PlpYK0D34T6DVgsA', name: 'Mathieu Bich',
@@ -91,9 +113,7 @@ module RESOURCES_CONSTANT
           {url:'https://www.youtube.com/channel/UCu1fwMSRH383erOhZ1aYZ4g', name: 'Yuhojin77',
            favicon:'http://yt3.ggpht.com/-Kv43qfaz1LE/AAAAAAAAAAI/AAAAAAAAAAA/bYW6B5Ly5r0/s88-c-k-no/photo.jpg'},
           {url:'https://www.youtube.com/channel/UCccvbKrrgvcEc2h-hfMLjfQ', name: 'David Stone',
-           favicon:'http://i.ytimg.com/i/ccvbKrrgvcEc2h-hfMLjfQ/1.jpg?v=4fc532bd'},
-      ]
-
+           favicon:'http://i.ytimg.com/i/ccvbKrrgvcEc2h-hfMLjfQ/1.jpg?v=4fc532bd'},],
   }
 
 
@@ -108,6 +128,7 @@ module RESOURCES_CONSTANT
     {url: 'https://www.youtube.com/channel/UCS1lj4kyIrWBqZ5YQHWgT5w', name: 'David Blain'},
     {url: 'https://www.youtube.com/channel/UCa-iuHGLTxvkOChd4jnybiA', name: 'Yif'},
     {url: 'https://www.youtube.com/channel/UCNGAGtpeciKLnGgoAM53FvQ', name: 'João Blümel'},
+    {url: 'https://www.youtube.com/channel/UCvGMGQC8gNkd4gwxSbABIlw', name: 'quirkology'},
     # Award Winning Magician
     {url: 'https://www.youtube.com/channel/UCmkaiZAj_rOjPcpidbbjSOw', name: 'Soma'},
     {url: 'https://www.youtube.com/channel/UC-lBIg7PlpYK0D34T6DVgsA', name: 'Mathieu Bich'},
@@ -121,18 +142,19 @@ module RESOURCES_CONSTANT
     {url: 'https://www.youtube.com/channel/UCccvbKrrgvcEc2h-hfMLjfQ', name: 'David Stone'},
     # Frequently Updated Personal Channel
     {url: 'https://www.youtube.com/channel/UCBNkiIDZMlB72a_N0BUHCwQ', name: 'Ollie Mealing'},
+    {url: 'https://www.youtube.com/channel/UCpip9EesFuO1lkSY_B-vExw', name: 'Daniel Fernandez'},
     {url: 'https://www.youtube.com/channel/UC-beEh5L8QETtO1r32eXxqA', name: 'jack carpenter'},
     {url: 'https://www.youtube.com/channel/UCewE7G8ZQOA-9zfK2OQmM5g', name: 'Patrick Kun'},
     {url: 'https://www.youtube.com/channel/UCQqQpVg1QrC6MvBa932jwaA', name: 'Jean Pierr Vallarino'},
     {url: 'https://www.youtube.com/channel/UCKlU-QQcjGlIg8TccHREQww', name: 'Doc Eason'},
     # Magic Group & Archive
     {url: 'https://www.youtube.com/channel/UCnCr4v73iD2prmqDfmGvhpg', name: 'Enfilo'},
-    {url: 'https://www.youtube.com/channel/UCRQA6Y4ofSivJGV2evZgukA', name: 'HeadHacking'},
     {url: 'https://www.youtube.com/channel/UCsUO2qpMrNeoro48taaEj0w', name: 'Paco Rodas Ratazzi'},
-    {url: 'https://www.youtube.com/channel/UC4C2-sFiBbBEeyGE6soagpw', name: 'Infomagie'},
-    {url: 'https://www.youtube.com/channel/UC4n4MJm6uK1eVClQrmwRlIg', name: 'theblockmagic'},
     {url: 'https://www.youtube.com/channel/UCXiK0ySADAUhtx8YJkSN8Jw', name: 'Vintage Magic Archives'} ,
     {url: 'https://www.youtube.com/channel/UCbQWelTfa0xTCCJcb0sgcUQ', name: 'Steve Pellegrino'} ,
+    {url: 'https://www.youtube.com/channel/UCRQA6Y4ofSivJGV2evZgukA', name: 'HeadHacking'},
+    {url: 'https://www.youtube.com/channel/UC4C2-sFiBbBEeyGE6soagpw', name: 'Infomagie'},
+    {url: 'https://www.youtube.com/channel/UC4n4MJm6uK1eVClQrmwRlIg', name: 'theblockmagic'},
     {url: 'https://www.youtube.com/channel/UCDaDCy1NNbhnZJ5Tokn4Bxg', name: 'Miracles of Magic'},
     {url: 'https://www.youtube.com/channel/UCOn_hpazVfS7ZSX00eLZKdA', name: '770pratik'},
     {url: 'https://www.youtube.com/channel/UC4F9G58rQlCaJqGX6oeZhHg', name: 'cardinimagican'},
@@ -156,10 +178,62 @@ module RESOURCES_CONSTANT
     {url: 'https://www.youtube.com/channel/UCqr6tYc9Bollsoi2qRXsj7w', name: 'Mike Dynamo'} ,
     {url: 'https://www.youtube.com/channel/UC1IUltgiD5sMpAVbOe6BNNg', name: 'james brown'},
     #{url: 'https://www.youtube.com/channel/UCmNEfaZp9QXEvVIiqQMITYw', name: 'russq stevens'},
+  ]
+
+  NODES = [
+{title:'1. Rails Tutorial',
+ intro: 'Why this is the best for absolute beginners',
+ content:
+     "个人觉得最好的入门教程，尤其是对于0基础，从来没接触过编程的同学，非计算机专业的同学等等
+
+  为什么呢？
+
+  “手把手”。作为一个新手，我连IDE是什么都不知道，唯一的概念就是，我应该打开一个东西，然后写代码，比如PS、VB
+  我不知道什么是CMD，不知道Text Editor，不知道浏览器怎么调试……有太多的东西不知道了。
+  It's just more intuitive.
+  那么，最快的办法，就是跟着做。你做一步，我做一步，自然就知道怎么弄了，“手把手”教程
+  Rails Tutorial正是如此。有视频教程，可以看到操作的每一步，因此非常适合入门。
+
+  注意事项：跳过测试；可以用Win开发；开始不懂没太大关系，快速跟着视频过一遍，大量复制代码没问题
+  时间：大概1-2周。"},
+{title:'2. Review',
+ intro: 'What is this chapter about?',
+ content:
+     "为什么要把“复习”单独拎出来？
+因为刚开始看教程，什么也不懂。而实际的开发，牵涉到的概念是全局的，从Routes到Controller、View再到Model。
+只学了Model、Controller, 想要开发，就会很困难，因为很多概念还没接触到到。而当把教材整体过了一遍，建立起了对Rails的整体认识，就能够从全局去理解怎么用Rails了
+
+那么，怎么复习？重新看一遍吗？
+
+那样子速度太慢。我的做法，把重点放在“总结”上
+具体来说，也就是每看完一章，就问自己一个问题：“这一章，到底讲了什么？是怎么做到的？”
+比如，第7章，写的是用户注册Sign up。是怎么做Sign up的？就是从View的Form开始，用户提交数据，再到Controller的Create里面，来用这个数据User.new(user_params)，这样子注册。
+比如，第8章，登陆log in, log out，则是从view的form里面，再到SessionController, 用的session[:user_id] = user.id。
+
+这样，学习的思路更为清晰
+
+有些人，只是草草过了一遍书、复制代码，却忘记了最重要的思考，所以看完教程，把里面的Sample App写出来了，依然不是很理解怎么弄。这个就是学习方法的问题，实际上一点就懂。不过这样读书，会更累一点"},
+{title:'3. Agile Web Development + Rails Guide',
+ intro: 'more examples',
+ content:"
+①Agile Web: 也常被推荐用来入门，区别在于，没有视频。因此，适合已经有开发经验的人来学习Rails，而不适合完全0基础的人。
+但现在，因为已经有了《Rails Tutorial》的基础，所以可以看了。重点，和上面一样，也是放在思考“这个功能应该怎么实现？”，比如说要做购物车，那么就应该自己想想，是不是要做个Cart的Model，和Product之间怎么建立联系？先自己想一想，然后再和书中的做法比较。
+因此，读书中的第2部分就行，第3部分深入的不需要看。
+②Rails Guide：Get Started部分，则是一个做博客的实例，怎么创建article? 怎么让可以让用户留下comment?都可以用于refresh，帮助自己再加深理解。
+
+同时，也可以再参考其他的入门教程（比如One Month Rails、Codeschool的视频等等）。只是，始终注意学习的方法，是不断在反问自己“这个东西是怎么做的？”“这一章到底讲了什么？”
+带着问题去学习比较累，但是这样才有收获
+"},
 
 
-  {url: 'https://www.youtube.com/channel/UCvGMGQC8gNkd4gwxSbABIlw', name: 'quirkology'},
+{title:'The Ronco Principle',
+ intro: 'From Paul Graham',
+ content: "No one, VC or angel, has invested in more of the top startups than Ron Conway. He knows what happened in every deal in the Valley, half the time because he arranged it.
 
+And yet he's a super nice guy. In fact, nice is not the word. Ronco is good. I know of zero instances in which he has behaved badly. It's hard even to imagine.
+
+When I first came to Silicon Valley I thought \"How lucky that someone so powerful is so benevolent.\" But gradually I realized it wasn't luck. It was by being benevolent that Ronco became so powerful. "\
+"All the deals he gets to invest in come to him through referrals. Google did. Facebook did. Twitter was a referral from Evan Williams himself. And the reason so many people refer deals to him is that he's proven himself to be a good guy."},
 
   ]
 end

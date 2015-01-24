@@ -31,6 +31,8 @@ gem 'will_paginate-bootstrap', '~> 1.0'
 gem 'yt', '~> 0.13.4'
 gem 'youtube_it'
 
+gem 'factory_girl_rails'
+
 gem 'nokogiri'
 gem 'httparty'
 #gem 'video_info'

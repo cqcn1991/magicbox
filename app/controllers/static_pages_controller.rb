@@ -9,6 +9,7 @@ class StaticPagesController < ApplicationController
   end
 
   def discussion
+    @nodes = RESOURCES_CONSTANT::NODES
   end
 
   def best_in_cafe_2014
@@ -47,23 +48,13 @@ class StaticPagesController < ApplicationController
   end
 
   def resources
-    @shops = Shop.all
-    @youku_sites = RESOURCES_CONSTANT::YOUKU
-    @forums = RESOURCES_CONSTANT::FORUMS
-    @china_websites = RESOURCES_CONSTANT::CHINA
+    @oversea_shops = RESOURCES_CONSTANT::OVERSEA_SHOPS
 
-    @tv_famous_magicians = RESOURCES_CONSTANT::YOUTUBE_CHANNELS[:tv_famous_magicians]
-    @oversea_shops = [#魔术厂商类
-        {url:'http://murphysmagic.com/', name: "Murphy's Magic", favicon: 'http://www.murphysmagic.com/favicon1.ico'},
-        {url:'http://www.penguin.com/', name: 'Penguin Magic',  favicon: 'http://www.penguinmagic.com/favicon.ico'},
-        {url:'http://www.dananddave.com/', name: 'Dan and Dave',favicon: 'http://dananddave.com/wp-content/themes/dananddave/img/favicon.ico' },
-        {url:'http://www.ellusionist.com/', name: 'Ellusionist', favicon: 'http://www.ellusionist.com/favicon.ico'},
-        {url:'http://www.theory11.com/', name: 'Theory11', favicon: 'http://www.theory11.com/favicon.ico'},
-        {url:'http://www.vanishingincmagic.com/', name: 'Vanishing Inc.', favicon: 'http://www.vanishingincmagic.com/favicon.ico'},
-        {url:'http://www.ementalism.com/', name: 'Ementalism', favicon: ''},
-        {url:'http://www.lybrary.com/', name: 'lybrary', favicon: 'http://www.lybrary.com/favicon.ico'},
-        {url:'http://www.alakazam.co.uk/', name: 'Alakazam Magic', favicon: 'http://www.alakazam.co.uk/favicon.ico'},
-        {url:'http://thebluecrown.com/', name: 'The Blue Crown', favicon: 'http://thebluecrown.com/favicon.ico'}]
+    tv_famous_magicians = RESOURCES_CONSTANT::YOUTUBE_CHANNELS[:tv_famous_magicians]
+    archives = RESOURCES_CONSTANT::YOUTUBE_CHANNELS[:archives]
+    award_winning_magicians = RESOURCES_CONSTANT::YOUTUBE_CHANNELS[:award_winning_magicians]
+    @youtube_channels = [tv_famous_magicians, award_winning_magicians, archives, ]
+
     @oversea_sites = [
 #社区类
 {url:'http://www.themagiccafe.com/forums/index.php', name: 'themagiccafe'},

@@ -24,9 +24,11 @@
       <h2 class="panel-title">Youtube Channels</h2>
     </div>
     <ul class="list-group">
+      <%# @youtube_channels.count %>
+      <% @youtube_channels.each do |channel_group|  %>
       <li class="list-group-item">
         <div class="row">
-          <% @tv_famous_magicians.each do |site|  %>
+          <% channel_group.each do |site|  %>
             <div class="col-md-3 site">
               <%= image_tag(site[:favicon], class: 'favicon') %>
               <%= link_to(site[:name], site[:url]) %>
@@ -34,44 +36,9 @@
           <% end  %>
         </div>
       </li>
-      <li class="list-group-item">
-        <div class="row">
-
-        </div>
-      </li>
+      <% end %>
     </ul>
   </div>
 
-
-  <div class="panel panel-default main">
-    <div class="panel-heading clearfix">
-      <h2 class="panel-title">国外网站</h2>
-    </div>
-    <ul class="list-group">
-      <li class="list-group-item">
-        <div class="row">
-          <% @oversea_shops.each do |site|  %>
-            <div class="col-md-3 site">
-              <% if !site[:favicon].blank?  %>
-                <%= image_tag(site[:favicon], class: 'favicon') %>
-              <% end  %>
-              <%= link_to(site[:name], site[:url]) %>
-            </div>
-          <% end  %>
-        </div>
-      </li>
-      <li class="list-group-item">
-        <div class="row">
-          <% @oversea_sites.each do |site|  %>
-            <div class="col-md-3 site">
-              <% if !site[:favicon].blank?  %>
-                <%= image_tag(site[:favicon], class: 'favicon') %>
-              <% end  %>
-              <%= link_to(site[:name], site[:url]) %>
-            </div>
-          <% end  %>
-        </div>
-      </li>
-    </ul>
-  </div>
 </div>
+
