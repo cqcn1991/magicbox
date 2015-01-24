@@ -4,6 +4,8 @@ class Video < ActiveRecord::Base
   validates :source_id, uniqueness: true
   before_validation :get_info, on: :create
 
+  after_initialize :init
+
   scope :by_category, ->(category) { where category: category }
   scope :by_source, ->(source) { where source: source }
   scope :order_by_date, -> { order('created_at DESC, source_id ASC')}
@@ -30,6 +32,10 @@ class Video < ActiveRecord::Base
   scope :created_in_days, ->(number)  {where('created_at >= ?', Time.zone.now - number.days)}
   scope :selected, -> { where(selected: true)}
   require 'open-uri'
+
+  def init
+    self.selected = false if (self.has_attribute? :selected) && self.selected.nil?
+  end
 
   def self.yt_session
     @yt_session ||= YouTubeIt::Client.new(:dev_key => YouTubeITConfig.dev_key)
@@ -114,9 +120,8 @@ class Video < ActiveRecord::Base
     self.title = video.title
     self.duration = video.duration
     self.hits = video.view_count
-    self.selected = false
     self.img_url = "http://img.youtube.com/vi/#{youtube_id}/mqdefault.jpg"
-    self.created_at = video.published_at.to_s
+    self.created_at ||= video.published_at.to_s
     self.author = video.author.name
     if video.rating
       self.rating = video.rating.average

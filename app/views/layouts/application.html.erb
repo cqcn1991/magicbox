@@ -21,14 +21,21 @@
 <body>
 <%= render 'layouts/magic_digest_header' %>
 <div class="container cafe_spot_layout">
+
+
   <div class="row">
     <div class="col-md-9">
+      <% if flash[:notice] %>
+        <div class="alert alert-info alert-dismissible" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <%= flash[:notice] %>
+        </div>
+       <% end  %>
       <%= yield %>
     </div>
     <div class="col-md-3">
       <div class="">
         <%= yield :sidebar_selector %>
-
         <div class="notices">
           <div class="panel panel-default">
             <div class="panel-heading">

@@ -1,5 +1,38 @@
-<h1>New video</h1>
+<div class="row">
+  <div class="col-md-9">
+    <div class="panel panel-default main">
+      <div class="panel-heading main">
+        <h1 class="panel-title">Recommend a Video</h1>
+      </div>
+      <div class="panel-body">
+        <%= form_for(@video) do |f| %>
+          <% if @video.errors.any? %>
+            <div id="error_explanation">
+    <!--          <h2><%= pluralize(@video.errors.count, "error") %> prohibited this video from being saved:</h2>-->
 
-<%= render 'form' %>
 
-<%= link_to 'Back', videos_path %>
+                <% @video.errors.full_messages.each do |message| %>
+                  <div class="alert alert-warning"><%= message %></div>
+                <% end %>
+            </div>
+          <% end %>
+
+          <div class="form-group">
+            <label for="video_url">Now only support Youtube</label>
+            <%= f.text_field :url, class:"form-control", placeholder:"Enter video url"  %>
+          </div>
+
+          <div class="actions">
+            <%= f.submit 'Submit', class: 'btn btn-success'%>
+            <%= link_to 'Cancel', videos_path, class: 'btn btn-default pull-right' %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+

@@ -75,10 +75,12 @@ class VideosController < ApplicationController
   # POST /videos.json
   def create
     @video = Video.new(video_params)
+    @video.selected = true
+    @video.created_at = Date.today
 
     respond_to do |format|
       if @video.save
-        format.html { redirect_to @video, notice: 'Video was successfully created.' }
+        format.html { redirect_to videos_path, notice: 'Video was successfully created.' }
         format.json { render :show, status: :created, location: @video }
       else
         format.html { render :new }
