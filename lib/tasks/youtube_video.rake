@@ -10,7 +10,7 @@ task :fetch_youtube_videos, [:fetch_number] => :environment do|t, args|
 
   client = YouTubeIt::Client.new(:dev_key => "AIzaSyBktwEa5lFm87ENBHmAGWJMCTChS282Whk")
 
-  channels = RESOURCES_CONSTANT::YOUTUBE_MAGICIAN_CHANNELS + RESOURCES_CONSTANT::YOUTUBE_MAGIC_SHOP_CHANNELS
+  channels = RESOURCES_CONSTANT::YOUTUBE_MAGICIAN_CHANNELS + RESOURCES_CONSTANT::YOUTUBE_CHANNELS[:shops]
   channels.each do |channel|
     channel_id = channel[:url].split('channel/')[1]
     query = {

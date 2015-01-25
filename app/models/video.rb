@@ -2,8 +2,8 @@
 class Video < ActiveRecord::Base
   validates :url, :title, :img_url,  presence: true
   validates :source_id, uniqueness: true
+  
   before_validation :get_info, on: :create
-
   after_initialize :init
 
   scope :by_category, ->(category) { where category: category }

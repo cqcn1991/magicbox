@@ -16,11 +16,18 @@
             <span class="glyphicon glyphicon-cutlery" aria-hidden="true"></span>
             <strong>Best in Cafe, 2014</strong>
         </h2></th>
-        <th class="hidden-xxs"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span></th>
-        <th class="hidden-xxs"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></th>
-        <th class="hidden-xxs">❤</th>
-        <th class="hidden-xxs">Create</th>
-        <th class="hidden-xxs">Reply</th>
+        <th class="hidden-xxs">
+          <%= link_to sort: 'replies' do %>
+          <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
+          <% end %>
+        </th>
+        <th class="hidden-xxs">
+          <%= link_to sort: 'views' do %>
+          <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+          <% end %>
+        </th>
+        <th class="hidden-xxs"><%= link_to '❤', sort: 'like' %></th>
+        <th class="hidden-xxs"><%= link_to 'Create', sort: 'create' %></th>
       </tr>
       </thead>
 
