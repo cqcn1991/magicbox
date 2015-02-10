@@ -3,19 +3,14 @@ desc "Get youtube video information"
 task :fetch_penguin, [:fetch_number] => :environment do|t, args|
   require 'nokogiri'
   require 'open-uri'
-  if args.fetch_number
-    fetch_number = args.fetch_number.to_i
-  else
-    fetch_number = 7
-  end
 
   penguin_lectures = []
-  for page_number in 1..10 do
+  for page_number in 1..16 do
     url ="http://www.penguinmagic.com/browse.php?c=live&p=#{page_number}"
     puts url
     doc = Nokogiri::HTML(open(url))
     doc.css("td[width='100%'] .splash").each do |item_info|
-      title = item_info.at('.splash_text a b').text.gsub( "(Instant Download)", "")
+      title = item_info.at('.splash_text a b').text.gsub( "(Instant Download)", "").split('LIVE')[0]
       lecture_url = 'http://www.penguinmagic.com'+ item_info.at('.splash_text a')['href']
       thumbnail = item_info.at('.product_main_thumbnail img')['src']
       if item_info.at('.splash_avgStars img')
@@ -27,11 +22,10 @@ task :fetch_penguin, [:fetch_number] => :environment do|t, args|
       end
     end
   end
-  puts penguin_lectures.count
 
-  output_file = File.open( "penguin_lectures.txt","w" )
-  output_file << penguin_lectures
-  output_file.close
+  file = 'lib/penguin.yml'
+  open(file, 'w') { |f| YAML::dump(penguin_lectures, f) }
+  lecs = YAML::load(File.read(file))
 
 end
 

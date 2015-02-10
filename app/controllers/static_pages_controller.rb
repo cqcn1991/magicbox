@@ -28,6 +28,19 @@ class StaticPagesController < ApplicationController
     @posts = posts.first(50)
   end
 
+  def penguin
+    lectures = YAML::load(File.read('lib/penguin.yml')).sort_by { |hsh| [hsh[:stars],hsh[:review_number]] }.reverse
+    case params[:rating]
+    when 'excellent'
+      lectures = lectures.select {|l| l[:stars] >= 5}
+    when 'good'
+      lectures = lectures.select {|l| l[:stars] == 4}
+    when 'ordinary'
+      lectures = lectures.select {|l| l[:stars] == 3}
+    end
+    @penguin_lectures = lectures
+  end
+
   def selected
 
   end

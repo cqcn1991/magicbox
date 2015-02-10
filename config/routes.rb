@@ -26,6 +26,7 @@ end
   get 'home' => 'static_pages#home'
 
   get 'best_in_cafe_2014' => 'static_pages#best_in_cafe_2014'
+  get 'penguin' => 'static_pages#penguin'
 
   get 'admin' => 'static_pages#admin'
 
