@@ -137,26 +137,31 @@ class Video < ActiveRecord::Base
   end
 
   def get_hits
-    if self.source == 'youku'
-      video_id = self.get_youku_id
-      response = HTTParty.get("http://v.youku.com/QVideo/~ajax/getVideoPlayInfo?&id=#{video_id}&type=vv")
-      decode_response =  ActiveSupport::JSON.decode(response)
-      hits = decode_response['vv'].to_i
-    elsif self.source == 'tudou'
-      response = HTTParty.get("http://index.youku.com/dataapi/getData?jsoncallback=page_play_model_exponentModel__getNum&num=100011&icode=#{self.source_id}")
-      json =  /(\{.*\})/.match(response).to_s
-      decode_response =  ActiveSupport::JSON.decode(json)
-      hits = decode_response['result']['totalVv'].to_i
-    elsif self.source == 'youtube'
-      video_info = Video.yt_session.video_by(self.source_id)
-      hits = video_info.view_count
-      if video_info.rating
-        self.rating = video_info.rating.average
-        self.likes = video_info.rating.likes.to_i
+    begin
+      if self.source == 'youku'
+        video_id = self.get_youku_id
+        response = HTTParty.get("http://v.youku.com/QVideo/~ajax/getVideoPlayInfo?&id=#{video_id}&type=vv")
+        decode_response =  ActiveSupport::JSON.decode(response)
+        hits = decode_response['vv'].to_i
+      elsif self.source == 'tudou'
+        response = HTTParty.get("http://index.youku.com/dataapi/getData?jsoncallback=page_play_model_exponentModel__getNum&num=100011&icode=#{self.source_id}")
+        json =  /(\{.*\})/.match(response).to_s
+        decode_response =  ActiveSupport::JSON.decode(json)
+        hits = decode_response['result']['totalVv'].to_i
+      elsif self.source == 'youtube'
+        video_info = Video.yt_session.video_by(self.source_id)
+        hits = video_info.view_count
+        if video_info.rating
+          self.rating = video_info.rating.average
+          self.likes = video_info.rating.likes.to_i
+        end
       end
+      self.hits = hits
+      self.save
+    rescue OpenURI::HTTPError
+      # Delete the entry
+      self.destroy
     end
-    self.hits = hits
-    self.save
   end
 
   def self.search(query)

@@ -86,10 +86,7 @@ class Post < ActiveRecord::Base
   end
 
   def get_likes_or_reply_number(doc = nil)
-    if !doc
-      url = self.url
-      doc = Nokogiri::HTML(open(url))
-    end
+    doc = Nokogiri::HTML(open(self.url)) if !doc
     if self.source == 'cafe'
       self.get_likes(doc)
     elsif self.source == 'tieba'
@@ -101,10 +98,9 @@ class Post < ActiveRecord::Base
     likes = doc.at("table.normal span.midtext")
     if likes
       self.likes = likes.text.tr("^0-9", '').to_i
-      puts self.likes
     else
-      puts 'links are deleted'
       self.destroy
+      return 'links are deleted'
     end
   end
 
