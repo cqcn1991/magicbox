@@ -12,6 +12,7 @@ class VideosController < ApplicationController
     else
       videos = video_base.all
     end
+    params[:sort] = 'date' if !params[:sort]
     if params[:sort] == 'pop'
       videos = videos.order_by_hits
     elsif params[:sort] == 'rating'

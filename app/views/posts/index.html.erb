@@ -1,11 +1,12 @@
 <% content_for :sidebar_selector do %>
   <div class="panel panel-default">
     <div class="panel-body">
-      <h4 class="no-margin">Order by</h4>
-      <%= link_to 'Create', sort: 'create' %>
-      <%= link_to 'Reply', sort: 'update' %>
-      <%= link_to 'Likes', sort: 'like' %>
-      <br>
+      <div class="selectors">
+        <h4 class="no-margin">Order by</h4>
+        <%= selector_link 'Create', sort: 'create' %>
+        <%= selector_link 'Reply', sort: 'update' %>
+        <%= selector_link 'Likes', sort: 'like' %>
+      </div>
       <%= cafe_tag_nav_link('post', 'new') %>
       <%= cafe_tag_nav_link('post', 'card') %>
       <%= cafe_tag_nav_link('post', 'mental') %>

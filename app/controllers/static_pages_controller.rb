@@ -54,6 +54,9 @@ class StaticPagesController < ApplicationController
   def popular
     base_videos = Video.by_source('youtube')
     base_posts = Post.by_forum('cafe')
+    if !(params[:number] or params[:sort])
+      params[:sort] = 'new'
+    end
     if  params[:number]
       number = params[:number].to_i
       trending_videos = base_videos.created_in_days(number).order_by_rating.first(4)

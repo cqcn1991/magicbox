@@ -4,21 +4,21 @@ module ApplicationHelper
       /^http/i.match(url) ? url : "http://#{url}"
     end
 
+    # Usage: <%= nav_link  'Trending', pop_path %>
     def nav_link(link_text, link_path, additional_class = nil)
       recognized = Rails.application.routes.recognize_path(link_path)
       if recognized[:controller] == params[:controller]
         if recognized[:controller] != 'static_pages'
-          #&& recognized[:action] == params[:action]
+          # 对于一般如TopicsController, 在index, new, edit等action下面，都显示active css
           class_name = 'active'
         else
+          # 对于StaticPagesController下面杂七杂八的action, 需要全部匹配
           class_name = 'active' if recognized[:action] == params[:action]
         end
       else
         class_name = nil
       end
-      if additional_class
-        class_name = [class_name, additional_class ]
-      end
+      class_name = [class_name, additional_class ] if additional_class
       content_tag(:li, :class => class_name) do
         link_to link_text, link_path
       end
@@ -36,12 +36,13 @@ module ApplicationHelper
       end
     end
 
-    def selector_link(link_text, link_path, default_link = nil)
-      class_name = current_page?(link_path) ? 'active' : nil
-      if default_link
-        class_name = 'active'
-      end
-      link_to link_text, link_path, class: class_name
+    # Usage:
+    # selector_link('This is New', tab: 'new')
+    # link_to link_text, url_for(tab: 'new'), class: ('active'if params[:tab] == 'new')
+    def selector_link(link_text, link)
+      key = link.keys.first
+      class_name = 'active'if params[key].to_s == link[key]
+      link_to link_text, url_for(link), class: class_name
     end
 
     def tag_link(item)

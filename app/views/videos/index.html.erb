@@ -1,9 +1,11 @@
 <% content_for :sidebar_selector_content do %>
   <br/>
-  <span>Order by</span>
-  <%= link_to 'Time', sort: 'date' %>
-  <%= link_to 'Views', sort: 'pop' %>
-  <%= link_to 'Rating', sort: 'rating' %>
+  <div class="selectors">
+    <span>Order by</span>
+    <%= selector_link 'Time', sort: 'date' %>
+    <%= selector_link 'Views', sort: 'pop' %>
+    <%= selector_link 'Rating', sort: 'rating' %>
+  </div>
 <% end %>
 
 <%= render 'sidebar_selector' %>

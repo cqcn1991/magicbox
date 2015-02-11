@@ -9,7 +9,7 @@ class PostsController < ApplicationController
     else
       posts = Post.by_forum('cafe')
     end
-
+    params[:sort] = 'update' if !params[:sort]
     if params[:sort] == 'like'
       posts = posts.order_by_likes
     elsif params[:sort] == 'create'
