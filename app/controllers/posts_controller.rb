@@ -9,13 +9,11 @@ class PostsController < ApplicationController
     else
       posts = Post.by_forum('cafe')
     end
-    params[:sort] = 'update' if !params[:sort]
+    params[:sort] = 'time' if !params[:sort]
     if params[:sort] == 'like'
       posts = posts.order_by_likes
-    elsif params[:sort] == 'create'
+    elsif params[:sort] == 'time'
         posts = posts.order_by_date
-    else
-      posts = posts.order_by_update
     end
     @posts = posts.paginate(:page => params[:page], :per_page => 10)\
   end

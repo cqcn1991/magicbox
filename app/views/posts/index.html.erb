@@ -3,8 +3,8 @@
     <div class="panel-body">
       <div class="selectors">
         <h4 class="no-margin">Order by</h4>
-        <%= selector_link 'Create', sort: 'create' %>
-        <%= selector_link 'Reply', sort: 'update' %>
+        <%= selector_link 'Time', sort: 'create' %>
+        <%#= selector_link 'Reply', sort: 'update' %>
         <%= selector_link 'Likes', sort: 'like' %>
       </div>
       <%= cafe_tag_nav_link('post', 'new') %>
@@ -28,7 +28,7 @@
         </h2></th>
         <th class="hidden-xxs"><%= link_to '❤', sort: 'like' %></th>
         <th class="hidden-xxs"><%= link_to 'Create', sort: 'create' %></th>
-        <th class="hidden-xxs"><%= link_to 'Reply', sort: 'update' %></th>
+        <!--<th class="hidden-xxs"><%= link_to 'Reply', sort: 'update' %></th>-->
       </tr>
       </thead>
 

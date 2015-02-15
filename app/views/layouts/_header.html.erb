@@ -9,34 +9,22 @@
         <span class="icon-bar"></span>
       </button>
       <%= link_to root_path, class: 'navbar-brand' do %>
-        <strong>魔法盒子</strong>
+        <strong>Magic Digest</strong>
       <% end  %>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <%= nav_link '最新', root_path %>
-        <%= nav_link  '热门', pop_path %>
-        <%#= nav_link  '精选', selected_path %>
-        <%= nav_link  '淘宝', shops_path %>
-        <%= nav_link  '视频', videos_path %>
-        <%= nav_link  '热帖', posts_path %>
+        <%= nav_link  'Trending', pop_path %>
+        <%= nav_link  'Videos', best_videos_path %>
+        <%= nav_link  'Posts', posts_path %>
+        <%= nav_link  'Sources', resources_path %>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
-        <%= nav_link  '信息来源', resources_path, 'important-link' %>
-        <%= nav_link  '留言！', discussion_path %>
-<!--        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
-        </li>-->
+        <%= nav_link  'Top Penguin Live?', reports_penguin_path, 'important-link' %>
+        <%= nav_link  'Discuss', discuss_path %>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div>
