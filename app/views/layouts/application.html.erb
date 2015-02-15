@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Magic Digest</title>
+  <title>Magic Digest - Less but better</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -43,7 +43,7 @@
             </div>
             <ul class="list-group">
               <li class="list-group-item notice">Here are the <strong>hottest topics</strong> at <a href="http://themagiccafe.com">themagiccafe.com</a>, and magic videos from <a href="http://youtube.com">youtube.com</a></li>
-              <li class="list-group-item notice">If you have any <strong>suggestion</strong>, you can put it <a href="http://www.themagiccafe.com/forums/viewtopic.php?topic=574013&forum=218">here</a>, or contact me by 38306608@qq.com
+              <li class="list-group-item notice">If you have any <strong>suggestion</strong>, you can put it <%= link_to 'Here', discuss_path %>, or contact me by 38306608@qq.com
               </li>
             </ul>
           </div>

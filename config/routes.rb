@@ -23,7 +23,7 @@ Rails.application.routes.draw do
 
   root 'static_pages#popular'
 
-  get 'discussion' => 'static_pages#discussion'
+  get 'discussion' => 'static_pages#discussion', as: :discuss
   get 'pop' => 'static_pages#popular'
   get 'resources' => 'static_pages#resources'
   get 'home' => 'static_pages#home'

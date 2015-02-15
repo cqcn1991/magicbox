@@ -9,6 +9,9 @@ class StaticPagesController < ApplicationController
   end
 
   def discussion
+  end
+
+  def nodes
     @nodes = RESOURCES_CONSTANT::NODES
   end
 

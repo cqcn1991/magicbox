@@ -1,24 +1,14 @@
-<div class="row">
-  <div class="col-md-6">
-  <% @nodes.each_with_index do |node,index|  %>
-    <div class="panel panel-default main">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" href=".node-<%= index %>">
-          <%= node[:title] %>
-          </a>
-        </h4>
-      </div>
-      <div class="panel-body">
-        <span class="intro collapse in node-<%= index %>"><%= node[:intro] %></span>
-        <div class="content collapse node-<%= index %>">
-          <%= simple_format node[:content] %>
-        </div>
-      </div>
-    </div>
-   <% end %>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+  var disqus_shortname = 'magicdigest'; // required: replace example with your forum shortname
 
-
-  </div>
-</div>
-
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    

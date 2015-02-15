@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col-md-6">
+    <% @nodes.each_with_index do |node,index|  %>
+      <div class="panel panel-default main">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" href=".node-<%= index %>">
+              <%= node[:title] %>
+            </a>
+          </h4>
+        </div>
+        <div class="panel-body">
+          <span class="intro collapse in node-<%= index %>"><%= node[:intro] %></span>
+          <div class="content collapse node-<%= index %>">
+            <%= simple_format node[:content] %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
+
+  </div>
+</div>
+
