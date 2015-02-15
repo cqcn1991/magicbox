@@ -45,6 +45,14 @@ module ApplicationHelper
       link_to link_text, url_for(link), class: class_name
     end
 
+    def selector_link2(link_text, link)
+      key = link.keys.first
+      class_name = 'active'if params[key].to_s == link[key]
+      content_tag :li, class: class_name do
+        link_to link_text, url_for(link)
+      end
+    end
+
     def tag_link(item)
       if item.category == '心灵'
         category = 'mental'

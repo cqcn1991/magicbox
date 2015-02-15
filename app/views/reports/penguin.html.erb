@@ -1,0 +1,36 @@
+<div class="panel panel-default">
+  <div class="panel-body">
+    <ul class="nav nav-pills nav-justified">
+      <%= selector_link2('All', rating: 'all') %>
+      <%= selector_link2('★★★★★', rating: '5') %>
+      <%= selector_link2('★★★★', rating: '4') %>
+      <%= selector_link2('★★★', rating: '3') %>
+    </ul>
+  </div>
+  <ul class="list-group">
+    <% @penguin_lectures.each_slice(21) do |grouped_lectures| %>
+      <li class="list-group-item">
+        <div class="row">
+        <% grouped_lectures.each do |lecture| %>
+          <div class="col-md-4 clearfix lecture">
+            <%= link_to lecture[:url] do %>
+              <%= image_tag(lecture[:thumnail_url], class: 'lecture-thumbnail pull-left img-rounded') %>
+              <div class="lecture-info pull-left">
+                <h4><%= lecture[:title].truncate(15) %></h4>
+                <h6>
+                  <% lecture[:stars].times do %>
+                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                  <% end %>
+                  <%= lecture[:review_number] %>
+                </h6>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+

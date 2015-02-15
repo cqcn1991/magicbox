@@ -1,12 +1,15 @@
 Rails.application.routes.draw do
+  get 'reports/penguin'
+  get 'reports/best_in_cafe_2014'
+
   resources :notices
   resources :posts
 
   resources :videos do
-  collection do
-    get 'best'
+    collection do
+      get 'best'
+    end
   end
-end
   resources :shops
   resources :items
 
@@ -24,9 +27,6 @@ end
   get 'pop' => 'static_pages#popular'
   get 'resources' => 'static_pages#resources'
   get 'home' => 'static_pages#home'
-
-  get 'best_in_cafe_2014' => 'static_pages#best_in_cafe_2014'
-  get 'penguin' => 'static_pages#penguin'
 
   get 'admin' => 'static_pages#admin'
 
