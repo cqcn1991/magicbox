@@ -22,6 +22,13 @@ class Video < ActiveRecord::Base
     where("created_at > ? AND created_at < ?", start_time, end_time).where("likes > ?", 15).where("rating > ?", 4.85).order_by_rating.to_a.uniq(&:author)
   end
 
+  scope :selected_of_the_month, ->(year, month) do
+    time = Time.new(year, month)
+    start_time = time.beginning_of_month
+    end_time = time.end_of_month
+    where("created_at > ? AND created_at < ?", start_time, end_time).where("selected = ?", true).by_source('youtube')
+  end
+
   scope :random_best_before,->(year, month) do
     time = Time.new(year, month)
     before_time = time.beginning_of_month
@@ -39,6 +46,12 @@ class Video < ActiveRecord::Base
 
   def self.yt_session
     @yt_session ||= YouTubeIt::Client.new(:dev_key => YouTubeITConfig.dev_key)
+  end
+
+  def important_author
+    important_authors = RESOURCES_CONSTANT::YOUTUBE_CHANNELS.values.flatten
+    match_authors = important_authors.select {|author| author[:name] == self.author }
+    match_authors.first if match_authors.any?
   end
 
   def get_info

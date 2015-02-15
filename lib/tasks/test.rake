@@ -5,22 +5,24 @@ task :test_post => :environment do
   require 'nokogiri'
   require 'open-uri'
 
-  client = YouTubeIt::Client.new(:dev_key => "AIzaSyBktwEa5lFm87ENBHmAGWJMCTChS282Whk")
+  videos = Video.selected_of_the_month(2015,1)
 
-  tv_famous_magicians = RESOURCES_CONSTANT::YOUTUBE_CHANNELS[:archives]
-  tv_famous_magicians.each do |channel|
-    channel_id = channel[:url].split('channel/')[1]
-    query = {
-        author: channel_id,
-        max_results: 3   ### used when getting initial videos
-    }
-    video = client.videos_by(query).videos.first
-    author = video.author
-    doc = Nokogiri::HTML(open(author.uri))
-    img_url = doc.css('thumbnail')[0]['url']
-    puts "{url:'#{channel[:url]}', name: '#{author.name}',"
-    puts "favicon:'#{img_url}'},"
-  end
+  # client = YouTubeIt::Client.new(:dev_key => "AIzaSyBktwEa5lFm87ENBHmAGWJMCTChS282Whk")
+  #
+  # tv_famous_magicians = RESOURCES_CONSTANT::YOUTUBE_CHANNELS[:shops]
+  # tv_famous_magicians.each do |channel|
+  #   channel_id = channel[:url].split('channel/')[1]
+  #   query = {
+  #       author: channel_id,
+  #       max_results: 3   ### used when getting initial videos
+  #   }
+  #   video = client.videos_by(query).videos.first
+  #   author = video.author
+  #   doc = Nokogiri::HTML(open(author.uri))
+  #   img_url = doc.css('thumbnail')[0]['url']
+  #   puts "{url:'#{channel[:url]}', name: '#{author.name}',"
+  #   puts "favicon:'#{img_url}'},"
+  # end
 
 
   #keywords =['Le grand Cabaret magic', 'penn teller fool us',

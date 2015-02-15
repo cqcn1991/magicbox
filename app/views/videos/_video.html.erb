@@ -16,15 +16,24 @@
 
     <div class="caption clearfix">
       <%= link_to item.title, item.url, class: 'title' %>
-      <% if show_views  %>
-        <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span><strong><%= " #{number_to_human(item.hits, precision: 2)}" %></strong>
-      <% end %>
-      <div class="pull-right">
-        <% if item.selected?  %>
-          <%= selected_tag_link %>
-        <% else %>
-          <span><%= item.created_at.strftime("%m/%d") %></span>
+      <div class="video-sub-info">
+        <% if show_views  %>
+          <!--<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>-->
+          <strong><%= " #{number_to_human(item.hits, precision: 2)}" %></strong>
         <% end %>
+        <div class="pull-right">
+          <% author = item.important_author  %>
+          <% if item.selected?  %>
+            <%= selected_tag_link %>
+          <% elsif author %>
+            <%= link_to author[:url], class: "video-author" do %>
+              <%= image_tag(author[:favicon], class: 'favicon pull-left img-rounded') %>
+              <%= author[:name].truncate(12) %>
+            <% end %>
+          <% else %>
+            <span><%= item.created_at.strftime("%m/%d") %></span>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>

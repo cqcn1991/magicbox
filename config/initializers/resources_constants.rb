@@ -64,12 +64,19 @@ module RESOURCES_CONSTANT
 
   YOUTUBE_CHANNELS = {
       shops: [
-          {url: 'https://www.youtube.com/channel/UCFR8mp0gz-h93DGGhsdLmrg', name: 'MAGIC SHOP FRENCH DROP'},
-          {url: 'https://www.youtube.com/channel/UChKgsPL1MX5z_M33fYtOPKg', name: 'Ellusionist'},
-          {url: 'https://www.youtube.com/channel/UCfrhuhTDSpVhK7omh_ZIKaw', name: "Murphy's Magic"},
-          {url: 'https://www.youtube.com/channel/UCEybzfsG2WI4Hnx5hpd2uRA', name: 'TheBlueCrownMagic'},
-          {url: 'https://www.youtube.com/channel/UCwlXbq5KtkdGC87oABDsfTQ', name: 'Dan & Dave'},
-          {url: 'https://www.youtube.com/channel/UCl1WwbVpKUdQerivZpUxZLA', name: 'Theory 11'},],
+          {url:'https://www.youtube.com/channel/UCFR8mp0gz-h93DGGhsdLmrg', name: 'FrenchdropTube',
+            favicon:'http://i.ytimg.com/i/FR8mp0gz-h93DGGhsdLmrg/1.jpg?v=520dc2c6'},
+          {url:'https://www.youtube.com/channel/UChKgsPL1MX5z_M33fYtOPKg', name: 'Ellusionist',
+            favicon:'http://yt3.ggpht.com/-bkv4MEQkfSU/AAAAAAAAAAI/AAAAAAAAAAA/QUHQ3eQ-KOc/s88-c-k-no/photo.jpg'},
+          {url:'https://www.youtube.com/channel/UCfrhuhTDSpVhK7omh_ZIKaw', name: "Murphy's Magic",
+            favicon:'http://yt3.ggpht.com/-b3PEKajo91w/AAAAAAAAAAI/AAAAAAAAAAA/YmANkeDmPiM/s88-c-k-no/photo.jpg'},
+          {url:'https://www.youtube.com/channel/UCEybzfsG2WI4Hnx5hpd2uRA', name: 'TheBlueCrownMagic',
+            favicon:'http://yt3.ggpht.com/-GXFRAFwE3z4/AAAAAAAAAAI/AAAAAAAAAAA/9ExyJKt-OBk/s88-c-k-no/photo.jpg'},
+          {url:'https://www.youtube.com/channel/UCwlXbq5KtkdGC87oABDsfTQ', name: 'DAN & DAVE',
+            favicon:'http://yt3.ggpht.com/-7_PFte33nSE/AAAAAAAAAAI/AAAAAAAAAAA/Dppk611JzzQ/s88-c-k-no/photo.jpg'},
+          {url:'https://www.youtube.com/channel/UCl1WwbVpKUdQerivZpUxZLA', name: 'whatistheory11',
+            favicon:'http://yt3.ggpht.com/-C0CZXKOZBC0/AAAAAAAAAAI/AAAAAAAAAAA/fbMd3irXCqs/s88-c-k-no/photo.jpg'},
+      ],
       tv_famous_magicians: [
           {url:'https://www.youtube.com/channel/UCb9A6uotqUiuVCvVp4GMqOg', name: 'Justin Flom',
            favicon:'http://yt3.ggpht.com/-23GcVKQRHYw/AAAAAAAAAAI/AAAAAAAAAAA/N8f9s9vQ5Iw/s88-c-k-no/photo.jpg'},

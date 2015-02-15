@@ -6,6 +6,24 @@
   overflow: hidden;
 }
 
+.video.thumbnail{
+    padding-bottom: 0px;
+  .caption{
+    padding-bottom: 8px;
+  }
+  .video-sub-info{
+    margin-top:2px ;
+  }
+}
+
+.video-author{
+  .favicon{
+    height: 20px;
+  }
+  color: #777;
+  font-size:11px
+}
+
 .thumbnail{
   img.un-responsive{
     height: 102px;

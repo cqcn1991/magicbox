@@ -29,7 +29,7 @@ class VideosController < ApplicationController
     date = Date.new(2014,1,1)
     @monthly_videos = []
     while true
-      videos = Video.best_of_the_month(date.year, date.month)
+      videos = (Video.selected_of_the_month(date.year, date.month) + Video.best_of_the_month(date.year, date.month)).uniq
       @monthly_videos << videos
       date += 1.month
       break if date > Date.today.beginning_of_month
