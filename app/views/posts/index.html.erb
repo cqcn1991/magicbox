@@ -1,19 +1,18 @@
-<% content_for :sidebar_selector do %>
-  <div class="panel panel-default">
-    <div class="panel-body">
-      <div class="selectors">
-        <h4 class="no-margin">Order by</h4>
-        <%= selector_link 'Time', sort: 'create' %>
-        <%#= selector_link 'Reply', sort: 'update' %>
-        <%= selector_link 'Likes', sort: 'like' %>
-      </div>
-      <%= cafe_tag_nav_link('post', 'new') %>
-      <%= cafe_tag_nav_link('post', 'card') %>
-      <%= cafe_tag_nav_link('post', 'mental') %>
-      <%= cafe_tag_nav_link('post', 'review') %>
-    </div>
+<% content_for :sidebar_selector_content do %>
+  <div class="selectors">
+    <h4 class="no-margin">Order by</h4>
+    <%= selector_link 'Time', sort: 'create' %>
+    <%#= selector_link 'Reply', sort: 'update' %>
+    <%= selector_link 'Likes', sort: 'like' %>
   </div>
+  <%= cafe_tag_nav_link('post', 'new') %>
+  <%= cafe_tag_nav_link('post', 'card') %>
+  <%= cafe_tag_nav_link('post', 'mental') %>
+  <%= cafe_tag_nav_link('post', 'review') %>
 <% end %>
+
+<%= render 'sidebar_selector' %>
+
 
 <div class="panel panel-default">
   <div class="panel-body">

@@ -1,0 +1,13 @@
+<% content_for :sidebar_selector do %>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <ul class="nav nav-pills">
+        <%= accurate_nav_link 'Best Posts', best_posts_path %>
+        <%= accurate_nav_link  'All Posts', posts_path %>
+      </ul>
+      <%= yield :sidebar_selector_content %>
+    </div>
+  </div>
+
+  <%= render 'layouts/new_video' %>
+<% end %>

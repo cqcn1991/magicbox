@@ -1,0 +1,29 @@
+<%= render 'sidebar_selector' %>
+
+<% @monthly_posts.each_with_index do |post_group, index| %>
+  <% if post_group.any?  %>
+  <div class="panel panel-default best-posts">
+    <div class="panel-body">
+      <table class="table table-striped table-condensed">
+        <thead>
+        <tr class="no-style-link">
+          <th ><h2 class="no-margin">
+            Best in <%= post_group.first.created_at.strftime("%Y/%m") %>
+          </h2></th>
+          <th class="hidden-xxs">❤</th>
+          <th class="hidden-xxs">Time</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <% post_group.each do |post| %>
+          <%= render partial: 'posts/post_row', locals: {post: post}  %>
+        <% end  %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <% end  %>
+<% end  %>
+
+<%= will_paginate @monthly_posts, renderer: BootstrapPagination::Rails %>

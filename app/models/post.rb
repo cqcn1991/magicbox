@@ -19,9 +19,28 @@ class Post < ActiveRecord::Base
     end
   end
 
+  scope :best_of_the_month, ->(year, month) do
+    time = Time.new(year, month)
+    start_time = time.beginning_of_month
+    end_time = time.end_of_month
+    where("created_at > ? AND created_at < ?", start_time, end_time).order_by_likes
+  end
+
   require 'open-uri'
 
   before_validation :get_info, on: :create
+
+  def self.best_by_month
+    date = Date.new(2013,1,1)
+    monthly_posts = []
+    while true
+      posts = Post.best_of_the_month(date.year, date.month).first(7)
+      monthly_posts << posts
+      date += 1.month
+      break if date > Date.today.beginning_of_month
+    end
+    monthly_posts
+  end
 
   def get_info
     url = self.url

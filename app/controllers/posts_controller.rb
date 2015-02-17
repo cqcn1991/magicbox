@@ -15,7 +15,7 @@ class PostsController < ApplicationController
     elsif params[:sort] == 'time'
         posts = posts.order_by_date
     end
-    @posts = posts.paginate(:page => params[:page], :per_page => 10)\
+    @posts = posts.paginate(:page => params[:page], :per_page => 10)
   end
 
   def admin
@@ -30,6 +30,10 @@ class PostsController < ApplicationController
     else
       @posts = Post.order_by_date
     end
+  end
+
+  def best
+    @monthly_posts = Post.best_by_month.reverse.paginate(:page => params[:page], :per_page => 6)
   end
 
   # GET /posts/1

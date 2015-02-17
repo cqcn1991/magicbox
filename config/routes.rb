@@ -3,7 +3,11 @@ Rails.application.routes.draw do
   get 'reports/best_in_cafe_2014'
 
   resources :notices
-  resources :posts
+  resources :posts do
+    collection do
+      get 'best'
+    end
+  end
 
   resources :videos do
     collection do
