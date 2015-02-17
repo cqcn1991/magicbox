@@ -87,19 +87,9 @@ module RESOURCES_CONSTANT
           {url:'https://www.youtube.com/channel/UCa-iuHGLTxvkOChd4jnybiA', name: 'Yif',
            favicon:'http://yt3.ggpht.com/-Tv0ywXKcV6M/AAAAAAAAAAI/AAAAAAAAAAA/keqsEvamxBI/s88-c-k-no/photo.jpg'},
           {url:'https://www.youtube.com/channel/UCNGAGtpeciKLnGgoAM53FvQ', name: 'João Blümel',
-           favicon:'http://yt3.ggpht.com/-C7VyBQZPcRQ/AAAAAAAAAAI/AAAAAAAAAAA/st0SkLVcWgI/s88-c-k-no/photo.jpg'},],
-      archives: [
-          {url:'https://www.youtube.com/channel/UCnCr4v73iD2prmqDfmGvhpg', name: 'enfilo',
-           favicon:'http://yt3.ggpht.com/-_lqMihs7uNk/AAAAAAAAAAI/AAAAAAAAAAA/D-j0IGnecH4/s88-c-k-no/photo.jpg'},
-          {url:'https://www.youtube.com/channel/UCsUO2qpMrNeoro48taaEj0w', name: 'Paco Rodas Ratazzi',
-           favicon:'http://yt3.ggpht.com/-Y1WQMoUymWE/AAAAAAAAAAI/AAAAAAAAAAA/9c76pq7Xkos/s88-c-k-no/photo.jpg'},
-          {url:'https://www.youtube.com/channel/UCXiK0ySADAUhtx8YJkSN8Jw', name: 'VintageMagic Archives',
-           favicon:'http://yt3.ggpht.com/-gu9tlTJTUTg/AAAAAAAAAAI/AAAAAAAAAAA/jcziGI_xLL8/s88-c-k-no/photo.jpg'},
-          {url:'https://www.youtube.com/channel/UCbQWelTfa0xTCCJcb0sgcUQ', name: 'Steve Pellegrino',
-           favicon:'http://yt3.ggpht.com/-J-7lcB0pTR8/AAAAAAAAAAI/AAAAAAAAAAA/Pc5WuN0izfk/s88-c-k-no/photo.jpg'},
-          {url:'https://www.youtube.com/channel/UCRQA6Y4ofSivJGV2evZgukA', name: 'theheadhacker',
-           favicon:'http://yt3.ggpht.com/-wUj0qoTNUjg/AAAAAAAAAAI/AAAAAAAAAAA/O-A_KHT7Tfc/s88-c-k-no/photo.jpg'},
-      ],
+           favicon:'http://yt3.ggpht.com/-C7VyBQZPcRQ/AAAAAAAAAAI/AAAAAAAAAAA/st0SkLVcWgI/s88-c-k-no/photo.jpg'},
+          {url:'https://www.youtube.com/channel/UCvGMGQC8gNkd4gwxSbABIlw', name: 'Quirkology',
+           favicon:'http://yt3.ggpht.com/-i8MMXyS1CAo/AAAAAAAAAAI/AAAAAAAAAAA/XhWydCsJDKU/s88-c-k-no/photo.jpg'},],
       award_winning_magicians: [
           {url:'https://www.youtube.com/channel/UCmkaiZAj_rOjPcpidbbjSOw', name: 'HajnoczySoma',
            favicon:'http://i.ytimg.com/i/mkaiZAj_rOjPcpidbbjSOw/1.jpg?v=aecd78'},
@@ -120,12 +110,59 @@ module RESOURCES_CONSTANT
           {url:'https://www.youtube.com/channel/UCu1fwMSRH383erOhZ1aYZ4g', name: 'Yuhojin77',
            favicon:'http://yt3.ggpht.com/-Kv43qfaz1LE/AAAAAAAAAAI/AAAAAAAAAAA/bYW6B5Ly5r0/s88-c-k-no/photo.jpg'},
           {url:'https://www.youtube.com/channel/UCccvbKrrgvcEc2h-hfMLjfQ', name: 'David Stone',
-           favicon:'http://i.ytimg.com/i/ccvbKrrgvcEc2h-hfMLjfQ/1.jpg?v=4fc532bd'},],
+           favicon:'http://i.ytimg.com/i/ccvbKrrgvcEc2h-hfMLjfQ/1.jpg?v=4fc532bd'},
+          {url:'https://www.youtube.com/channel/UCtJkiissi90Z8MBlMnrvXfQ', name: 'dani daortiz',
+           favicon:'http://yt3.ggpht.com/-HarlSs-3tG0/AAAAAAAAAAI/AAAAAAAAAAA/2OrkymoHnlw/s88-c-k-no/photo.jpg'},
+          {url:'https://www.youtube.com/channel/UC8wSDyGlNCQWbpTj9uXjHdA', name: 'MichaelAmmar',
+           favicon:'http://yt3.ggpht.com/-HA4ElWGo0Zg/AAAAAAAAAAI/AAAAAAAAAAA/uZ2TFgVWNpc/s88-c-k-no/photo.jpg'},],
+      famous_magicians: [
+          {url:'https://www.youtube.com/channel/UCBNkiIDZMlB72a_N0BUHCwQ', name: 'ollie mealing',
+           favicon:'http://yt3.ggpht.com/-xPyJe5bp66c/AAAAAAAAAAI/AAAAAAAAAAA/cOr8LthEdR8/s88-c-k-no/photo.jpg'},
+          {url:'https://www.youtube.com/channel/UCpip9EesFuO1lkSY_B-vExw', name: 'Daniel Fernandez',
+           favicon:'http://yt3.ggpht.com/-JzR_XOqDBEE/AAAAAAAAAAI/AAAAAAAAAAA/K1mbAMvCtSE/s88-c-k-no/photo.jpg'},
+          {url:'https://www.youtube.com/channel/UC-beEh5L8QETtO1r32eXxqA', name: 'Jack Carpenter',
+           favicon:'http://yt3.ggpht.com/-q4JfGntuZMY/AAAAAAAAAAI/AAAAAAAAAAA/aGJItpUC8fc/s88-c-k-no/photo.jpg'},
+          {url:'https://www.youtube.com/channel/UCewE7G8ZQOA-9zfK2OQmM5g', name: 'PatrickKun',
+           favicon:'http://yt3.ggpht.com/-XRsK85LJ-i8/AAAAAAAAAAI/AAAAAAAAAAA/8XaQ9TjxPWA/s88-c-k-no/photo.jpg'},
+          {url:'https://www.youtube.com/channel/UCQqQpVg1QrC6MvBa932jwaA', name: 'Jean Pierre Vallarino',
+           favicon:'http://yt3.ggpht.com/-IijMUXCfZyo/AAAAAAAAAAI/AAAAAAAAAAA/nbJZf7UD_b4/s88-c-k-no/photo.jpg'},
+          {url:'https://www.youtube.com/channel/UCKlU-QQcjGlIg8TccHREQww', name: 'Doc Eason',
+           favicon:'http://yt3.ggpht.com/-p-DF5iwxxuk/AAAAAAAAAAI/AAAAAAAAAAA/uOX7r-SqxvY/s88-c-k-no/photo.jpg'},
+          {url:'https://www.youtube.com/channel/UC0lGvHjyA4ol65sPwrWa9xg', name: 'waynehouchin',
+           favicon:'http://yt3.ggpht.com/-GIFdIkPzLK0/AAAAAAAAAAI/AAAAAAAAAAA/Amk5OzZ7p9A/s88-c-k-no/photo.jpg'},
+          {url:'https://www.youtube.com/channel/UCB99aK4f2WaH96joccxLvSQ', name: 'Daniel Madison',
+           favicon:'http://yt3.ggpht.com/-GUOAb825ln4/AAAAAAAAAAI/AAAAAAAAAAA/ICfE4sxJnW8/s88-c-k-no/photo.jpg'},
+      ],
+      mentalists: [
+          {url:'https://www.youtube.com/channel/UC5-JKTkri6Nq4o9s5rZ5u9w', name: 'Bob Cassidy',
+           favicon:'http://yt3.ggpht.com/-O3_uKc6h3tI/AAAAAAAAAAI/AAAAAAAAAAA/HxCrd-7xOvU/s88-c-k-no/photo.jpg'},
+          {url:'https://www.youtube.com/channel/UCQUECg9e9iqnH_63qM3sj_w', name: 'Looch Mind Reader',
+           favicon:'http://yt3.ggpht.com/-gfq74DvgMZI/AAAAAAAAAAI/AAAAAAAAAAA/LpzILBwfMgU/s88-c-k-no/photo.jpg'},
+          {url:'https://www.youtube.com/channel/UC8Mb-IpQOPBByANch2XGpCg', name: 'PatrickRedford',
+           favicon:'http://yt3.ggpht.com/-l7AmGuLhU-0/AAAAAAAAAAI/AAAAAAAAAAA/aPJfvIhH0N0/s88-c-k-no/photo.jpg'},
+          {url:'https://www.youtube.com/channel/UCRRTORo_cwbC9xP0DuTJtDQ', name: 'Andrew Gerard',
+           favicon:'http://yt3.ggpht.com/-KGPkmpaMVwA/AAAAAAAAAAI/AAAAAAAAAAA/wSzYSgFsWfw/s88-c-k-no/photo.jpg'},
+          {url:'https://www.youtube.com/channel/UCZIhf2Jf4AirRLNLOWQqjdQ', name: 'SixthSense',
+           favicon:'http://yt3.ggpht.com/-QGGmACMpt20/AAAAAAAAAAI/AAAAAAAAAAA/5xPSbDVp-2U/s88-c-k-no/photo.jpg'},
+          {url:'https://www.youtube.com/channel/UCU-LcQ4lsQ8bD_v0H3QawPw', name: 'Peter Turner',
+           favicon:'http://yt3.ggpht.com/-WUVy2BqM6bc/AAAAAAAAAAI/AAAAAAAAAAA/K2kZjZ9lH28/s88-c-k-no/photo.jpg'},
+          {url:'https://www.youtube.com/channel/UCSqZOoDM735N0KTGVQ_Ytng', name: 'Atlas Brookings - Mind Reader',
+           favicon:'http://yt3.ggpht.com/-dMvhZ6kxei0/AAAAAAAAAAI/AAAAAAAAAAA/YOXFlhg5u7s/s88-c-k-no/photo.jpg'},],
+      archives: [
+          {url:'https://www.youtube.com/channel/UCnCr4v73iD2prmqDfmGvhpg', name: 'enfilo',
+           favicon:'http://yt3.ggpht.com/-_lqMihs7uNk/AAAAAAAAAAI/AAAAAAAAAAA/D-j0IGnecH4/s88-c-k-no/photo.jpg'},
+          {url:'https://www.youtube.com/channel/UCsUO2qpMrNeoro48taaEj0w', name: 'Paco Rodas Ratazzi',
+           favicon:'http://yt3.ggpht.com/-Y1WQMoUymWE/AAAAAAAAAAI/AAAAAAAAAAA/9c76pq7Xkos/s88-c-k-no/photo.jpg'},
+          {url:'https://www.youtube.com/channel/UCXiK0ySADAUhtx8YJkSN8Jw', name: 'VintageMagic Archives',
+           favicon:'http://yt3.ggpht.com/-gu9tlTJTUTg/AAAAAAAAAAI/AAAAAAAAAAA/jcziGI_xLL8/s88-c-k-no/photo.jpg'},
+          {url:'https://www.youtube.com/channel/UCbQWelTfa0xTCCJcb0sgcUQ', name: 'Steve Pellegrino',
+           favicon:'http://yt3.ggpht.com/-J-7lcB0pTR8/AAAAAAAAAAI/AAAAAAAAAAA/Pc5WuN0izfk/s88-c-k-no/photo.jpg'},
+          {url:'https://www.youtube.com/channel/UCRQA6Y4ofSivJGV2evZgukA', name: 'theheadhacker',
+           favicon:'http://yt3.ggpht.com/-wUj0qoTNUjg/AAAAAAAAAAI/AAAAAAAAAAA/O-A_KHT7Tfc/s88-c-k-no/photo.jpg'},
+      ],
   }
 
-
-
-
+#Overall Data
   YOUTUBE_MAGICIAN_CHANNELS = [
       # Search Key Words
       # FISM, Ellen Show, Le grand Cabaret, Magic Castle, Magic Circle, American Got Talents
@@ -184,7 +221,6 @@ module RESOURCES_CONSTANT
     {url: 'https://www.youtube.com/channel/UCB99aK4f2WaH96joccxLvSQ', name: 'Daniel Madiosn'} ,
     {url: 'https://www.youtube.com/channel/UCqr6tYc9Bollsoi2qRXsj7w', name: 'Mike Dynamo'} ,
     {url: 'https://www.youtube.com/channel/UC1IUltgiD5sMpAVbOe6BNNg', name: 'james brown'},
-    #{url: 'https://www.youtube.com/channel/UCmNEfaZp9QXEvVIiqQMITYw', name: 'russq stevens'},
   ]
 
   NODES = [

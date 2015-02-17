@@ -48,10 +48,10 @@ class StaticPagesController < ApplicationController
   def resources
     @oversea_shops = RESOURCES_CONSTANT::OVERSEA_SHOPS
 
-    tv_famous_magicians = RESOURCES_CONSTANT::YOUTUBE_CHANNELS[:tv_famous_magicians]
-    archives = RESOURCES_CONSTANT::YOUTUBE_CHANNELS[:archives]
-    award_winning_magicians = RESOURCES_CONSTANT::YOUTUBE_CHANNELS[:award_winning_magicians]
-    @youtube_channels = [tv_famous_magicians, award_winning_magicians, archives, ]
+    @youtube_channels = []
+    RESOURCES_CONSTANT::YOUTUBE_CHANNELS.each do |key, value|
+      @youtube_channels = @youtube_channels.push(value)
+    end
 
     @oversea_sites = [
 #社区类

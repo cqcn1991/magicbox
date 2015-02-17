@@ -24,7 +24,7 @@ class VideosController < ApplicationController
   end
 
   def best
-    @random_videos = Video.random_best_before(2013,7).first(8)
+    @random_videos = Video.random_best_before(2013,7).first(4)
 
     @monthly_videos = Video.best_by_month.reverse.paginate(:page => params[:page], :per_page => 6)
   end

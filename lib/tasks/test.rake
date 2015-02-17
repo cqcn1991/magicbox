@@ -5,70 +5,14 @@ task :test_post => :environment do
   require 'nokogiri'
   require 'open-uri'
 
-  # input_file = 'lib/subtitle_en'
-  # text = File.open(input_file, "r:UTF-8", &:read)
-
-  text= '1
-00:00:00000  -->00:00:00000
-2
-00:00:00730  -->00:00:04280
-当Sam跟我发邮件讲要做这个课程
-So when Sam originally sent me an email to do this course,
-3
-00:00:04280  -->00:00:08400
-他说Ben你可以讲一个50分钟的管理方面课程
-he said Ben can you teach a 50 minute course on management.
-4
-00:00:08400  -->00:00:09980
-我立刻就想 我天
-And I immediately thought to myself, wow,'
-
-  puts text.gsub(/(\d{2})(\d{3})/, '\1,\2')
-  # text = "00:00:04280  -->00:00:08400"
-  # text = File.open(input_file, "r:UTF-8", &:read)
-  # new_contents = text.gsub(/(\d{2})(\d{3})/, '\1,\2')
-  # # # To write changes to the file, use:
-  # File.open(output_file, "w:UTF-8") {|file| file.puts new_contents }
-
-#中文名、作者、原文名&地址、译者、译文地址 这样来。
-  # readings = []
-  # url = 'http://startupclass.samaltman.com/lists/readings/'
-  # doc = Nokogiri::HTML(open(url) )
-  # puts doc.css("title").text
-  # doc.css("li ul li").each do |reading_info|
-  #   if reading_info.at('a')
-  #     number = reading_info.text.split(':')[0]
-  #     en_url = reading_info.at('a')['href']
-  #     en_title = reading_info.at('a').text
-  #     author = reading_info.text.split('by ')[1]
-  #     puts "#{en_title} by #{author}"
-  #     puts en_url
-  #     reading = {
-  #           number: number,
-  #           cn_title:'',
-  #           author:author,
-  #           en_title:en_title,
-  #           url:en_url,
-  #           cn_url:'',
-  #           cn_translator: ''}
-  #     readings << reading
-  #   end
-  # end
-
-  # file = 'lib/reading_cn.yml'
-  # readings = YAML::load(File.read(file))
-  # readings.each do |reading|
-  #   puts "#{reading[:number]}"
-  #   puts "[#{reading[:en_title]}](#{reading[:url]}) by #{reading[:author]}"
-  #   if !reading[:cn_translator].blank?
-  #     puts ' '
-  #     puts "[#{reading[:cn_title]}](#{reading[:cn_url]}) by #{reading[:cn_translator]}"
-  #   end
-  # end
-
+  groups = []
+  RESOURCES_CONSTANT::YOUTUBE_CHANNELS.each do |key, value|
+    groups = groups.push(value)
+  end
+  puts groups.count
   # client = YouTubeIt::Client.new(:dev_key => "AIzaSyBktwEa5lFm87ENBHmAGWJMCTChS282Whk")
   #
-  # tv_famous_magicians = RESOURCES_CONSTANT::YOUTUBE_CHANNELS[:shops]
+  # tv_famous_magicians = RESOURCES_CONSTANT::UPDATE
   # tv_famous_magicians.each do |channel|
   #   channel_id = channel[:url].split('channel/')[1]
   #   query = {
@@ -83,33 +27,6 @@ And I immediately thought to myself, wow,'
   #   puts "favicon:'#{img_url}'},"
   # end
 
-
-  #keywords =['Le grand Cabaret magic', 'penn teller fool us',
-  #           'Cyril Takayama',
-  #           'criss angel', 'penn teller', 'david blain',
-  #           'magic circle magician', 'dynamo magician', 'derren brown', 'david berglas',
-  #           'Mat Franco',
-  #          'Magic Castle magician', 'ellen show magician']
-  #
-  #keywords.each do |keyword|
-  #  query = {
-  #      query: keyword,
-  #      order_by: 'viewCount',
-  #      #author: channel_id,
-  #      #order_by: 'published', #viewCount, #rating
-  #      ##fields: {:published  => ((Date.today - fetch_number)..(Date.today))},,
-  #      max_results: 50
-  #  }
-  #  videos = client.videos_by(query).videos
-  #  videos.each do |video_info|
-  #    url = video_info.player_url.gsub(/[?&]feature=youtube_gdata_player/, '')
-  #    puts url
-  #    video = Video.new(url: url)
-  #    if video.save
-  #      puts video.title + 'saved'
-  #    end
-  #  end
-  #end
 
 #
 #  channels =  [
