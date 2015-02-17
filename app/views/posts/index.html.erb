@@ -1,4 +1,6 @@
 <% content_for :sidebar_selector_content do %>
+  <div class="panel panel-default">
+    <div class="panel-body">
   <div class="selectors">
     <h4 class="no-margin">Order by</h4>
     <%= selector_link 'Time', sort: 'create' %>
@@ -9,6 +11,8 @@
   <%= cafe_tag_nav_link('post', 'card') %>
   <%= cafe_tag_nav_link('post', 'mental') %>
   <%= cafe_tag_nav_link('post', 'review') %>
+    </div>
+  </div>
 <% end %>
 
 <%= render 'sidebar_selector' %>

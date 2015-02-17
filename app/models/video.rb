@@ -40,6 +40,18 @@ class Video < ActiveRecord::Base
   scope :selected, -> { where(selected: true)}
   require 'open-uri'
 
+  def self.best_by_month
+    date = Date.new(2012,1,1)
+    monthly_videos = []
+    while true
+      videos = (Video.selected_of_the_month(date.year, date.month) + Video.best_of_the_month(date.year, date.month)).uniq
+      monthly_videos << videos
+      date += 1.month
+      break if date > Date.today.beginning_of_month
+    end
+    monthly_videos
+  end
+
   def init
     self.selected = false if (self.has_attribute? :selected) && self.selected.nil?
   end

@@ -1,13 +1,15 @@
 <%= render 'sidebar_selector' %>
 
-<h2>Today's pick </h2>
-<div class="videos row">
-  <% @random_videos.each do |video|  %>
-    <%= render partial: 'videos/video', locals: {item: video}  %>
-  <% end  %>
-</div>
+<% if !(params[:page].to_i > 1) %>
+  <h2>Today's pick </h2>
+  <div class="videos row">
+    <% @random_videos.each do |video|  %>
+      <%= render partial: 'videos/video', locals: {item: video}  %>
+    <% end  %>
+  </div>
+<% end  %>
 
-<% @monthly_videos.reverse.each_with_index do |video_group, index| %>
+<% @monthly_videos.each_with_index do |video_group, index| %>
   <% if video_group.any?  %>
     <h2>Best in <%= video_group.first.created_at.strftime("%Y/%m") %> </h2>
     <div class="videos row">
@@ -18,5 +20,4 @@
   <% end  %>
 <% end  %>
 
-
-<%#= will_paginate @videos, renderer: BootstrapPagination::Rails %>
+<%= will_paginate @monthly_videos, renderer: BootstrapPagination::Rails %>

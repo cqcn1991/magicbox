@@ -26,14 +26,7 @@ class VideosController < ApplicationController
   def best
     @random_videos = Video.random_best_before(2013,7).first(8)
 
-    date = Date.new(2014,1,1)
-    @monthly_videos = []
-    while true
-      videos = (Video.selected_of_the_month(date.year, date.month) + Video.best_of_the_month(date.year, date.month)).uniq
-      @monthly_videos << videos
-      date += 1.month
-      break if date > Date.today.beginning_of_month
-    end
+    @monthly_videos = Video.best_by_month.reverse.paginate(:page => params[:page], :per_page => 6)
   end
 
   def admin
