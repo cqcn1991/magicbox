@@ -5,14 +5,12 @@ module ApplicationHelper
     end
 
     # Usage: <%= nav_link  'Trending', pop_path %>
-    def nav_link(link_text, link_path, additional_class = nil)
+    def nav_link(link_text, link_path, additional_class = nil, glyphicon = nil )
       recognized = Rails.application.routes.recognize_path(link_path)
       if recognized[:controller] == params[:controller]
         if recognized[:controller] != 'static_pages'
-          # 对于一般如TopicsController, 在index, new, edit等action下面，都显示active css
           class_name = 'active'
         else
-          # 对于StaticPagesController下面杂七杂八的action, 需要全部匹配
           class_name = 'active' if recognized[:action] == params[:action]
         end
       else
@@ -20,7 +18,21 @@ module ApplicationHelper
       end
       class_name = [class_name, additional_class ] if additional_class
       content_tag(:li, :class => class_name) do
-        link_to link_text, link_path
+        if glyphicon
+          link_to link_path do
+            content_tag(:span, nil, class: glyphicon) + " " + link_text
+          end
+        else
+          link_to link_text, link_path
+        end
+      end
+    end
+
+    def nav_link2(link_text, link_path)
+      content_tag(:li, class: 'active') do
+        link_to link_path do
+          content_tag(:span, nil, class: "glyphicon glyphicon-star") +  link_text
+        end
       end
     end
 

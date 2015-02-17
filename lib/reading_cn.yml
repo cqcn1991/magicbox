@@ -1,0 +1,387 @@
+---
+- :number: "#1"
+  :cn_title: '给雄心勃勃的19岁们的建议'
+  :author: Sam Altman
+  :en_title: Advice for Ambitious 19 year olds
+  :url: http://blog.samaltman.com/advice-for-ambitious-19-year-olds
+  :cn_url: 'http://article.yeeyan.org/view/432043/425400'
+  :cn_translator: '周小匣'
+- :number: "#2"
+  :cn_title: '成为一名企业家的好理由与坏理由'
+  :author: Dustin Moskovitz
+  :en_title: Good and Bad Reasons to Become an Entrepreneur
+  :url: https://medium.com/i-m-h-o/good-and-bad-reasons-to-become-an-entrepreneur-decf0766de8d
+  :cn_url: 'http://startupclass.club/topics/124'
+  :cn_translator: '路遥'
+- :number: "#3"
+  :cn_title: '愚蠢软件和改变世界'
+  :author: Sam Altman
+  :en_title: Stupid Apps and Changing the World
+  :url: http://blog.samaltman.com/stupid-apps-and-changing-the-world
+  :cn_url: 'http://www.jianshu.com/p/f16b00f23660'
+  :cn_translator: 'Qingniu'
+- :number: "#4"
+  :cn_title: ''
+  :author: Paul Graham
+  :en_title: Do things that Don’t Scale
+  :url: http://paulgraham.com/ds.html
+  :cn_url: ''
+  :cn_translator: ''
+- :number: "#5"
+  :cn_title: '如何获得创业idea'
+  :author: Paul Graham
+  :en_title: How to Get Startup Ideas
+  :url: http://www.paulgraham.com/startupideas.html
+  :cn_url: 'http://www.36kr.com/p/172863.html'
+  :cn_translator: 'JasonZheng'
+- :number: "#6"
+  :cn_title: ''
+  :author: 
+  :en_title: "[video] Excerpt from Steve Jobs’s 1995 interview with Computerworld’s
+    Oral History Project"
+  :url: https://www.youtube.com/watch?v=M6Oxl5dAnR0&t=1h10m53s
+  :cn_url: ''
+  :cn_translator: ''
+- :number: "#7"
+  :cn_title: ''
+  :author: 
+  :en_title: From Failure to $37M in Funding with Adora Chueng
+  :url: http://wpcurve.com/homejoy-adora-cheung/
+  :cn_url: ''
+  :cn_translator: ''
+- :number: "#8"
+  :cn_title: '为什么初创公司要专注于销售而不是市场'
+  :author: Jessica Livingston
+  :en_title: Why Startups Need to Focus on Sales, Not Marketing
+  :url: http://blogs.wsj.com/accelerators/2014/06/03/jessica-livingston-why-startups-need-to-focus-on-sales-not-marketing/
+  :cn_url: 'http://startupclass.club/topics/57'
+  :cn_translator: '路遥'
+- :number: "#9"
+  :cn_title: '从零到一'
+  :author: Peter Thiel
+  :en_title: Chapter 3-5 of Zero to One
+  :url: https://www.dropbox.com/s/ujtrbcltiy6hgpy/ZtOChapters3-5.pdf?dl=0
+  :cn_url: 'http://maker4ever.com/blog/wordpress/2014/10/zero2one/'
+  :cn_translator: 'Tony'
+- :number: "#10"
+  :cn_title: ''
+  :author: 
+  :en_title: "[video] How we put Facebook on the path to 1 billion users"
+  :url: http://youtu.be/raIUQP71SBU?t=29s
+  :cn_url: ''
+  :cn_translator: ''
+- :number: "#11"
+  :cn_title: ''
+  :author: Joel Spolsky
+  :en_title: Does Slow Growth Equal Slow Death?
+  :url: http://www.inc.com/magazine/20091101/does-slow-growth-equal-slow-death.html
+  :cn_url: ''
+  :cn_translator: ''
+- :number: "#12"
+  :cn_title: ''
+  :author: Jeff Jordan
+  :en_title: A Recipe for Growth - Adding Layers to the Cake
+  :url: http://jeff.a16z.com/2012/01/18/a-recipe-for-growth-adding-layers-to-the-cake/
+  :cn_url: ''
+  :cn_translator: ''
+- :number: "#13"
+  :cn_title: ''
+  :author: Mike Isaac
+  :en_title: Mark Zuckerberg on Facebook’s Early Days
+  :url: http://allthingsd.com/20121020/mark-zuckerberg-on-facebooks-early-days-go-hard-or-go-home/
+  :cn_url: ''
+  :cn_translator: ''
+- :number: "#14"
+  :cn_title: 'Pinterest CEO：Pinterest 的成功来自于市场推广，而不是技术'
+  :author: Liz Gannes
+  :en_title: The Secret Behind Pinterest’s Growth Was Marketing, Not Engineering
+  :url: http://allthingsd.com/20121020/the-secret-behind-pinterests-growth-was-marketing-not-engineering-says-ceo-ben-silbermann/
+  :cn_url: 'http://www.36kr.com/p/161492.html'
+  :cn_translator: 'JohnTian'
+- :number: "#15"
+  :cn_title: ''
+  :author: Danny Ferante
+  :en_title: "[video] Growth Accounting & Triangle Heatmap Explanation"
+  :url: https://www.facebook.com/photo.php?v=3707283286197
+  :cn_url: ''
+  :cn_translator: ''
+- :number: "#16"
+  :cn_title: '创业=增长'
+  :author: Paul Graham
+  :en_title: Startup = Growth
+  :url: http://www.paulgraham.com/growth.html
+  :cn_url: 'http://www.36kr.com/p/155310.html'
+  :cn_translator: 'JohnTian'
+- :number: "#17"
+  :cn_title: ''
+  :author: Douglas MacMillan
+  :en_title: Chasing Facebook's Next Billion Users
+  :url: http://www.businessweek.com/articles/2012-07-25/chasing-facebooks-next-billion-users
+  :cn_url: ''
+  :cn_translator: ''
+- :number: "#18"
+  :cn_title: ''
+  :author: 
+  :en_title: "[video] Ready to Grow Breakout Session"
+  :url: http://www.livestream.com/f8industry/video?clipId=pla_a093cf1f-2d34-4e74-8377-9e54bc65d8e9
+  :cn_url: ''
+  :cn_translator: ''
+- :number: "#19"
+  :cn_title: ''
+  :author: Kathy Sierra
+  :en_title: Your App Makes Me Fat
+  :url: http://seriouspony.com/blog/2013/7/24/your-app-makes-me-fat
+  :cn_url: ''
+  :cn_translator: ''
+- :number: "#20"
+  :cn_title: ''
+  :author: Jared Spool
+  :en_title: What Makes a Design Intuitive
+  :url: http://www.uie.com/articles/design_intuitive/
+  :cn_url: ''
+  :cn_translator: ''
+- :number: "#21"
+  :cn_title: ''
+  :author: 
+  :en_title: "[video] Creative mornings with Ben Chestnut"
+  :url: http://vimeo.com/34081566
+  :cn_url: ''
+  :cn_translator: ''
+- :number: "#22"
+  :cn_title: ''
+  :author: John Gottman, Nan Silver
+  :en_title: What Makes Marriages Work
+  :url: http://www.psychologytoday.com/articles/200910/what-makes-marriage-work
+  :cn_url: ''
+  :cn_translator: ''
+- :number: ""
+  :cn_title: ''
+  :author: 
+  :en_title: Behavior Model
+  :url: http://www.behaviormodel.org/
+  :cn_url: ''
+  :cn_translator: ''
+- :number: BJ Fogg’s Behavior Model
+  :cn_title: ''
+  :author: 
+  :en_title: Behavior Model
+  :url: http://www.behaviormodel.org/
+  :cn_url: ''
+  :cn_translator: ''
+- :number: Customer Intimacy and Other Value Disciplines, Harvard Business Review
+  :cn_title: ''
+  :author: 
+  :en_title: Customer Intimacy and Other Value Disciplines
+  :url: http://hbr.org/1993/01/customer-intimacy-and-other-value-disciplines/ar/1
+  :cn_url: ''
+  :cn_translator: ''
+- :number: The Sanctity of Marriage, This American Life
+  :cn_title: ''
+  :author: 
+  :en_title: The Sanctity of Marriage
+  :url: http://www.thisamericanlife.org/radio-archives/episode/261/transcript
+  :cn_url: ''
+  :cn_translator: ''
+- :number: Creating Passionate Users
+  :cn_title: ''
+  :author: 
+  :en_title: Creating Passionate Users
+  :url: http://headrush.typepad.com/
+  :cn_url: ''
+  :cn_translator: ''
+- :number: "#23"
+  :cn_title: ''
+  :author: Alexia Tsotsis
+  :en_title: The Press is a Tool
+  :url: https://docs.google.com/document/d/1LQxnHxQ6xO54BHcoOmgEeuhdHwWwujKuSpzQbQnlThk
+  :cn_url: ''
+  :cn_translator: ''
+- :number: "#24"
+  :cn_title: ''
+  :author: Marc Andreessen
+  :en_title: Why Software is Eating the World
+  :url: http://online.wsj.com/news/articles/SB10001424053111903480904576512250915629460
+  :cn_url: ''
+  :cn_translator: ''
+- :number: "#25"
+  :cn_title: '如何打动投资人？'
+  :author: Paul Graham
+  :en_title: How to Convince Investors
+  :url: http://paulgraham.com/convince.html
+  :cn_url: 'http://www.36kr.com/p/205342.html'
+  :cn_translator: '苑伶'
+- :number: "#26"
+  :cn_title: '如何融资（一）'
+  :author: Paul Graham
+  :en_title: How to Raise Money
+  :url: http://paulgraham.com/fr.html
+  :cn_url: 'http://www.36kr.com/p/206542.html'
+  :cn_translator: 'dog潘'
+- :number: "#27"
+  :cn_title: ''
+  :author: Reid Hoffman
+  :en_title: Linkedin’s Series B Pitch to Greylock
+  :url: http://reidhoffman.org/linkedin-pitch-to-greylock/
+  :cn_url: ''
+  :cn_translator: ''
+- :number: " Ron Conway's Recommended Reading List"
+  :cn_title: ''
+  :author: 
+  :en_title: Ron Conway's Recommended Reading List
+  :url: https://docs.google.com/spreadsheets/d/1KLCdlp4SW7Z64W_DWGwwuTIfH1GXRAMtPxv4EB5gKu0/edit?usp=sharing
+  :cn_url: ''
+  :cn_translator: ''
+- :number: "#28"
+  :cn_title: '快乐的文化：Zappos 不是一家公司 -- 它是一项使命'
+  :author: 
+  :en_title: 'The Happiness Culture: Zappos isn’t a Company -- it’s a Mission'
+  :url: http://www.fastcompany.com/1657030/happiness-culture-zappos-isnt-company-its-mission
+  :cn_url: 'https://www.teambition.com/research/insights/article?p=research-insights&s=add-article&_id=54587f903848af49145abae5'
+  :cn_translator: '王钊劼'
+- :number: "#29"
+  :cn_title: '别搞砸你们的团队文化'
+  :author: Brian Chesky
+  :en_title: Don’t Fuck Up the Culture
+  :url: https://medium.com/@bchesky/dont-fuck-up-the-culture-597cde9ee9d4
+  :cn_url: 'https://www.teambition.com/research/insights/article?p=research-insights&s=undefined&_id=54589d603848af49145abae6'
+  :cn_translator: '王钊劼'
+- :number: "#30"
+  :cn_title: '在 Stripe 工作是怎样的一种体验？'
+  :author: Alex Maccaw
+  :en_title: What’s It Like to Work for Stripe
+  :url: http://blog.alexmaccaw.com/stripes-culture
+  :cn_url: 'https://www.teambition.com/research/insights/article?p=research-insights&s=undefined&_id=545ad2e44db04590783491fd'
+  :cn_translator: '王钊劼'
+- :number: "#31"
+  :cn_title: '创业公司怎样去招人？'
+  :author: Sam Altman
+  :en_title: How to Hire
+  :url: http://blog.samaltman.com/how-to-hire
+  :cn_url: 'https://www.teambition.com/research/insights/article?p=research-insights&s=undefined&_id=545215ab872e549541e23ef8'
+  :cn_translator: '王钊劼'
+- :number: "#32"
+  :cn_title: ''
+  :author: 
+  :en_title: The Continuous Productivity of Aaron Levie
+  :url: http://www.technologyreview.com/news/522081/the-continuous-productivity-of-aaron-levie/
+  :cn_url: ''
+  :cn_translator: ''
+- :number: "#33"
+  :cn_title: ''
+  :author: 
+  :en_title: Robert Cialdini’s six principles of influence
+  :url: http://en.wikipedia.org/wiki/Robert_Cialdini#6_key_principles_of_influence_by_Robert_Cialdini
+  :cn_url: ''
+  :cn_translator: ''
+- :number: "#34"
+  :cn_title: ''
+  :author: Alexia Tsotsis
+  :en_title: Marc Andreessen on the Future of Enterprise
+  :url: http://techcrunch.com/2013/01/27/marc-andreessen-on-the-future-of-the-enterprise/
+  :cn_url: ''
+  :cn_translator: ''
+- :number: "#35"
+  :cn_title: ''
+  :author: Reid Hoffman
+  :en_title: 'The Information Age to the Networked Age: Are you Network Literate?'
+  :url: http://reidhoffman.org/information-age-networked-age-network-literate/
+  :cn_url: ''
+  :cn_translator: ''
+- :number: "#36"
+  :cn_title: ''
+  :author: Reid Hoffman
+  :en_title: 'The Alliance: A Visual Summary'
+  :url: http://reidhoffman.org/alliance-visual-summary/
+  :cn_url: ''
+  :cn_translator: ''
+- :number: "#37"
+  :cn_title: ''
+  :author: Reid Hoffman
+  :en_title: What I Wish I Knew Before Pitching LinkedIn to VCs
+  :url: https://www.linkedin.com/pulse/article/20131015161834-1213-what-i-wish-i-knew-before-pitching-linkedin-to-vcs
+  :cn_url: ''
+  :cn_translator: ''
+- :number: "#38"
+  :cn_title: ''
+  :author: Reid Hoffman
+  :en_title: If, Why, and How Founders Should Hire a “Professional” CEO
+  :url: https://www.linkedin.com/pulse/article/20130123161202-1213-if-why-and-how-founders-should-hire-a-professional-ceo?trk=mp-author-card
+  :cn_url: ''
+  :cn_translator: ''
+- :number: "#39"
+  :cn_title: '让你的创业失败的18个昏招'
+  :author: Paul Graham
+  :en_title: The 18 Mistakes That Kill Startups
+  :url: http://paulgraham.com/startupmistakes.html
+  :cn_url: 'http://select.yeeyan.org/view/5/114'
+  :cn_translator: '拙尘'
+- :number: "#42"
+  :cn_title: ''
+  :author: Ben Horowitz
+  :en_title: Making Yourself a CEO
+  :url: http://www.bhorowitz.com/making_yourself_a_ceo
+  :cn_url: ''
+  :cn_translator: ''
+- :number: "#43"
+  :cn_title: ''
+  :author: Ben Horowitz
+  :en_title: A Good Place to Work
+  :url: http://www.bhorowitz.com/a_good_place_to_work
+  :cn_url: ''
+  :cn_translator: ''
+- :number: "#44"
+  :cn_title: 'A16Z联合创始人Ben Horowitz：如何减少公司的政治斗争'
+  :author: Ben Horowitz
+  :en_title: How to Minimize Politics in Your Company
+  :url: http://www.bhorowitz.com/how_to_minimize_politics_in_your_company
+  :cn_url: 'http://www.36kr.com/p/210488.html'
+  :cn_translator: 'Kryptoners'
+- :number: "#45"
+  :cn_title: ''
+  :author: 
+  :en_title: "[video] Hosain Rahman at Startup School 2014"
+  :url: https://www.youtube.com/watch?v=ZpINPjfSlZc
+  :cn_url: ''
+  :cn_translator: ''
+- :number: "#46"
+  :cn_title: ''
+  :author: Mark Suster
+  :en_title: How to Work with Lawyers at a Startup
+  :url: http://www.bothsidesofthetable.com/2010/01/21/how-to-work-with-lawyers-at-a-startup/
+  :cn_url: ''
+  :cn_translator: ''
+- :number: "#47"
+  :cn_title: ''
+  :author: Yokum Taku
+  :en_title: Startup Company Lawyer
+  :url: http://www.startupcompanylawyer.com/
+  :cn_url: ''
+  :cn_translator: ''
+- :number: "#48"
+  :cn_title: ''
+  :author: Jason Lemkin, founder of EchoSign
+  :en_title: SaaStr – From-the-trenches sales advice
+  :url: http://saastr.com/the-best-of-saastr/
+  :cn_url: ''
+  :cn_translator: ''
+- :number: "#49"
+  :cn_title: ''
+  :author: Frank Bettger (1949)
+  :en_title: How I Raised Myself From Failure to Success In Selling
+  :url: http://www.amazon.com/How-Raised-Myself-From-Failure-ebook/dp/B002XQAAWW
+  :cn_url: ''
+  :cn_translator: ''
+- :number: "#50"
+  :cn_title: ''
+  :author: Cristoph Janz
+  :en_title: Five ways to build a $100 million business
+  :url: https://medium.com/@chrija/five-ways-to-build-a-100-million-business-82ac6ea8ffd9
+  :cn_url: ''
+  :cn_translator: ''
+- :number: "#51"
+  :cn_title: ''
+  :author: Venture Hacks
+  :en_title: Pitching Hacks! How to pitch startups to investors
+  :url: http://venturehacks.wpengine.com/wp-content/uploads/2009/12/Pitching-Hacks.pdf
+  :cn_url: ''
+  :cn_translator: ''
