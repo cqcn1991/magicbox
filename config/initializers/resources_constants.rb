@@ -50,6 +50,16 @@ module RESOURCES_CONSTANT
       {url:'http://thebluecrown.com/', name: 'The Blue Crown', favicon: 'http://thebluecrown.com/favicon.ico'}
   ]
 
+  GENERAL_WEBSITES = [
+#社区类
+      {url:'http://www.themagiccafe.com/forums/index.php', name: 'themagiccafe'},
+      #内容类
+      {url:'http://secretartjournal.com/', name: 'Secret Journal'},
+      {url:'http://www.michaelvincentmagic.com/news', name: 'Elegant Deceptions', favicon:'http://www.michaelvincentmagic.com/favicon.ico'},
+      {url:'http://www.conjuringarchive.com/', name: "Denis Behr's Conjuring Archive", favicon: 'http://www.conjuringarchive.com/images/favicon.ico'},
+      {url:'http://conjuringarts.org/', name: 'Conjuring Arts Research Center',favicon: 'http://conjuringarts.org/wp-content/themes/lifestyle_40/images/favicon.ico'},
+  ]
+
   OVERSEA_SHOPS =  [#魔术厂商类
       {url:'http://murphysmagic.com/', name: "Murphy's Magic", favicon: 'http://www.murphysmagic.com/favicon1.ico'},
       {url:'http://www.penguin.com/', name: 'Penguin Magic',  favicon: 'http://www.penguinmagic.com/favicon.ico'},
@@ -90,6 +100,18 @@ module RESOURCES_CONSTANT
            favicon:'http://yt3.ggpht.com/-C7VyBQZPcRQ/AAAAAAAAAAI/AAAAAAAAAAA/st0SkLVcWgI/s88-c-k-no/photo.jpg'},
           {url:'https://www.youtube.com/channel/UCvGMGQC8gNkd4gwxSbABIlw', name: 'Quirkology',
            favicon:'http://yt3.ggpht.com/-i8MMXyS1CAo/AAAAAAAAAAI/AAAAAAAAAAA/XhWydCsJDKU/s88-c-k-no/photo.jpg'},],
+      archives: [
+          {url:'https://www.youtube.com/channel/UCnCr4v73iD2prmqDfmGvhpg', name: 'enfilo',
+           favicon:'http://yt3.ggpht.com/-_lqMihs7uNk/AAAAAAAAAAI/AAAAAAAAAAA/D-j0IGnecH4/s88-c-k-no/photo.jpg'},
+          {url:'https://www.youtube.com/channel/UCsUO2qpMrNeoro48taaEj0w', name: 'Paco Rodas Ratazzi',
+           favicon:'http://yt3.ggpht.com/-Y1WQMoUymWE/AAAAAAAAAAI/AAAAAAAAAAA/9c76pq7Xkos/s88-c-k-no/photo.jpg'},
+          {url:'https://www.youtube.com/channel/UCXiK0ySADAUhtx8YJkSN8Jw', name: 'VintageMagic Archives',
+           favicon:'http://yt3.ggpht.com/-gu9tlTJTUTg/AAAAAAAAAAI/AAAAAAAAAAA/jcziGI_xLL8/s88-c-k-no/photo.jpg'},
+          {url:'https://www.youtube.com/channel/UCbQWelTfa0xTCCJcb0sgcUQ', name: 'Steve Pellegrino',
+           favicon:'http://yt3.ggpht.com/-J-7lcB0pTR8/AAAAAAAAAAI/AAAAAAAAAAA/Pc5WuN0izfk/s88-c-k-no/photo.jpg'},
+          {url:'https://www.youtube.com/channel/UCRQA6Y4ofSivJGV2evZgukA', name: 'theheadhacker',
+           favicon:'http://yt3.ggpht.com/-wUj0qoTNUjg/AAAAAAAAAAI/AAAAAAAAAAA/O-A_KHT7Tfc/s88-c-k-no/photo.jpg'},
+      ],
       award_winning_magicians: [
           {url:'https://www.youtube.com/channel/UCmkaiZAj_rOjPcpidbbjSOw', name: 'HajnoczySoma',
            favicon:'http://i.ytimg.com/i/mkaiZAj_rOjPcpidbbjSOw/1.jpg?v=aecd78'},
@@ -148,18 +170,7 @@ module RESOURCES_CONSTANT
            favicon:'http://yt3.ggpht.com/-WUVy2BqM6bc/AAAAAAAAAAI/AAAAAAAAAAA/K2kZjZ9lH28/s88-c-k-no/photo.jpg'},
           {url:'https://www.youtube.com/channel/UCSqZOoDM735N0KTGVQ_Ytng', name: 'Atlas Brookings - Mind Reader',
            favicon:'http://yt3.ggpht.com/-dMvhZ6kxei0/AAAAAAAAAAI/AAAAAAAAAAA/YOXFlhg5u7s/s88-c-k-no/photo.jpg'},],
-      archives: [
-          {url:'https://www.youtube.com/channel/UCnCr4v73iD2prmqDfmGvhpg', name: 'enfilo',
-           favicon:'http://yt3.ggpht.com/-_lqMihs7uNk/AAAAAAAAAAI/AAAAAAAAAAA/D-j0IGnecH4/s88-c-k-no/photo.jpg'},
-          {url:'https://www.youtube.com/channel/UCsUO2qpMrNeoro48taaEj0w', name: 'Paco Rodas Ratazzi',
-           favicon:'http://yt3.ggpht.com/-Y1WQMoUymWE/AAAAAAAAAAI/AAAAAAAAAAA/9c76pq7Xkos/s88-c-k-no/photo.jpg'},
-          {url:'https://www.youtube.com/channel/UCXiK0ySADAUhtx8YJkSN8Jw', name: 'VintageMagic Archives',
-           favicon:'http://yt3.ggpht.com/-gu9tlTJTUTg/AAAAAAAAAAI/AAAAAAAAAAA/jcziGI_xLL8/s88-c-k-no/photo.jpg'},
-          {url:'https://www.youtube.com/channel/UCbQWelTfa0xTCCJcb0sgcUQ', name: 'Steve Pellegrino',
-           favicon:'http://yt3.ggpht.com/-J-7lcB0pTR8/AAAAAAAAAAI/AAAAAAAAAAA/Pc5WuN0izfk/s88-c-k-no/photo.jpg'},
-          {url:'https://www.youtube.com/channel/UCRQA6Y4ofSivJGV2evZgukA', name: 'theheadhacker',
-           favicon:'http://yt3.ggpht.com/-wUj0qoTNUjg/AAAAAAAAAAI/AAAAAAAAAAA/O-A_KHT7Tfc/s88-c-k-no/photo.jpg'},
-      ],
+
   }
 
 #Overall Data

@@ -46,26 +46,15 @@ class StaticPagesController < ApplicationController
   end
 
   def resources
+    @general_websites = RESOURCES_CONSTANT::GENERAL_WEBSITES
     @oversea_shops = RESOURCES_CONSTANT::OVERSEA_SHOPS
 
     @youtube_channels = []
-    RESOURCES_CONSTANT::YOUTUBE_CHANNELS.each do |key, value|
+    RESOURCES_CONSTANT::YOUTUBE_CHANNELS.first(3).each do |key, value|
       @youtube_channels = @youtube_channels.push(value)
     end
 
-    @oversea_sites = [
-#社区类
-{url:'http://www.themagiccafe.com/forums/index.php', name: 'themagiccafe'},
-#内容类
-{url:'http://itricks.com/news/', name: 'iTricks'},
-{url:'http://secretartjournal.com/', name: 'Secret Journal'},
-{url:'http://www.michaelvincentmagic.com/news', name: 'Elegant Deceptions', favicon:'http://www.michaelvincentmagic.com/favicon.ico'},
-{url:'http://www.conjuringarchive.com/', name: "Denis Behr's Conjuring Archive", favicon: 'http://www.conjuringarchive.com/images/favicon.ico'},
-{url:'http://conjuringarts.org/', name: 'Conjuring Arts Research Center',favicon: 'http://conjuringarts.org/wp-content/themes/lifestyle_40/images/favicon.ico'},
-{url:'http://geniimagazine.com/', name: 'Genii Magazine'},
-{url:'http://www.magicmagazine.com/', name: 'Magic Magazine',favicon:'http://www.magicmagazine.com/favicon.ico'},
-{url:'http://www.reelmagicmagazine.com/', name: 'Reel Magic Magazine',favicon: 'http://www.reelmagicmagazine.com/templates/reelmagicjoom25a/favicon.ico'},
-    ]
+
   end
 
 

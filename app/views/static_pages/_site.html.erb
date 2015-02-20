@@ -1,0 +1,6 @@
+<div class="col-md-3 site">
+  <% if !site[:favicon].blank?  %>
+    <%= image_tag(site[:favicon], class: 'favicon') %>
+  <% end  %>
+  <%= link_to(site[:name].truncate(25), site[:url]) %>
+</div>
