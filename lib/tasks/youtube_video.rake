@@ -8,6 +8,7 @@ task :fetch_youtube_videos, [:fetch_number] => :environment do|t, args|
     fetch_number = 7
   end
 
+  max_mode =true if fetch_number == 0
   def get_channels_avatar(channels)
     # tv_famous_magicians = RESOURCES_CONSTANT::YOUTUBE_CHANNELS[:shops]
     channels.each do |channel|
@@ -39,7 +40,7 @@ task :fetch_youtube_videos, [:fetch_number] => :environment do|t, args|
           order_by: 'viewCount',
           #author: channel_id,
           #order_by: 'published', #viewCount, #rating
-          ##fields: {:published  => ((Date.today - fetch_number)..(Date.today))},,
+          # fields: {:published  => ((Date.today - fetch_number)..(Date.today))},
           max_results: 50
       }
       videos = client.videos_by(query).videos
@@ -62,9 +63,15 @@ task :fetch_youtube_videos, [:fetch_number] => :environment do|t, args|
     query = {
         author: channel_id,
         order_by: 'published',
-        fields: {:published  => ((Date.today - fetch_number)..(Date.today))},
-        #max_results: 50   ### used when getting initial videos
+        # fields: {:published  => ((Date.today - fetch_number)..(Date.today))},
+        # max_results: 50   ### used when getting initial videos
     }
+    if !max_mode
+      query[:fields] = {:published  => ((Date.today - fetch_number)..(Date.today))}
+    else
+      query[:max_results] = 50
+      puts 'max mode'
+    end
     videos = client.videos_by(query).videos
     videos.each do |video_info|
       url = video_info.player_url.gsub(/[?&]feature=youtube_gdata_player/, '')

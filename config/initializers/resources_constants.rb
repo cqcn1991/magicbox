@@ -54,6 +54,7 @@ module RESOURCES_CONSTANT
 #社区类
       {url:'http://www.themagiccafe.com/forums/index.php', name: 'themagiccafe'},
       #内容类
+      {url:'http://www.magictimes.com/', name: 'Magic Times',  favicon:'http://www.magictimes.com/favicon.ico'},
       {url:'http://secretartjournal.com/', name: 'Secret Journal'},
       {url:'http://www.michaelvincentmagic.com/news', name: 'Elegant Deceptions', favicon:'http://www.michaelvincentmagic.com/favicon.ico'},
       {url:'http://www.conjuringarchive.com/', name: "Denis Behr's Conjuring Archive", favicon: 'http://www.conjuringarchive.com/images/favicon.ico'},
@@ -135,6 +136,8 @@ module RESOURCES_CONSTANT
            favicon:'http://i.ytimg.com/i/ccvbKrrgvcEc2h-hfMLjfQ/1.jpg?v=4fc532bd'},
           {url:'https://www.youtube.com/channel/UCtJkiissi90Z8MBlMnrvXfQ', name: 'dani daortiz',
            favicon:'http://yt3.ggpht.com/-HarlSs-3tG0/AAAAAAAAAAI/AAAAAAAAAAA/2OrkymoHnlw/s88-c-k-no/photo.jpg'},
+          {url:'https://www.youtube.com/channel/UCGqJdp5DSEXhQ7Dd6jk6w5Q', name: 'HarryLorayneOnVideo',
+           favicon:'http://yt3.ggpht.com/-cdn4WFw1oeI/AAAAAAAAAAI/AAAAAAAAAAA/veHeKHCrO20/s88-c-k-no/photo.jpg'},
           {url:'https://www.youtube.com/channel/UC8wSDyGlNCQWbpTj9uXjHdA', name: 'MichaelAmmar',
            favicon:'http://yt3.ggpht.com/-HA4ElWGo0Zg/AAAAAAAAAAI/AAAAAAAAAAA/uZ2TFgVWNpc/s88-c-k-no/photo.jpg'},],
       famous_magicians: [
@@ -232,6 +235,13 @@ module RESOURCES_CONSTANT
     {url: 'https://www.youtube.com/channel/UCB99aK4f2WaH96joccxLvSQ', name: 'Daniel Madiosn'} ,
     {url: 'https://www.youtube.com/channel/UCqr6tYc9Bollsoi2qRXsj7w', name: 'Mike Dynamo'} ,
     {url: 'https://www.youtube.com/channel/UC1IUltgiD5sMpAVbOe6BNNg', name: 'james brown'},
+    {url:'https://www.youtube.com/channel/UC2X0s6-0luc_Egd01fZX2Tw', name: 'SankeyMagic'},
+    {url:'https://www.youtube.com/channel/UCCbldDSzPhkyONThiVE8uDQ', name: 'LawrensGodon',
+     favicon:'http://yt3.ggpht.com/-IL1WidnCllE/AAAAAAAAAAI/AAAAAAAAAAA/UWCZZ_uqIsU/s88-c-k-no/photo.jpg'},
+    {url:'https://www.youtube.com/channel/UCGqJdp5DSEXhQ7Dd6jk6w5Q', name: 'HarryLorayneOnVideo',
+     favicon:'http://yt3.ggpht.com/-cdn4WFw1oeI/AAAAAAAAAAI/AAAAAAAAAAA/veHeKHCrO20/s88-c-k-no/photo.jpg'},
+    {url:'https://www.youtube.com/channel/UCGy0x09SgrXQL6zTVSiPxZw', name: 'Sterling Dietz',
+     favicon:'http://yt3.ggpht.com/-cdn4WFw1oeI/AAAAAAAAAAI/AAAAAAAAAAA/veHeKHCrO20/s88-c-k-no/photo.jpg'},
   ]
 
   NODES = [
