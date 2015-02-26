@@ -6,9 +6,14 @@
     </div>
     <div class="panel-body">
       <div class="row">
-        <% @general_websites.each do |site|  %>
+        <% @community_websites[:sites].each do |site|  %>
           <%= render partial: 'site', locals: {site: site} %>
         <% end  %>
+      </div>
+      <div class="row">
+      <% @general_websites[:sites].each do |site|  %>
+        <%= render partial: 'site', locals: {site: site} %>
+      <% end  %>
       </div>
     </div>
   </div>

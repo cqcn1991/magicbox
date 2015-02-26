@@ -1,14 +1,19 @@
 ---
+- :title: 'Chris Bolter '
+  :url: http://www.penguinmagic.com/p/5157
+  :thumnail_url: http://images.penguinmagic.com/images/products/medium/10198a-54be869bf1036.jpg
+  :stars: 4
+  :review_number: 5
 - :title: 'David Berglas '
   :url: http://www.penguinmagic.com/p/5116
   :thumnail_url: http://images.penguinmagic.com/images/products/medium/10162a-54b2ecae9e9b3.jpg
   :stars: 4
-  :review_number: 2
+  :review_number: 4
 - :title: 'Vincent Hedan '
   :url: http://www.penguinmagic.com/p/5107
   :thumnail_url: http://images.penguinmagic.com/images/products/medium/10153a-54bc5e0b2c552.jpg
   :stars: 5
-  :review_number: 2
+  :review_number: 10
 - :title: 'Dynamo '
   :url: http://www.penguinmagic.com/p/5058
   :thumnail_url: http://images.penguinmagic.com/images/products/medium/10105a-5493435ecb74d.jpg
@@ -18,7 +23,7 @@
   :url: http://www.penguinmagic.com/p/5042
   :thumnail_url: http://images.penguinmagic.com/images/products/medium/10089a-54b2ea1968056.jpg
   :stars: 4
-  :review_number: 13
+  :review_number: 14
 - :title: 'Bill Montana '
   :url: http://www.penguinmagic.com/p/5041
   :thumnail_url: http://images.penguinmagic.com/images/products/medium/10088a-549b18a2de87f.jpg
@@ -28,7 +33,7 @@
   :url: http://www.penguinmagic.com/p/5027
   :thumnail_url: http://images.penguinmagic.com/images/products/medium/10074a-5485d3872299e.jpg
   :stars: 3
-  :review_number: 100
+  :review_number: 101
 - :title: 'Eugene Burger '
   :url: http://www.penguinmagic.com/p/4917
   :thumnail_url: http://images.penguinmagic.com/images/products/medium/8969a-546ba56784d84.jpg
@@ -122,8 +127,8 @@
 - :title: 'Shimshi '
   :url: http://www.penguinmagic.com/p/4534
   :thumnail_url: http://images.penguinmagic.com/images/products/medium/8593a-53dc67a8e0814.jpg
-  :stars: 4
-  :review_number: 19
+  :stars: 5
+  :review_number: 20
 - :title: 'Norman Gilbreath '
   :url: http://www.penguinmagic.com/p/4533
   :thumnail_url: http://images.penguinmagic.com/images/products/medium/8592a-53dc66617570c.jpg
@@ -143,7 +148,7 @@
   :url: http://www.penguinmagic.com/p/4460
   :thumnail_url: http://images.penguinmagic.com/images/products/medium/8524a-53d0858f7c329.jpg
   :stars: 5
-  :review_number: 3
+  :review_number: 4
 - :title: 'Rocco Silano '
   :url: http://www.penguinmagic.com/p/4421
   :thumnail_url: http://images.penguinmagic.com/images/products/medium/8485a-53a46cc137214.jpg
@@ -218,7 +223,7 @@
   :url: http://www.penguinmagic.com/p/4190
   :thumnail_url: http://images.penguinmagic.com/images/products/medium/8261a-5347fbe9174e4.jpg
   :stars: 5
-  :review_number: 23
+  :review_number: 24
 - :title: 'Christopher Taylor '
   :url: http://www.penguinmagic.com/p/4187
   :thumnail_url: http://images.penguinmagic.com/images/products/medium/8258a-5341faf7d61b3.jpg
@@ -258,7 +263,7 @@
   :url: http://www.penguinmagic.com/p/4021
   :thumnail_url: http://images.penguinmagic.com/images/products/medium/7884a-53016fc4d206e.jpg
   :stars: 5
-  :review_number: 27
+  :review_number: 28
 - :title: 'Paul Gertner '
   :url: http://www.penguinmagic.com/p/3998
   :thumnail_url: http://images.penguinmagic.com/images/products/medium/7861a-52f7fefd2b177.jpg
@@ -273,7 +278,7 @@
   :url: http://www.penguinmagic.com/p/3973
   :thumnail_url: http://images.penguinmagic.com/images/products/medium/7836a-52e5c26c94aad.jpg
   :stars: 5
-  :review_number: 17
+  :review_number: 18
 - :title: 'Roberto Giobbi '
   :url: http://www.penguinmagic.com/p/3961
   :thumnail_url: http://images.penguinmagic.com/images/products/medium/7824a-52d6dafb76065.jpg
@@ -308,7 +313,7 @@
   :url: http://www.penguinmagic.com/p/3878
   :thumnail_url: http://images.penguinmagic.com/images/products/medium/7741a-52a7c8e28a790.jpg
   :stars: 5
-  :review_number: 22
+  :review_number: 23
 - :title: 'Lonnie Chevrie '
   :url: http://www.penguinmagic.com/p/3874
   :thumnail_url: http://images.penguinmagic.com/images/products/medium/7737a-52a20480c2ea7.jpg
@@ -333,7 +338,7 @@
   :url: http://www.penguinmagic.com/p/3801
   :thumnail_url: http://images.penguinmagic.com/images/products/medium/6991a-5282a79300c66.jpg
   :stars: 5
-  :review_number: 19
+  :review_number: 20
 - :title: 'Michael Rubinstein '
   :url: http://www.penguinmagic.com/p/3786
   :thumnail_url: http://images.penguinmagic.com/images/products/medium/6976a-5276f03d58af2.jpg
@@ -433,7 +438,7 @@
   :url: http://www.penguinmagic.com/p/3576
   :thumnail_url: http://images.penguinmagic.com/images/products/medium/6766a-51c3636db996c.jpg
   :stars: 5
-  :review_number: 66
+  :review_number: 67
 - :title: 'Paul Wilson '
   :url: http://www.penguinmagic.com/p/3571
   :thumnail_url: http://images.penguinmagic.com/images/products/medium/6761a-51bf3489d555b.jpg
@@ -483,7 +488,7 @@
   :url: http://www.penguinmagic.com/p/3438
   :thumnail_url: http://images.penguinmagic.com/images/products/medium/6629a-5162d5602e497.jpg
   :stars: 5
-  :review_number: 108
+  :review_number: 109
 - :title: 'David Gabbay '
   :url: http://www.penguinmagic.com/p/3421
   :thumnail_url: http://images.penguinmagic.com/images/products/medium/6612a-516c828a15348.jpg
@@ -503,7 +508,7 @@
   :url: http://www.penguinmagic.com/p/3360
   :thumnail_url: http://images.penguinmagic.com/images/products/medium/6552a-5152f15fcd210.jpg
   :stars: 5
-  :review_number: 28
+  :review_number: 29
 - :title: 'Chris Korn '
   :url: http://www.penguinmagic.com/p/3304
   :thumnail_url: http://images.penguinmagic.com/images/products/medium/6496a-513f3bbb57e67.jpg
@@ -743,12 +748,12 @@
   :url: http://www.penguinmagic.com/p/2649
   :thumnail_url: http://images.penguinmagic.com/images/products/medium/5773a.jpg
   :stars: 4
-  :review_number: 19
+  :review_number: 20
 - :title: 'Gazzo '
   :url: http://www.penguinmagic.com/p/2645
   :thumnail_url: http://images.penguinmagic.com/images/products/medium/5769a.jpg
   :stars: 4
-  :review_number: 3
+  :review_number: 4
 - :title: 'David Regal '
   :url: http://www.penguinmagic.com/p/2639
   :thumnail_url: http://images.penguinmagic.com/images/products/medium/5763a.jpg
@@ -769,13 +774,3 @@
   :thumnail_url: http://images.penguinmagic.com/images/products/medium/5753b.jpg
   :stars: 5
   :review_number: 17
-- :title: 'Nathan Kranzo '
-  :url: http://www.penguinmagic.com/p/2624
-  :thumnail_url: http://images.penguinmagic.com/images/products/medium/5748b.jpg
-  :stars: 5
-  :review_number: 6
-- :title: 'Dan Hauss '
-  :url: http://www.penguinmagic.com/p/2622
-  :thumnail_url: http://images.penguinmagic.com/images/products/medium/5746b.jpg
-  :stars: 4
-  :review_number: 3

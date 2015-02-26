@@ -2,5 +2,5 @@
   <% if !site[:favicon].blank?  %>
     <%= image_tag(site[:favicon], class: 'favicon') %>
   <% end  %>
-  <%= link_to(site[:name].truncate(25), site[:url]) %>
+  <%= link_to(site[:name].truncate(23), site[:url], class: "title #{'placeholder' if site[:favicon].blank?}") %>
 </div>

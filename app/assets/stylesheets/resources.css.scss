@@ -2,13 +2,15 @@
   margin-bottom: 10px;
   .favicon{
     height: 16px;
+    margin-top: -2px;
+    width: 16px;
   }
   .title{
-//    white-space: nowrap;
-//    text-overflow:ellipsis;
-//    white-space:nowrap;
-//    overflow:hidden;
+    &.placeholder{
+      margin-left: 18px;
+    }
   }
+
 }
 
 .resources{

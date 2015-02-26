@@ -51,14 +51,26 @@ module RESOURCES_CONSTANT
   ]
 
   GENERAL_WEBSITES = [
-#社区类
-      {url:'http://www.themagiccafe.com/forums/index.php', name: 'themagiccafe'},
-      #内容类
-      {url:'http://www.magictimes.com/', name: 'Magic Times',  favicon:'http://www.magictimes.com/favicon.ico'},
-      {url:'http://secretartjournal.com/', name: 'Secret Journal'},
-      {url:'http://www.michaelvincentmagic.com/news', name: 'Elegant Deceptions', favicon:'http://www.michaelvincentmagic.com/favicon.ico'},
-      {url:'http://www.conjuringarchive.com/', name: "Denis Behr's Conjuring Archive", favicon: 'http://www.conjuringarchive.com/images/favicon.ico'},
-      {url:'http://conjuringarts.org/', name: 'Conjuring Arts Research Center',favicon: 'http://conjuringarts.org/wp-content/themes/lifestyle_40/images/favicon.ico'},
+     {title: 'community',
+     sites: [{url:'http://www.themagiccafe.com/forums/index.php', name: 'the magic cafe'},
+             {url:'http://forums.geniimagazine.com/', name: 'Genii Forum'},
+             # {url:'http://www.magicvideodepot.com/', name: 'Magic Video Depot'},
+             # {url:'http://www.somfv3.com/secretforums/', name: 'Secret of Magic Forum'},
+     ]},
+     {title: 'news',
+      sites: [#news
+              {url:'http://www.linkingpage.com/', name: 'The Magic Newswire',  favicon:'http://www.linkingpage.com/favicon.ico'},
+              {url:'http://itricks.com/news/', name: 'iTricks'},
+              {url:'http://www.magictimes.com/', name: 'Magic Times',  favicon:'http://www.magictimes.com/favicon.ico'},
+              #articles
+              {url:'http://secretartjournal.com/', name: 'Secret Journal'},
+              {url:'http://www.magicana.com/blog/', name: 'Magicana',favicon:'http://sharingwonder.magicana.com/wp-content/uploads/2013/02/magicana.ico'},
+              {url:'http://www.michaelvincentmagic.com/news', name: 'Elegant Deceptions', favicon:'http://www.michaelvincentmagic.com/favicon.ico'},
+              #database
+              {url:'http://www.conjuringarchive.com/', name: "Denis Behr's Conjuring Archive", favicon: 'http://www.conjuringarchive.com/images/favicon.ico'},
+              {url:'http://conjuringarts.org/', name: 'Conjuring Arts Research Center',favicon: 'http://conjuringarts.org/wp-content/themes/lifestyle_40/images/favicon.ico'},
+              # {url:'http://magicref.tripod.com/magic0.htm', name: 'The Magic Reference Pages'},
+      ]},
   ]
 
   OVERSEA_SHOPS =  [#魔术厂商类
@@ -70,7 +82,9 @@ module RESOURCES_CONSTANT
       {url:'http://www.vanishingincmagic.com/', name: 'Vanishing Inc.', favicon: 'http://www.vanishingincmagic.com/favicon.ico'},
       {url:'http://www.ementalism.com/', name: 'Ementalism', favicon: ''},
       {url:'http://www.lybrary.com/', name: 'lybrary', favicon: 'http://www.lybrary.com/favicon.ico'},
+      {url:'http://www.magicbookshop.com/', name: 'H & R Magic Books', favicon: 'http://www.magicbookshop.com/favicon.ico'},
       {url:'http://www.alakazam.co.uk/', name: 'Alakazam Magic', favicon: 'http://www.alakazam.co.uk/favicon.ico'},
+      {url:'http://www.outlaw-effects.com/store/', name: 'Outlaw Effects', favicon: 'http://www.outlaw-effects.com/store/favicon.ico'},
       {url:'http://thebluecrown.com/', name: 'The Blue Crown', favicon: 'http://thebluecrown.com/favicon.ico'}]
 
   YOUTUBE_CHANNELS = {
@@ -101,18 +115,6 @@ module RESOURCES_CONSTANT
            favicon:'http://yt3.ggpht.com/-C7VyBQZPcRQ/AAAAAAAAAAI/AAAAAAAAAAA/st0SkLVcWgI/s88-c-k-no/photo.jpg'},
           {url:'https://www.youtube.com/channel/UCvGMGQC8gNkd4gwxSbABIlw', name: 'Quirkology',
            favicon:'http://yt3.ggpht.com/-i8MMXyS1CAo/AAAAAAAAAAI/AAAAAAAAAAA/XhWydCsJDKU/s88-c-k-no/photo.jpg'},],
-      archives: [
-          {url:'https://www.youtube.com/channel/UCnCr4v73iD2prmqDfmGvhpg', name: 'enfilo',
-           favicon:'http://yt3.ggpht.com/-_lqMihs7uNk/AAAAAAAAAAI/AAAAAAAAAAA/D-j0IGnecH4/s88-c-k-no/photo.jpg'},
-          {url:'https://www.youtube.com/channel/UCsUO2qpMrNeoro48taaEj0w', name: 'Paco Rodas Ratazzi',
-           favicon:'http://yt3.ggpht.com/-Y1WQMoUymWE/AAAAAAAAAAI/AAAAAAAAAAA/9c76pq7Xkos/s88-c-k-no/photo.jpg'},
-          {url:'https://www.youtube.com/channel/UCXiK0ySADAUhtx8YJkSN8Jw', name: 'VintageMagic Archives',
-           favicon:'http://yt3.ggpht.com/-gu9tlTJTUTg/AAAAAAAAAAI/AAAAAAAAAAA/jcziGI_xLL8/s88-c-k-no/photo.jpg'},
-          {url:'https://www.youtube.com/channel/UCbQWelTfa0xTCCJcb0sgcUQ', name: 'Steve Pellegrino',
-           favicon:'http://yt3.ggpht.com/-J-7lcB0pTR8/AAAAAAAAAAI/AAAAAAAAAAA/Pc5WuN0izfk/s88-c-k-no/photo.jpg'},
-          {url:'https://www.youtube.com/channel/UCRQA6Y4ofSivJGV2evZgukA', name: 'theheadhacker',
-           favicon:'http://yt3.ggpht.com/-wUj0qoTNUjg/AAAAAAAAAAI/AAAAAAAAAAA/O-A_KHT7Tfc/s88-c-k-no/photo.jpg'},
-      ],
       award_winning_magicians: [
           {url:'https://www.youtube.com/channel/UCmkaiZAj_rOjPcpidbbjSOw', name: 'HajnoczySoma',
            favicon:'http://i.ytimg.com/i/mkaiZAj_rOjPcpidbbjSOw/1.jpg?v=aecd78'},
@@ -140,6 +142,18 @@ module RESOURCES_CONSTANT
            favicon:'http://yt3.ggpht.com/-cdn4WFw1oeI/AAAAAAAAAAI/AAAAAAAAAAA/veHeKHCrO20/s88-c-k-no/photo.jpg'},
           {url:'https://www.youtube.com/channel/UC8wSDyGlNCQWbpTj9uXjHdA', name: 'MichaelAmmar',
            favicon:'http://yt3.ggpht.com/-HA4ElWGo0Zg/AAAAAAAAAAI/AAAAAAAAAAA/uZ2TFgVWNpc/s88-c-k-no/photo.jpg'},],
+      archives: [
+          {url:'https://www.youtube.com/channel/UCnCr4v73iD2prmqDfmGvhpg', name: 'enfilo',
+           favicon:'http://yt3.ggpht.com/-_lqMihs7uNk/AAAAAAAAAAI/AAAAAAAAAAA/D-j0IGnecH4/s88-c-k-no/photo.jpg'},
+          {url:'https://www.youtube.com/channel/UCsUO2qpMrNeoro48taaEj0w', name: 'Paco Rodas Ratazzi',
+           favicon:'http://yt3.ggpht.com/-Y1WQMoUymWE/AAAAAAAAAAI/AAAAAAAAAAA/9c76pq7Xkos/s88-c-k-no/photo.jpg'},
+          {url:'https://www.youtube.com/channel/UCXiK0ySADAUhtx8YJkSN8Jw', name: 'VintageMagic Archives',
+           favicon:'http://yt3.ggpht.com/-gu9tlTJTUTg/AAAAAAAAAAI/AAAAAAAAAAA/jcziGI_xLL8/s88-c-k-no/photo.jpg'},
+          {url:'https://www.youtube.com/channel/UCbQWelTfa0xTCCJcb0sgcUQ', name: 'Steve Pellegrino',
+           favicon:'http://yt3.ggpht.com/-J-7lcB0pTR8/AAAAAAAAAAI/AAAAAAAAAAA/Pc5WuN0izfk/s88-c-k-no/photo.jpg'},
+          {url:'https://www.youtube.com/channel/UCRQA6Y4ofSivJGV2evZgukA', name: 'theheadhacker',
+           favicon:'http://yt3.ggpht.com/-wUj0qoTNUjg/AAAAAAAAAAI/AAAAAAAAAAA/O-A_KHT7Tfc/s88-c-k-no/photo.jpg'},
+      ],
       famous_magicians: [
           {url:'https://www.youtube.com/channel/UCBNkiIDZMlB72a_N0BUHCwQ', name: 'ollie mealing',
            favicon:'http://yt3.ggpht.com/-xPyJe5bp66c/AAAAAAAAAAI/AAAAAAAAAAA/cOr8LthEdR8/s88-c-k-no/photo.jpg'},

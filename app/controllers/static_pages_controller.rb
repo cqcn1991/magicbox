@@ -46,11 +46,13 @@ class StaticPagesController < ApplicationController
   end
 
   def resources
-    @general_websites = RESOURCES_CONSTANT::GENERAL_WEBSITES
+    @community_websites = RESOURCES_CONSTANT::GENERAL_WEBSITES[0]
+    @general_websites = RESOURCES_CONSTANT::GENERAL_WEBSITES[1]
+
     @oversea_shops = RESOURCES_CONSTANT::OVERSEA_SHOPS
 
     @youtube_channels = []
-    RESOURCES_CONSTANT::YOUTUBE_CHANNELS.first(3).each do |key, value|
+    RESOURCES_CONSTANT::YOUTUBE_CHANNELS.first(4).each do |key, value|
       @youtube_channels = @youtube_channels.push(value)
     end
 
