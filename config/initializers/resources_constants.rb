@@ -55,7 +55,7 @@ module RESOURCES_CONSTANT
      sites: [{url:'http://www.themagiccafe.com/forums/index.php', name: 'the magic cafe'},
              {url:'http://forums.geniimagazine.com/', name: 'Genii Forum'},
              # {url:'http://www.magicvideodepot.com/', name: 'Magic Video Depot'},
-             # {url:'http://www.somfv3.com/secretforums/', name: 'Secret of Magic Forum'},
+             {url:'http://www.somfv3.com/secretforums/', name: 'Secret of Magic Forum',  favicon:'http://www.somfv3.com/secretforums/favicon.ico'},
      ]},
      {title: 'news',
       sites: [#news
@@ -214,7 +214,7 @@ module RESOURCES_CONSTANT
     {url: 'https://www.youtube.com/channel/UCccvbKrrgvcEc2h-hfMLjfQ', name: 'David Stone'},
     # Frequently Updated Personal Channel
     {url: 'https://www.youtube.com/channel/UCBNkiIDZMlB72a_N0BUHCwQ', name: 'Ollie Mealing'},
-    {url: 'https://www.youtube.com/channel/UCpip9EesFuO1lkSY_B-vExw', name: 'Daniel Fernandez'},
+    # {url: 'https://www.youtube.com/channel/UCpip9EesFuO1lkSY_B-vExw', name: 'Daniel Fernandez'},
     {url: 'https://www.youtube.com/channel/UC-beEh5L8QETtO1r32eXxqA', name: 'jack carpenter'},
     {url: 'https://www.youtube.com/channel/UCewE7G8ZQOA-9zfK2OQmM5g', name: 'Patrick Kun'},
     {url: 'https://www.youtube.com/channel/UCQqQpVg1QrC6MvBa932jwaA', name: 'Jean Pierr Vallarino'},
@@ -230,6 +230,7 @@ module RESOURCES_CONSTANT
     {url: 'https://www.youtube.com/channel/UCDaDCy1NNbhnZJ5Tokn4Bxg', name: 'Miracles of Magic'},
     {url: 'https://www.youtube.com/channel/UCOn_hpazVfS7ZSX00eLZKdA', name: '770pratik'},
     {url: 'https://www.youtube.com/channel/UC4F9G58rQlCaJqGX6oeZhHg', name: 'cardinimagican'},
+    {url: 'https://www.youtube.com/channel/UCt7RO0UaYxqvE8eKzY3H5Rw', name: 'magicpromotionclub'},
     # Masters
     {url: 'https://www.youtube.com/channel/UCtJkiissi90Z8MBlMnrvXfQ', name: 'Dani Daortiz'} ,
     {url: 'https://www.youtube.com/channel/UC8wSDyGlNCQWbpTj9uXjHdA', name: 'Michael Ammar'},
@@ -249,7 +250,7 @@ module RESOURCES_CONSTANT
     {url: 'https://www.youtube.com/channel/UCB99aK4f2WaH96joccxLvSQ', name: 'Daniel Madiosn'} ,
     {url: 'https://www.youtube.com/channel/UCqr6tYc9Bollsoi2qRXsj7w', name: 'Mike Dynamo'} ,
     {url: 'https://www.youtube.com/channel/UC1IUltgiD5sMpAVbOe6BNNg', name: 'james brown'},
-    {url:'https://www.youtube.com/channel/UC2X0s6-0luc_Egd01fZX2Tw', name: 'SankeyMagic'},
+    # {url:'https://www.youtube.com/channel/UC2X0s6-0luc_Egd01fZX2Tw', name: 'SankeyMagic'},
     {url:'https://www.youtube.com/channel/UCCbldDSzPhkyONThiVE8uDQ', name: 'LawrensGodon',
      favicon:'http://yt3.ggpht.com/-IL1WidnCllE/AAAAAAAAAAI/AAAAAAAAAAA/UWCZZ_uqIsU/s88-c-k-no/photo.jpg'},
     {url:'https://www.youtube.com/channel/UCGqJdp5DSEXhQ7Dd6jk6w5Q', name: 'HarryLorayneOnVideo',

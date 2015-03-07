@@ -35,18 +35,6 @@
     <div class="col-md-3">
       <div class="">
         <%= yield :sidebar_selector %>
-        <div class="notices">
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h4 class="panel-title">Notice</h4>
-            </div>
-            <ul class="list-group">
-              <li class="list-group-item notice">Here are the <strong>hottest topics</strong> at <a href="http://themagiccafe.com">themagiccafe.com</a>, and magic videos from <a href="http://youtube.com">youtube.com</a></li>
-              <li class="list-group-item notice">If you have any <strong>suggestion</strong>, you can put it <%= link_to 'Here', discuss_path %>, or contact me by 38306608@qq.com
-              </li>
-            </ul>
-          </div>
-        </div>
         <div class="panel panel-default main">
           <div class="panel-heading clearfix">
             <h2 class="panel-title">Websites</h2>
@@ -65,6 +53,17 @@
               </div>
             </li>
           </ul>
+        </div>
+        <div class="notices">
+          <div class="panel panel-default">
+            <!--<div class="panel-heading">-->
+              <!--<h4 class="panel-title">Notice</h4>-->
+            <!--</div>-->
+            <ul class="list-group">
+              <li class="list-group-item notice">If you have any <strong>suggestion</strong>, you can put it <%= link_to 'Here', discuss_path %>, or contact me by 38306608@qq.com
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>

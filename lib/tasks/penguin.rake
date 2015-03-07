@@ -5,7 +5,7 @@ task :fetch_penguin, [:fetch_number] => :environment do|t, args|
   require 'open-uri'
 
   penguin_lectures = []
-  for page_number in 1..16 do
+  for page_number in 1..17 do
     url ="http://www.penguinmagic.com/browse.php?c=live&p=#{page_number}"
     puts url
     doc = Nokogiri::HTML(open(url))

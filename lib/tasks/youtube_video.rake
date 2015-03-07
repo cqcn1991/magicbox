@@ -76,7 +76,7 @@ task :fetch_youtube_videos, [:fetch_number] => :environment do|t, args|
     videos.each do |video_info|
       url = video_info.player_url.gsub(/[?&]feature=youtube_gdata_player/, '')
       puts url
-      keywords = ['Coffee with Dan', 'Exposé', 'THE SHIFT', 'Free Tick Friday']
+      keywords = ['Coffee with Dan', 'Exposé', 'THE SHIFT', 'Free Tick Friday', 'Book Club']
       if !keywords.any? {|str| video_info.title.include? str}
         video = Video.new(url: url)
         if video.save

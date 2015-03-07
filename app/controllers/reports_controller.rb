@@ -4,7 +4,10 @@ class ReportsController < ApplicationController
   end
 
   def penguin
-    lectures = YAML::load(File.read('lib/penguin.yml')).sort_by { |hsh| [hsh[:stars],hsh[:review_number]] }.reverse
+    all_lectures = YAML::load(File.read('lib/penguin.yml'))
+    @newest_lec = all_lectures.first
+    @count = all_lectures.count
+    lectures = all_lectures.sort_by { |hsh| [hsh[:stars],hsh[:review_number]] }.reverse
     params[:rating] = '5' if !params[:rating]
     case params[:rating]
       when 'all'
