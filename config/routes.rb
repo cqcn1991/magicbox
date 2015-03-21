@@ -25,7 +25,7 @@ Rails.application.routes.draw do
     get 'notices' => 'notices#admin', as: :admin_notices
   end
 
-  root 'static_pages#popular'
+  root 'videos#best'
 
   get 'discussion' => 'static_pages#discussion', as: :discuss
   get 'pop' => 'static_pages#popular'

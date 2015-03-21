@@ -5,6 +5,12 @@ task :test_post => :environment do
   require 'nokogiri'
   require 'open-uri'
 
+  Video.all.each do |video|
+    if video.hits.blank?
+      puts video.url
+    end
+  end
+
 
   # client = YouTubeIt::Client.new(:dev_key => "AIzaSyBktwEa5lFm87ENBHmAGWJMCTChS282Whk")
   #

@@ -11,15 +11,20 @@ class Video < ActiveRecord::Base
   scope :order_by_date, -> { order('created_at DESC, source_id ASC')}
   scope :order_by_update, -> { order('updated_at DESC, source_id ASC')}
   scope :order_by_hits, -> { order('hits IS NULL, hits DESC') }
-  scope :order_by_rating, -> { order('rating IS NULL, rating DESC, hits DESC') }
+  # scope :order_by_rating, -> { order('rating IS NULL, rating DESC, hits DESC') }
   scope :order_by_duration, -> { order('duration IS NULL, duration DESC') }
   scope :order_by_id, -> {order('id DESC')}
+
+  scope :order_by_rating, -> do
+    where("likes > ? ", 5).to_a.sort_by{|video| video.likes.to_f/video.hits}.reverse
+  end
 
   scope :best_of_the_month, ->(year, month) do
     time = Time.new(year, month)
     start_time = time.beginning_of_month
     end_time = time.end_of_month
-    where("created_at > ? AND created_at < ?", start_time, end_time).where("likes > ?", 15).where("rating > ?", 4.85).order_by_rating.to_a.uniq(&:author)
+    # where("created_at > ? AND created_at < ?", start_time, end_time).where("likes > ?", 15).where("rating > ?", 4.85).order_by_rating.to_a.uniq(&:author)
+    where("created_at > ? AND created_at < ?", start_time, end_time).where("likes > ?", 15).where("rating > ?", 4.8).to_a.sort_by{|video| video.likes.to_f/video.hits}.reverse.uniq(&:author)
   end
 
   scope :selected_of_the_month, ->(year, month) do
